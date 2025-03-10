@@ -172,116 +172,126 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection">Investigating the Range as a Function of the Angle of Projection</h1>
+<h1 id="analytical-and-computational-investigation-of-projectile-range-as-a-function-of-launch-angle">Analytical and Computational Investigation of Projectile Range as a Function of Launch Angle</h1>
+<h2 id="abstract">Abstract</h2>
+<p>This study examines the dependence of a projectile’s horizontal range on its angle of projection, grounded in the principles of classical mechanics. Through analytical derivation and computational simulation, we explore the governing equations, analyze parametric influences, and assess practical applications. The investigation culminates in a Python-based simulation tool that visualizes range variations, accompanied by a discussion of model limitations and potential extensions.</p>
 <h2 id="1-theoretical-foundation">1. Theoretical Foundation</h2>
-<h3 id="deriving-the-equations-of-motion">Deriving the Equations of Motion</h3>
-<p>Projectile motion is a classic example of two-dimensional motion under constant acceleration due to gravity. Let’s start with Newton’s second law and assume the only force acting is gravity (no air resistance for now). Define the coordinate system: <span class="arithmatex">\(x\)</span> is horizontal (positive right), and <span class="arithmatex">\(y\)</span> is vertical (positive up). The acceleration due to gravity is <span class="arithmatex">\(g\)</span>, acting downward.</p>
-<p>The acceleration components are:
-- <span class="arithmatex">\(a_x = 0\)</span> (no horizontal forces),
-- <span class="arithmatex">\(a_y = -g\)</span>.</p>
-<p>Given initial velocity <span class="arithmatex">\(v_0\)</span> at angle <span class="arithmatex">\(\theta\)</span> from the horizontal, the initial velocity components are:
+<h3 id="11-derivation-of-governing-equations">1.1 Derivation of Governing Equations</h3>
+<p>Projectile motion under gravitational influence is modeled as two-dimensional kinematics with constant acceleration. Consider a Cartesian coordinate system where the <span class="arithmatex">\(x\)</span>-axis is horizontal and the <span class="arithmatex">\(y\)</span>-axis is vertical, with gravity acting downward. The acceleration vector is:
+- $ a_x = 0,$
+- $ a_y = -g,$</p>
+<p>where <span class="arithmatex">\(g\)</span> denotes gravitational acceleration (typically $ 9.81 \, \text{m/s}^2$ on Earth).</p>
+<p>A projectile is launched with initial velocity <span class="arithmatex">\(v_0\)</span> at angle <span class="arithmatex">\(\theta\)</span> relative to the horizontal, from an initial height <span class="arithmatex">\(h\)</span>. The initial velocity components are:
 - <span class="arithmatex">\(v_{0x} = v_0 \cos\theta\)</span>,
 - <span class="arithmatex">\(v_{0y} = v_0 \sin\theta\)</span>.</p>
 <h4 id="horizontal-motion">Horizontal Motion</h4>
-<p>Since <span class="arithmatex">\(a_x = 0\)</span>, the velocity is constant:
-<span class="arithmatex">\( v_x(t) = v_{0x} = v_0 \cos\theta. \)</span>
-Integrating with respect to time (initial position <span class="arithmatex">\(x_0 = 0\)</span>):
-<span class="arithmatex">\( x(t) = v_0 \cos\theta \cdot t. \)</span></p>
+<p>With no horizontal acceleration (<span class="arithmatex">\(a_x = 0\)</span>), the velocity remains constant:</p>
+<div class="arithmatex">\[ v_x(t) = v_{0x} = v_0 \cos\theta. \]</div>
+<p>Integrating with initial position <span class="arithmatex">\(x(0) = 0:\)</span></p>
+<div class="arithmatex">\[x(t) = v_0 \cos\theta \cdot t. \]</div>
 <h4 id="vertical-motion">Vertical Motion</h4>
-<p>With <span class="arithmatex">\(a_y = -g\)</span>, integrate the acceleration:
-[ v_y(t) = v_{0y} - g t = v_0 \sin\theta - g t. ]
-Integrate again (initial position <span class="arithmatex">\(y_0 = h\)</span>, the launch height):
-[ y(t) = h + v_0 \sin\theta \cdot t - \frac{1}{2} g t^2. ]</p>
-<p>These are the parametric equations of motion. The trajectory is a parabola when <span class="arithmatex">\(h = 0\)</span>, but the launch height adds versatility.</p>
-<h3 id="family-of-solutions">Family of Solutions</h3>
-<p>The parameters <span class="arithmatex">\(v_0\)</span>, <span class="arithmatex">\(\theta\)</span>, <span class="arithmatex">\(g\)</span>, and <span class="arithmatex">\(h\)</span> define a family of solutions. For instance:
-- Varying <span class="arithmatex">\(\theta\)</span> changes the balance between horizontal and vertical components.
-- Increasing <span class="arithmatex">\(v_0\)</span> scales the trajectory’s size.
-- Adjusting <span class="arithmatex">\(g\)</span> (e.g., Earth vs. Moon) alters the curvature.
-- Non-zero <span class="arithmatex">\(h\)</span> shifts the starting point, affecting the range.</p>
-<h2 id="2-analysis-of-the-range">2. Analysis of the Range</h2>
-<h3 id="range-derivation">Range Derivation</h3>
-<p>The range <span class="arithmatex">\(R\)</span> is the horizontal distance traveled when the projectile returns to <span class="arithmatex">\(y = 0\)</span>. Set <span class="arithmatex">\(y(t) = 0\)</span>:
-[ 0 = h + v_0 \sin\theta \cdot t - \frac{1}{2} g t^2. ]
-Multiply through by 2 and rearrange:
-[ g t^2 - 2 v_0 \sin\theta \cdot t - 2h = 0. ]
-This is a quadratic equation in <span class="arithmatex">\(t\)</span>:
-[ t = \frac{2 v_0 \sin\theta \pm \sqrt{(2 v_0 \sin\theta)^2 + 8 g h}}{2 g} = \frac{v_0 \sin\theta \pm \sqrt{v_0^2 \sin^2\theta + 2 g h}}{g}. ]
-The positive root gives the time of flight. For <span class="arithmatex">\(h = 0\)</span>:
-[ t_f = \frac{2 v_0 \sin\theta}{g}. ]
-Substitute into the horizontal position:
-[ R = v_0 \cos\theta \cdot t_f = v_0 \cos\theta \cdot \frac{2 v_0 \sin\theta}{g} = \frac{v_0^2 \cdot 2 \sin\theta \cos\theta}{g} = \frac{v_0^2 \sin(2\theta)}{g}. ]
-This confirms the range depends on <span class="arithmatex">\(\sin(2\theta)\)</span>, peaking at <span class="arithmatex">\(\theta = 45^\circ\)</span> when <span class="arithmatex">\(h = 0\)</span>.</p>
-<h3 id="parameter-influence">Parameter Influence</h3>
+<p>Vertical acceleration (<span class="arithmatex">\(a_y = -g\)</span>) yields:</p>
+<div class="arithmatex">\[v_y(t) = v_{0y} + a_y t = v_0 \sin\theta - g t.\]</div>
+<p>Integrating with initial position <span class="arithmatex">\(y(0) = h\)</span>:</p>
+<div class="arithmatex">\[
+y(t) = h + v_0 \sin\theta \cdot t - \frac{1}{2} g t^2.\]</div>
+<p>These equations describe a parabolic trajectory for <span class="arithmatex">\(h = 0\)</span>, modified by the initial height when <span class="arithmatex">\(h \neq 0\)</span>.</p>
+<h3 id="12-parametric-family-of-solutions">1.2 Parametric Family of Solutions</h3>
+<p>The solutions form a family parameterized by <span class="arithmatex">\(v_0\)</span>, <span class="arithmatex">\(\theta\)</span>, <span class="arithmatex">\(g\)</span>, and <span class="arithmatex">\(h\)</span>. Variations in these parameters yield distinct trajectories:
+- <span class="arithmatex">\(\theta\)</span> adjusts the directional distribution of velocity.
+- <span class="arithmatex">\(v_0\)</span> scales the magnitude of displacement.
+- <span class="arithmatex">\(g\)</span> influences the trajectory’s curvature.
+- <span class="arithmatex">\(h\)</span> shifts the vertical origin, affecting flight time and range.</p>
+<h2 id="2-range-analysis">2. Range Analysis</h2>
+<h3 id="21-derivation-of-horizontal-range">2.1 Derivation of Horizontal Range</h3>
+<p>The horizontal range <span class="arithmatex">\(R\)</span> is the <span class="arithmatex">\(x\)</span>-displacement when <span class="arithmatex">\(y(t) = 0\)</span>. Set the vertical position equation to zero:</p>
+<div class="arithmatex">\[
+0 = h + v_0 \sin\theta \cdot t - \frac{1}{2} g t^2.
+\]</div>
+<p>Rearrange into a quadratic form:</p>
+<p>$$
+\frac{1}{2} g t^2 - v_0 \sin\theta \cdot t - h = 0.
+$$
+Solve using the quadratic formula, where <span class="arithmatex">\(a = \frac{1}{2} g\)</span>, <span class="arithmatex">\(b = -v_0 \sin\theta\)</span>, <span class="arithmatex">\(c = -h:\)</span></p>
+<div class="arithmatex">\[
+t = \frac{v_0 \sin\theta \pm \sqrt{(v_0 \sin\theta)^2 - 4 \cdot \frac{1}{2} g \cdot (-h)}}{g} = \frac{v_0 \sin\theta \pm \sqrt{v_0^2 \sin^2\theta + 2 g h}}{g}. 
+\]</div>
+<p>The positive root represents the time of flight <span class="arithmatex">\(t_f\)</span>. For <span class="arithmatex">\(h = 0\)</span>:</p>
+<div class="arithmatex">\[t_f = \frac{2 v_0 \sin\theta}{g}.\]</div>
+<p>Thus:</p>
+<div class="arithmatex">\[R = v_0 \cos\theta \cdot t_f = \frac{v_0^2 \sin(2\theta)}{g},\]</div>
+<p>where <span class="arithmatex">\(\sin(2\theta) = 2 \sin\theta \cos\theta\)</span>. The range peaks at <span class="arithmatex">\(\theta = 45^\circ\)</span>, when <span class="arithmatex">\(h = 0\)</span>.</p>
+<h3 id="22-parametric-sensitivity">2.2 Parametric Sensitivity</h3>
 <ul>
-<li><strong>Initial Velocity (<span class="arithmatex">\(v_0\)</span>)</strong>: <span class="arithmatex">\(R \propto v_0^2\)</span>, a quadratic increase.</li>
-<li><strong>Gravity (<span class="arithmatex">\(g\)</span>)</strong>: <span class="arithmatex">\(R \propto 1/g\)</span>, so weaker gravity extends the range.</li>
-<li><strong>Launch Height (<span class="arithmatex">\(h\)</span>)</strong>: For <span class="arithmatex">\(h &gt; 0\)</span>, the time of flight increases, extending <span class="arithmatex">\(R\)</span>. The optimal angle shifts below 45°.</li>
+<li><strong>Initial Velocity</strong>: <span class="arithmatex">\(R \propto v_0^2\)</span>, exhibiting quadratic scaling.</li>
+<li><strong>Gravitational Acceleration</strong>: <span class="arithmatex">\(R \propto 1/g\)</span>, inversely proportional.</li>
+<li><strong>Initial Height</strong>: Non-zero <span class="arithmatex">\(h\)</span> extends <span class="arithmatex">\(t_f\)</span>, increasing <span class="arithmatex">\(R\)</span> and shifting the optimal angle below 45°.</li>
 </ul>
 <h2 id="3-practical-applications">3. Practical Applications</h2>
-<p>This model applies to:
-- <strong>Sports</strong>: Optimizing a basketball shot or golf drive.
-- <strong>Engineering</strong>: Designing artillery or water fountains.
-- <strong>Astrophysics</strong>: Trajectories on different planets (adjust <span class="arithmatex">\(g\)</span>).</p>
-<p>For uneven terrain, adjust the landing height in the equation. Air resistance requires numerical solutions (e.g., adding a drag term proportional to velocity squared), which we’ll simulate.</p>
-<h2 id="4-implementation">4. Implementation</h2>
-<h3 id="python-script">Python Script</h3>
-<p>Here’s a Python script using NumPy and Matplotlib to simulate and visualize the range.</p>
+<p>This model is adaptable to:
+- <strong>Sports Science</strong>: Optimizing trajectories in archery or javelin.
+- <strong>Engineering</strong>: Designing ballistic systems or fluid jets.
+- <strong>Planetary Physics</strong>: Adjusting <span class="arithmatex">\(g\)</span> for extraterrestrial environments.</p>
+<p>Extensions to uneven terrain or resistive forces require modified boundary conditions or numerical methods.</p>
+<h2 id="4-computational-implementation">4. Computational Implementation</h2>
+<h3 id="41-simulation-algorithm">4.1 Simulation Algorithm</h3>
+<p>A Python script computes and visualizes <span class="arithmatex">\(R(\theta)\)</span> for varying parameters. The range function accounts for arbitrary <span class="arithmatex">\(h\)</span>:</p>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
-def range_projectile(v0, theta_deg, g=9.81, h=0):
-    """Calculate range given initial velocity, angle (degrees), gravity, and height."""
+def compute_range(v0, theta_deg, g=9.81, h=0):
+    """Compute horizontal range for given parameters."""
     theta = np.radians(theta_deg)
     discriminant = v0**2 * np.sin(theta)**2 + 2 * g * h
     if discriminant &lt; 0:
-        return 0  # No real solution (doesn’t reach y=0)
-    t_flight = (v0 * np.sin(theta) + np.sqrt(discriminant)) / g
-    return v0 * np.cos(theta) * t_flight
+        return 0
+    t_flight = (v_0 * np.sin(theta) + np.sqrt(discriminant)) / g
+    return v_0 * np.cos(theta) * t_flight
 
-# Parameters
-v0_values = [10, 15, 20]  # m/s
-g = 9.81  # m/s^2
-h_values = [0, 10]  # m
-theta = np.linspace(0, 90, 91)  # 0 to 90 degrees
+# Simulation parameters
+v0_values = [10, 15, 20]  # Initial velocities (m/s)
+h_values = [0, 10]        # Initial heights (m)
+g = 9.81                  # Gravitational acceleration (m/s^2)
+theta = np.linspace(0, 90, 91)  # Angles (degrees)
 
-# Plotting
+# Visualization
 plt.figure(figsize=(10, 6))
 for v0 in v0_values:
     for h in h_values:
-        R = [range_projectile(v0, t, g, h) for t in theta]
-        plt.plot(theta, R, label=f'v0={v0} m/s, h={h} m')
-plt.xlabel('Angle of Projection (degrees)')
+        R = [compute_range(v0, t, g, h) for t in theta]
+        plt.plot(theta, R, label=f'$v_0={v0}$ m/s, $h={h}$ m')
+plt.xlabel('Projection Angle ($^\circ$)')
 plt.ylabel('Range (m)')
-plt.title('Range vs. Angle of Projection')
+plt.title('Projectile Range as a Function of Launch Angle')
 plt.legend()
 plt.grid(True)
 plt.show()
 
-# Optimal angle for h=0
+# Analytical verification
 theta_opt = 45
-print(f"Optimal angle for h=0: {theta_opt}°")
-R_max = range_projectile(20, theta_opt, g, 0)
-print(f"Max range for v0=20 m/s, h=0: {R_max:.2f} m")
+R_max = compute_range(20, theta_opt, g, 0)
+print(f"Optimal angle (h=0): {theta_opt}°")
+print(f"Maximum range (v0=20 m/s, h=0): {R_max:.2f} m")
 </code></pre>
-<h3 id="output-description">Output Description</h3>
+<h3 id="42-results">4.2 Results</h3>
+<p>The script generates curves of <span class="arithmatex">\(R\)</span> versus <span class="arithmatex">\(\theta\)</span>, illustrating:
+- Peak range at 45° for <span class="arithmatex">\(h = 0\)</span>.
+- Shifted optima and extended ranges for <span class="arithmatex">\(h &gt; 0\)</span>.
+- Quadratic scaling with <span class="arithmatex">\(v_0\)</span>.</p>
+<h2 id="5-discussion">5. Discussion</h2>
+<h3 id="51-model-limitations">5.1 Model Limitations</h3>
+<p>The idealized model neglects:
+- Air resistance, which reduces range and alters trajectories.
+- Environmental factors like wind or terrain slope.
+- Rotational effects (e.g., Magnus force).</p>
+<h3 id="52-proposed-extensions">5.2 Proposed Extensions</h3>
 <ul>
-<li><strong>Graph</strong>: Plots range vs. angle for different <span class="arithmatex">\(v_0\)</span> and <span class="arithmatex">\(h\)</span>. Peaks shift with height.</li>
-<li><strong>Family of Solutions</strong>: Curves vary with parameters, showing the model’s flexibility.</li>
+<li><strong>Drag Inclusion</strong>: Incorporate <span class="arithmatex">\(-k v^2\)</span> terms, solved via numerical integration (e.g., Runge-Kutta).</li>
+<li><strong>Complex Environments</strong>: Model wind or variable <span class="arithmatex">\(g\)</span> for planetary applications.</li>
+<li><strong>Validation</strong>: Compare with experimental data from physical systems.</li>
 </ul>
-<h2 id="discussion">Discussion</h2>
-<h3 id="limitations">Limitations</h3>
-<ul>
-<li><strong>Idealized Model</strong>: Ignores air resistance, wind, and spin.</li>
-<li><strong>Flat Earth</strong>: Assumes constant <span class="arithmatex">\(g\)</span> and no curvature.</li>
-</ul>
-<h3 id="enhancements">Enhancements</h3>
-<ul>
-<li><strong>Drag</strong>: Add <span class="arithmatex">\(-k v^2\)</span> terms to the equations and solve numerically (e.g., using Euler or Runge-Kutta methods).</li>
-<li><strong>Wind</strong>: Include horizontal acceleration terms.</li>
-<li><strong>Terrain</strong>: Model <span class="arithmatex">\(y_{\text{land}}(x)\)</span> and solve for intersection.</li>
-</ul>
-<p>This exploration reveals projectile motion’s elegance and adaptability, bridging theory and application across physics and beyond.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This investigation elucidates the interplay between launch angle and range, offering a robust framework for theoretical and applied physics. The computational tool enhances understanding, while proposed extensions address real-world complexities.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
