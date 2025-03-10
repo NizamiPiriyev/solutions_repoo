@@ -9,10 +9,10 @@ This study examines the dependence of a projectile’s horizontal range on its a
 
 ### 1.1 Derivation of Governing Equations
 Projectile motion under gravitational influence is modeled as two-dimensional kinematics with constant acceleration. Consider a Cartesian coordinate system where the $x$-axis is horizontal and the $y$-axis is vertical, with gravity acting downward. The acceleration vector is:
-- $ a_x = 0,$
-- $ a_y = -g,$
+- $a_x = 0$,
+- $a_y = -g$,
 
-where $g$ denotes gravitational acceleration (typically $ 9.81 \, \text{m/s}^2$ on Earth).
+where $g$ denotes gravitational acceleration (typically $9.81 \, \text{m/s}^2$ on Earth).
 
 A projectile is launched with initial velocity $v_0$ at angle $\theta$ relative to the horizontal, from an initial height $h$. The initial velocity components are:
 - $v_{0x} = v_0 \cos\theta$,
