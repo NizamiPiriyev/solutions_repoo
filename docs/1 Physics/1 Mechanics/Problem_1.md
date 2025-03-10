@@ -18,9 +18,9 @@ Given initial velocity \(v_0\) at angle \(\theta\) from the horizontal, the init
 
 #### Horizontal Motion
 Since \(a_x = 0\), the velocity is constant:
-\[ v_x(t) = v_{0x} = v_0 \cos\theta. \]
+\() v_x(t) = v_{0x} = v_0 \cos\theta. \)
 Integrating with respect to time (initial position \(x_0 = 0\)):
-\[ x(t) = v_0 \cos\theta \cdot t. \]
+\( x(t) = v_0 \cos\theta \cdot t. \)
 
 #### Vertical Motion
 With \(a_y = -g\), integrate the acceleration:
