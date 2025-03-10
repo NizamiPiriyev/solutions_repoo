@@ -12,7 +12,7 @@ Projectile motion under gravitational influence is modeled as two-dimensional ki
 - $a_x = 0$,
 - $a_y = -g$,
 
-where $g$ denotes gravitational acceleration (typically $9.81 \, \text{m/s}^2$ on Earth).
+where $g$ denotes gravitational acceleration (typically $9.81$$\text{m/s}^2$ on Earth).
 
 A projectile is launched with initial velocity $v_0$ at angle $\theta$ relative to the horizontal, from an initial height $h$. The initial velocity components are:
 - $v_{0x} = v_0 \cos\theta$,
