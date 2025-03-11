@@ -177,9 +177,11 @@
 <p>This study examines the dependence of a projectile’s horizontal range on its angle of projection, grounded in the principles of classical mechanics. Through analytical derivation and computational simulation, we explore the governing equations, analyze parametric influences, and assess practical applications. The investigation culminates in a Python-based simulation tool that visualizes range variations, accompanied by a discussion of model limitations and potential extensions.</p>
 <h2 id="1-theoretical-foundation">1. Theoretical Foundation</h2>
 <h3 id="11-derivation-of-governing-equations">1.1 Derivation of Governing Equations</h3>
-<p>Projectile motion under gravitational influence is modeled as two-dimensional kinematics with constant acceleration. Consider a Cartesian coordinate system where the <span class="arithmatex">\(x\)</span>-axis is horizontal and the <span class="arithmatex">\(y\)</span>-axis is vertical, with gravity acting downward. The acceleration vector is:
-- <span class="arithmatex">\(<span class="arithmatex">\(a_x = 0\)</span>\)</span>,
-- <span class="arithmatex">\(<span class="arithmatex">\(a_y = -g\)</span>\)</span>,</p>
+<p>Projectile motion under gravitational influence is modeled as two-dimensional kinematics with constant acceleration. Consider a Cartesian coordinate system where the <span class="arithmatex">\(x\)</span>-axis is horizontal and the <span class="arithmatex">\(y\)</span>-axis is vertical, with gravity acting downward. The acceleration vector is:</p>
+<ul>
+<li><span class="arithmatex">\(<span class="arithmatex">\(a_x = 0\)</span>\)</span>,</li>
+<li><span class="arithmatex">\(<span class="arithmatex">\(a_y = -g\)</span>\)</span>,</li>
+</ul>
 <p>where <span class="arithmatex">\(g\)</span> denotes gravitational acceleration (typically <span class="arithmatex">\(9.81\)</span><span class="arithmatex">\(\text{m/s}^2\)</span> on Earth).</p>
 <p>A projectile is launched with initial velocity <span class="arithmatex">\(v_0\)</span> at angle <span class="arithmatex">\(\theta\)</span> relative to the horizontal, from an initial height <span class="arithmatex">\(h\)</span>. The initial velocity components are:
 - <span class="arithmatex">\(v_{0x} = v_0 \cos\theta\)</span>,
@@ -228,10 +230,18 @@ t = \frac{v_0 \sin\theta \pm \sqrt{(v_0 \sin\theta)^2 - 4 \cdot \frac{1}{2} g \c
 <li><strong>Initial Height</strong>: Non-zero <span class="arithmatex">\(h\)</span> extends <span class="arithmatex">\(t_f\)</span>, increasing <span class="arithmatex">\(R\)</span> and shifting the optimal angle below 45°.</li>
 </ul>
 <h2 id="3-practical-applications">3. Practical Applications</h2>
-<p>This model is adaptable to:
-- <strong>Sports Science</strong>: Optimizing trajectories in archery or javelin.
-- <strong>Engineering</strong>: Designing ballistic systems or fluid jets.
-- <strong>Planetary Physics</strong>: Adjusting <span class="arithmatex">\(g\)</span> for extraterrestrial environments.</p>
+<p>This model is adaptable to:</p>
+<ul>
+<li>
+<p><strong>Sports Science</strong>: Optimizing trajectories in archery or javelin.</p>
+</li>
+<li>
+<p><strong>Engineering</strong>: Designing ballistic systems or fluid jets.</p>
+</li>
+<li>
+<p><strong>Planetary Physics</strong>: Adjusting <span class="arithmatex">\(g\)</span> for extraterrestrial environments.</p>
+</li>
+</ul>
 <p>Extensions to uneven terrain or resistive forces require modified boundary conditions or numerical methods.</p>
 <h2 id="4-computational-implementation">4. Computational Implementation</h2>
 <h3 id="41-simulation-algorithm">4.1 Simulation Algorithm</h3>
@@ -280,15 +290,29 @@ print(f"Maximum range (v0=20 m/s, h=0): {R_max:.2f} m")
 - Quadratic scaling with <span class="arithmatex">\(v_0\)</span>.</p>
 <h2 id="5-discussion">5. Discussion</h2>
 <h3 id="51-model-limitations">5.1 Model Limitations</h3>
-<p>The idealized model neglects:
-- Air resistance, which reduces range and alters trajectories.
-- Environmental factors like wind or terrain slope.
-- Rotational effects (e.g., Magnus force).</p>
+<p>The idealized model neglects:</p>
+<ul>
+<li>
+<p>Air resistance, which reduces range and alters trajectories.</p>
+</li>
+<li>
+<p>Environmental factors like wind or terrain slope.</p>
+</li>
+<li>
+<p>Rotational effects (e.g., Magnus force).</p>
+</li>
+</ul>
 <h3 id="52-proposed-extensions">5.2 Proposed Extensions</h3>
 <ul>
-<li><strong>Drag Inclusion</strong>: Incorporate <span class="arithmatex">\(-k v^2\)</span> terms, solved via numerical integration (e.g., Runge-Kutta).</li>
-<li><strong>Complex Environments</strong>: Model wind or variable <span class="arithmatex">\(g\)</span> for planetary applications.</li>
-<li><strong>Validation</strong>: Compare with experimental data from physical systems.</li>
+<li>
+<p><strong>Drag Inclusion</strong>: Incorporate <span class="arithmatex">\(-k v^2\)</span> terms, solved via numerical integration (e.g., Runge-Kutta).</p>
+</li>
+<li>
+<p><strong>Complex Environments</strong>: Model wind or variable <span class="arithmatex">\(g\)</span> for planetary applications.</p>
+</li>
+<li>
+<p><strong>Validation</strong>: Compare with experimental data from physical systems.</p>
+</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>This investigation elucidates the interplay between launch angle and range, offering a robust framework for theoretical and applied physics. The computational tool enhances understanding, while proposed extensions address real-world complexities.</p>
