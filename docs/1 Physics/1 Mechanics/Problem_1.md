@@ -9,6 +9,7 @@ This study examines the dependence of a projectile’s horizontal range on its a
 
 ### 1.1 Derivation of Governing Equations
 Projectile motion under gravitational influence is modeled as two-dimensional kinematics with constant acceleration. Consider a Cartesian coordinate system where the $x$-axis is horizontal and the $y$-axis is vertical, with gravity acting downward. The acceleration vector is:
+
 - $$a_x = 0$$,
 - $$a_y = -g$$,
 
@@ -83,8 +84,11 @@ where $\sin(2\theta) = 2 \sin\theta \cos\theta$. The range peaks at $\theta = 45
 
 ## 3. Practical Applications
 This model is adaptable to:
+
 - **Sports Science**: Optimizing trajectories in archery or javelin.
+
 - **Engineering**: Designing ballistic systems or fluid jets.
+
 - **Planetary Physics**: Adjusting $g$ for extraterrestrial environments.
 
 Extensions to uneven terrain or resistive forces require modified boundary conditions or numerical methods.
@@ -143,13 +147,19 @@ The script generates curves of $R$ versus $\theta$, illustrating:
 
 ### 5.1 Model Limitations
 The idealized model neglects:
+
 - Air resistance, which reduces range and alters trajectories.
+
 - Environmental factors like wind or terrain slope.
+
 - Rotational effects (e.g., Magnus force).
 
 ### 5.2 Proposed Extensions
+
 - **Drag Inclusion**: Incorporate $-k v^2$ terms, solved via numerical integration (e.g., Runge-Kutta).
+
 - **Complex Environments**: Model wind or variable $g$ for planetary applications.
+
 - **Validation**: Compare with experimental data from physical systems.
 
 ## Conclusion
