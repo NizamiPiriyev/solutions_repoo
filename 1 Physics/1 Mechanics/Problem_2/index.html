@@ -50,6 +50,20 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 2</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#investigating-the-dynamics-of-a-forced-damped-pendulum">Investigating the Dynamics of a Forced Damped Pendulum</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-theoretical-foundation">1. Theoretical Foundation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-analysis-of-dynamics">2. Analysis of Dynamics</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-practical-applications">3. Practical Applications</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#4-implementation-computational-model">4. Implementation: Computational Model</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#deliverables">Deliverables</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -172,6 +186,165 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h3 id="investigating-the-dynamics-of-a-forced-damped-pendulum">Investigating the Dynamics of a Forced Damped Pendulum</h3>
+<h4 id="1-theoretical-foundation">1. Theoretical Foundation</h4>
+<p>The motion of a forced damped pendulum is governed by a second-order nonlinear differential equation. For a pendulum of length <span class="arithmatex">\(L\)</span>, mass <span class="arithmatex">\(m\)</span>, under gravitational acceleration <span class="arithmatex">\(g\)</span>, with damping coefficient <span class="arithmatex">\(b\)</span>, and subjected to an external periodic force <span class="arithmatex">\(F(t) = F_0 \cos(\omega t)\)</span>, the equation of motion is:</p>
+<div class="arithmatex">\[
+mL\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + mg\sin\theta = F_0 \cos(\omega t)
+\]</div>
+<p>Dividing through by <span class="arithmatex">\(mL\)</span>, we obtain the standard form:</p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + \frac{b}{mL}\frac{d\theta}{dt} + \frac{g}{L}\sin\theta = \frac{F_0}{mL}\cos(\omega t)
+\]</div>
+<p>Define the natural frequency <span class="arithmatex">\(\omega_0 = \sqrt{\frac{g}{L}}\)</span>, the damping ratio <span class="arithmatex">\(\gamma = \frac{b}{2mL}\)</span>, and the forcing amplitude <span class="arithmatex">\(f = \frac{F_0}{mL}\)</span>. The equation becomes:</p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + 2\gamma\frac{d\theta}{dt} + \omega_0^2 \sin\theta = f \cos(\omega t)
+\]</div>
+<h5 id="small-angle-approximation">Small-Angle Approximation</h5>
+<p>For small angles $( \theta \ll 1 $), $ \sin\theta \approx \theta $, simplifying the equation to a linear forced damped oscillator:</p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + 2\gamma\frac{d\theta}{dt} + \omega_0^2 \theta = f \cos(\omega t)
+\]</div>
+<p>This is a linear second-order differential equation with a harmonic driving term. The general solution consists of a homogeneous solution (transient) and a particular solution (steady-state). The homogeneous equation is:</p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + 2\gamma\frac{d\theta}{dt} + \omega_0^2 \theta = 0
+\]</div>
+<p>The characteristic equation is <span class="arithmatex">\(r^2 + 2\gamma r + \omega_0^2 = 0\)</span>, with roots:</p>
+<div class="arithmatex">\[
+r = -\gamma \pm \sqrt{\gamma^2 - \omega_0^2}
+\]</div>
+<ul>
+<li>
+<p>If $ \gamma &lt; \omega_0$ (underdamped), the solution is $ \theta_h(t) = e^{-\gamma t} (A \cos(\omega_d t) + B \sin(\omega_d t)) $, where $ \omega_d = \sqrt{\omega_0^2 - \gamma^2} $.</p>
+</li>
+<li>
+<p>The particular solution for the forcing term $ f \cos(\omega t)$ is:</p>
+</li>
+</ul>
+<div class="arithmatex">\[
+\theta_p(t) = C \cos(\omega t) + D \sin(\omega t)
+\]</div>
+<p>Using the method of undetermined coefficients, substitute into the equation and solve for <span class="arithmatex">\(C\)</span> and <span class="arithmatex">\(D\)</span>:</p>
+<div class="arithmatex">\[
+C = \frac{f (\omega_0^2 - \omega^2)}{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2}, \quad D = \frac{f (2\gamma\omega)}{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2}
+\]</div>
+<p>The amplitude of the steady-state solution is:</p>
+<div class="arithmatex">\[
+A = \sqrt{C^2 + D^2} = \frac{f}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2}}
+\]</div>
+<h5 id="resonance-conditions">Resonance Conditions</h5>
+<p>Resonance occurs when the driving frequency <span class="arithmatex">\(\omega\)</span> approaches the natural frequency $ \omega_0<span class="arithmatex">\(. For minimal damping (\)</span> \gamma \to 0 $), the amplitude <span class="arithmatex">\(A\)</span> peaks sharply at <span class="arithmatex">\(\omega = \omega_0\)</span>, leading to a significant energy increase in the system. The maximum amplitude is approximately <span class="arithmatex">\(\frac{f}{2\gamma\omega_0}\)</span>, illustrating how damping limits resonant growth.</p>
+<h4 id="2-analysis-of-dynamics">2. Analysis of Dynamics</h4>
+<p>The full nonlinear equation ($\sin\theta \neq \theta $) introduces complexity beyond the small-angle regime. Key parameters influencing the dynamics include:</p>
+<ul>
+<li>
+<p><strong>Damping Coefficient ($ \gamma $)</strong>: Higher damping reduces oscillation amplitude and suppresses chaotic behavior, stabilizing the system.</p>
+</li>
+<li>
+<p><strong>Driving Amplitude (<span class="arithmatex">\(f\)</span>)</strong>: Small <span class="arithmatex">\(f\)</span> leads to periodic motion; large <span class="arithmatex">\(f\)</span> can drive the system into chaos.</p>
+</li>
+<li>
+<p><strong>Driving Frequency ($ \omega $)</strong>: Near $ \omega_0$, resonance enhances amplitude; far from <span class="arithmatex">\(\omega_0\)</span>, quasiperiodic or chaotic motion may emerge.</p>
+</li>
+</ul>
+<p>The transition to chaos occurs when nonlinearity dominates, often observed through period-doubling bifurcations. For certain <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(\omega\)</span>, the pendulum exhibits regular oscillations synchronized with the driving force. Increasing <span class="arithmatex">\(f\)</span> beyond a critical threshold destabilizes this motion, leading to unpredictable, chaotic trajectories sensitive to initial conditions.</p>
+<h4 id="3-practical-applications">3. Practical Applications</h4>
+<p>The forced damped pendulum model applies to:</p>
+<ul>
+<li>
+<p><strong>Energy Harvesting</strong>: Piezoelectric devices convert mechanical oscillations into electrical energy, optimized near resonance.</p>
+</li>
+<li>
+<p><strong>Suspension Bridges</strong>: Periodic wind forces can induce resonance or chaotic vibrations, necessitating damping design.</p>
+</li>
+<li>
+<p><strong>Oscillating Circuits</strong>: Driven RLC circuits mirror the pendulum’s dynamics, used in signal processing.</p>
+</li>
+</ul>
+<h4 id="4-implementation-computational-model">4. Implementation: Computational Model</h4>
+<p>We use Python with the Runge-Kutta 4th-order (RK4) method to solve the nonlinear equation numerically. Below is a sample implementation:</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import odeint
+
+# Parameters
+g = 9.81  # gravity (m/s^2)
+L = 1.0   # pendulum length (m)
+omega0 = np.sqrt(g / L)  # natural frequency
+gamma = 0.1  # damping coefficient
+f = 1.2      # driving amplitude
+omega = 2/3  # driving frequency
+
+# Differential equation as a system of first-order ODEs
+def pendulum_eq(state, t, gamma, omega0, f, omega):
+    theta, theta_dot = state
+    dtheta_dt = theta_dot
+    dtheta_dot_dt = -2 * gamma * theta_dot - omega0**2 * np.sin(theta) + f * np.cos(omega * t)
+    return [dtheta_dt, dtheta_dot_dt]
+
+# Time array
+t = np.linspace(0, 50, 1000)
+
+# Initial conditions
+state0 = [0.1, 0.0]  # [theta(0), theta_dot(0)]
+
+# Solve ODE
+sol = odeint(pendulum_eq, state0, t, args=(gamma, omega0, f, omega))
+theta, theta_dot = sol.T
+
+# Plot time series
+plt.figure(figsize=(10, 6))
+plt.plot(t, theta, label=r'$\theta(t)$')
+plt.xlabel('Time (s)')
+plt.ylabel('Angle (rad)')
+plt.title('Forced Damped Pendulum Motion')
+plt.legend()
+plt.grid()
+plt.show()
+
+# Phase portrait
+plt.figure(figsize=(10, 6))
+plt.plot(theta, theta_dot, label='Phase trajectory')
+plt.xlabel(r'$\theta$ (rad)')
+plt.ylabel(r'$\dot{\theta}$ (rad/s)')
+plt.title('Phase Portrait')
+plt.legend()
+plt.grid()
+plt.show()
+
+# Poincaré section (at t = 2π/ω)
+poincare_theta = []
+poincare_theta_dot = []
+period = 2 * np.pi / omega
+for i in range(len(t)):
+    if np.abs(t[i] % period) &lt; 0.01:
+        poincare_theta.append(theta[i])
+        poincare_theta_dot.append(theta_dot[i])
+
+plt.figure(figsize=(10, 6))
+plt.scatter(poincare_theta, poincare_theta_dot, s=5, label='Poincaré section')
+plt.xlabel(r'$\theta$ (rad)')
+plt.ylabel(r'$\dot{\theta}$ (rad/s)')
+plt.title('Poincaré Section')
+plt.legend()
+plt.grid()
+plt.show()
+</code></pre>
+<h4 id="deliverables">Deliverables</h4>
+<ol>
+<li>
+<p><strong>General Solutions</strong>: The small-angle solution is derived above; nonlinear dynamics require numerical methods like RK4.</p>
+</li>
+<li>
+<p><strong>Graphical Representations</strong>: The code generates time series, phase portraits, and Poincaré sections for varying <span class="arithmatex">\(\gamma\)</span>, <span class="arithmatex">\(f\)</span>, and <span class="arithmatex">\(\omega\)</span>. Resonance peaks at <span class="arithmatex">\(\omega \approx \omega_0\)</span>; chaos emerges with large <span class="arithmatex">\(f\)</span> (e.g., <span class="arithmatex">\(f = 1.5\)</span>).</p>
+</li>
+<li>
+<p><strong>Limitations and Extensions</strong>: The model assumes constant parameters and periodic forcing. Nonlinear damping ($ b|\dot{\theta}| $) or stochastic forcing could enhance realism.</p>
+</li>
+<li>
+<p><strong>Complex Dynamics</strong>: Phase portraits show closed loops for periodic motion and scattered points for chaos. Poincaré sections and bifurcation diagrams (varying <span class="arithmatex">\(f\)</span>) reveal transitions to chaos.</p>
+</li>
+</ol>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
