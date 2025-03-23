@@ -47,7 +47,7 @@ $$
  \theta_h(t) = e^{-\gamma t} (A \cos(\omega_d t) + B \sin(\omega_d t)) $, where $ \omega_d = \sqrt{\omega_0^2 - \gamma^2}. 
 $$
 
-- The particular solution for the forcing term $ f \cos(\omega t)$ is:
+- The particular solution for the forcing term $f\cos(\omega t)$ is:
 
 $$
 \theta_p(t) = C \cos(\omega t) + D \sin(\omega t)
