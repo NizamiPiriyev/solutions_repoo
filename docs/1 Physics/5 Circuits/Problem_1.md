@@ -29,13 +29,13 @@ The algorithm uses graph theory to calculate the equivalent resistance of a circ
 ### 2. Implementation in Python
 We’ll use Python with the `networkx` library to represent and manipulate the graph. The implementation will:
 
-    - Accept a circuit graph as input.
+- Accept a circuit graph as input.
 
-    - Iteratively reduce the graph using series and parallel reductions.
+- Iteratively reduce the graph using series and parallel reductions.
 
-    - Output the final equivalent resistance.
+- Output the final equivalent resistance.
 
-    - Test the implementation with three examples: simple series, simple parallel, and a nested configuration.
+- Test the implementation with three examples: simple series, simple parallel, and a nested configuration.
 
 #### Graphics
 Example 1: Simple Series Circuit
