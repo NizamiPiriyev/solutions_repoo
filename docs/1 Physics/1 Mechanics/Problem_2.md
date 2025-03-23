@@ -23,7 +23,7 @@ $$
 $$
 
 ##### Small-Angle Approximation
-For small angles $( \theta \ll 1 $), $ \sin\theta \approx \theta $, simplifying the equation to a linear forced damped oscillator:
+For small angles $( \theta \ll 1 )$, $\sin\theta \approx \theta$, simplifying the equation to a linear forced damped oscillator:
 
 $$
 \frac{d^2\theta}{dt^2} + 2\gamma\frac{d\theta}{dt} + \omega_0^2 \theta = f \cos(\omega t)
@@ -42,7 +42,10 @@ r = -\gamma \pm \sqrt{\gamma^2 - \omega_0^2}
 $$
 
 
-- If $ \gamma < \omega_0$ (underdamped), the solution is $ \theta_h(t) = e^{-\gamma t} (A \cos(\omega_d t) + B \sin(\omega_d t)) $, where $ \omega_d = \sqrt{\omega_0^2 - \gamma^2} $.
+- If $\gamma$ < $\omega_0$ (underdamped), the solution is 
+$$
+ \theta_h(t) = e^{-\gamma t} (A \cos(\omega_d t) + B \sin(\omega_d t)) $, where $ \omega_d = \sqrt{\omega_0^2 - \gamma^2}. 
+$$
 
 - The particular solution for the forcing term $ f \cos(\omega t)$ is:
 
