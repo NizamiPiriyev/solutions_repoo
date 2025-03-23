@@ -39,14 +39,14 @@ We’ll use Python with the `networkx` library to represent and manipulate the g
 
 #### Graphics
 Example 1: Simple Series Circuit
-
+Step 1: Series reduction at node B.
 ![Initial Circuit Graph](../images/image_2_C1.png)
-Step 1: Series reduction at node B
 
 
-![Final Graph](../images/image_2_C2.png)
 Equivalent resistance between A and C: 5.00 ohms.
 Expected: 5 ohms, Got: 5.00 ohms.
+
+![Final Graph](../images/image_2_C2.png)
 
 
 Example 2: Simple Parallel Circuit
@@ -54,25 +54,26 @@ Example 2: Simple Parallel Circuit
 ![Initial Circuit Graph](../images/image_2_C3.png)
 
 
-![Final Graph](../images/image_2_C4.png)
 Equivalent resistance between A and B: 3.00 ohms.
 Expected: 1.2 ohms, Got: 3.00 ohms.
+![Final Graph](../images/image_2_C4.png)
 
 
 Example 3: Nested Series-Parallel Circuit
-
-![Initial Circuit Graph](../images/image_2_C5.png)
 Step 1: Series reduction at node C.
 Step 2: Series reduction at node B.
 
+![Initial Circuit Graph](../images/image_2_C5.png)
 
-![Intermediate Graph](../images/image_2_C6.png)
+
 Step 3: Series reduction at node D.
+![Intermediate Graph](../images/image_2_C6.png)
 
 
-![Final Graph](../images/image_2_C7.png)
 Equivalent resistance between A and E: 10.00 ohms.
 Expected: 8.71 ohms, Got: 10.00 ohms.
+![Final Graph](../images/image_2_C7.png)
+
 
 ---
 
