@@ -72,11 +72,11 @@ Resonance occurs when the driving frequency $\omega$ approaches the natural freq
 
 The full nonlinear equation $(\sin\theta \neq \theta)$ introduces complexity beyond the small-angle regime. Key parameters influencing the dynamics include:
 
-- **Damping Coefficient ($ \gamma $)**: Higher damping reduces oscillation amplitude and suppresses chaotic behavior, stabilizing the system.
+- **Damping Coefficient $(\gamma)$**: Higher damping reduces oscillation amplitude and suppresses chaotic behavior, stabilizing the system.
 
 - **Driving Amplitude ($f$)**: Small $f$ leads to periodic motion; large $f$ can drive the system into chaos.
 
-- **Driving Frequency ($ \omega $)**: Near $ \omega_0$, resonance enhances amplitude; far from $\omega_0$, quasiperiodic or chaotic motion may emerge.
+- **Driving Frequency ($\omega$)**: Near $\omega_0$, resonance enhances amplitude; far from $\omega_0$, quasiperiodic or chaotic motion may emerge.
 
 The transition to chaos occurs when nonlinearity dominates, often observed through period-doubling bifurcations. For certain $f$ and $\omega$, the pendulum exhibits regular oscillations synchronized with the driving force. Increasing $f$ beyond a critical threshold destabilizes this motion, leading to unpredictable, chaotic trajectories sensitive to initial conditions.
 
@@ -169,6 +169,6 @@ plt.show()
 
 2. **Graphical Representations**: The code generates time series, phase portraits, and Poincaré sections for varying $\gamma$, $f$, and $\omega$. Resonance peaks at $\omega \approx \omega_0$; chaos emerges with large $f$ (e.g., $f = 1.5$).
 
-3. **Limitations and Extensions**: The model assumes constant parameters and periodic forcing. Nonlinear damping ($ b|\dot{\theta}| $) or stochastic forcing could enhance realism.
+3. **Limitations and Extensions**: The model assumes constant parameters and periodic forcing. Nonlinear damping $(b|\dot{\theta}|)$ or stochastic forcing could enhance realism.
 
 4. **Complex Dynamics**: Phase portraits show closed loops for periodic motion and scattered points for chaos. Poincaré sections and bifurcation diagrams (varying $f$) reveal transitions to chaos.
