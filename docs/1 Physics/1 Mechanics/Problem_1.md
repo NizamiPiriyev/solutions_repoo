@@ -99,47 +99,9 @@ Extensions to uneven terrain or resistive forces require modified boundary condi
 ## 4. Computational Implementation
 
 ### 4.1 Simulation Algorithm
-A Python script computes and visualizes $R(\theta)$ for varying parameters. The range function accounts for arbitrary $h$:
+Below is the plot for $v_0 = 15$ m/s and $h = 0$ m:
 
-```python
-import streamlit as st
-import numpy as np
-import matplotlib.pyplot as plt
-
-def compute_range(v0, theta_deg, g=9.81, h=0):
-    theta = np.radians(theta_deg)
-    discriminant = v0**2 * np.sin(theta)**2 + 2 * g * h
-    if discriminant < 0:
-        return 0
-    t_flight = (v0 * np.sin(theta) + np.sqrt(discriminant)) / g
-    return v0 * np.cos(theta) * t_flight
-
-# Streamlit interface
-st.title("Projectile Range Simulator")
-v0 = st.slider("Initial Velocity (m/s)", 5, 25, 15)
-h = st.slider("Initial Height (m)", 0, 20, 0)
-g = 9.81
-
-theta = np.linspace(0, 90, 91)
-R = [compute_range(v0, t, g, h) for t in theta]
-
-# Plot
-fig, ax = plt.subplots()
-ax.plot(theta, R, label=f"$v_0={v0}$ m/s, $h={h}$ m")
-ax.set_xlabel("Projection Angle (°)")
-ax.set_ylabel("Range (m)")
-ax.set_title("Range vs Launch Angle")
-ax.legend()
-ax.grid(True)
-st.pyplot(fig)
-
-# Display optimal range
-theta_opt = 45
-R_max = compute_range(v0, theta_opt, g, 0)
-st.write(f"Optimal angle (h=0): {theta_opt}°")
-st.write(f"Maximum range: {R_max:.2f} m")
-```
-
+![Range vs Launch Angle Plot](images/range_plot.png)
 ### 4.2 Results
 The script generates curves of $R$ versus $\theta$, illustrating:
 
