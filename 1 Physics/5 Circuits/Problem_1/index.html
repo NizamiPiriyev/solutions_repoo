@@ -215,38 +215,39 @@
 <h3 id="1-algorithm-overview">1. Algorithm Overview</h3>
 <p>The algorithm uses graph theory to calculate the equivalent resistance of a circuit by iteratively simplifying the graph representation of the circuit. Here’s the high-level approach:</p>
 <ol>
-<li><strong>Graph Representation</strong>:</li>
 <li>
-<p>Represent the circuit as an undirected graph where:</p>
+<p><strong>Graph Representation</strong>:</p>
 <ul>
+<li>Represent the circuit as an undirected graph where:<ul>
 <li>Nodes are junctions in the circuit.</li>
 <li>Edges represent resistors, with edge weights equal to their resistance values.</li>
 <li>The source and sink nodes (e.g., terminals A and B) are the points between which we calculate the equivalent resistance.</li>
 </ul>
 </li>
+</ul>
+</li>
 <li>
 <p><strong>Iterative Simplification</strong>:</p>
-</li>
+<ul>
 <li>
 <p><strong>Series Reduction</strong>: Identify nodes with degree 2 (i.e., nodes connected to exactly two other nodes). These represent resistors in series. Replace the two resistors with a single resistor whose resistance is the sum of the two.</p>
 </li>
 <li>
 <p><strong>Parallel Reduction</strong>: Identify pairs of nodes connected by multiple edges (parallel resistors). Replace these edges with a single edge whose resistance is computed using the parallel resistance formula:</p>
 </li>
-</ol>
-<p>$$
-   \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2}.
-   $$</p>
-<ul>
-<li>
-<p>Repeat these steps until the graph is reduced to a single edge between the source and sink nodes, representing the equivalent resistance.</p>
+</ul>
+<div class="arithmatex">\[
+\frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2}.
+\]</div>
+<pre><code>- Repeat these steps until the graph is reduced to a single edge between the source and sink nodes, representing the equivalent resistance.
+</code></pre>
 </li>
 <li>
 <p><strong>Handling Complex Configurations</strong>:</p>
 </li>
 <li>For nested series and parallel combinations, the iterative process naturally handles them by repeatedly applying series and parallel reductions.</li>
 <li>For circuits with cycles (e.g., bridges or deltas), we can use additional techniques like the <strong>star-delta transformation</strong> to simplify the graph. However, for this implementation, we’ll focus on circuits that can be reduced using series and parallel reductions, and we’ll discuss extensions for more complex cases in the analysis.</li>
-</ul>
+</ol>
 <hr/>
 <h3 id="2-implementation-in-python">2. Implementation in Python</h3>
 <p>We’ll use Python with the <code>networkx</code> library to represent and manipulate the graph. The implementation will:
