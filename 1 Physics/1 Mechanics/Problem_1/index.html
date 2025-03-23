@@ -186,10 +186,10 @@
 <p>A projectile is launched with initial velocity <span class="arithmatex">\(v_0\)</span> at angle <span class="arithmatex">\(\theta\)</span> relative to the horizontal, from an initial height <span class="arithmatex">\(h\)</span>. The initial velocity components are:</p>
 <ul>
 <li>
-<p><span class="arithmatex">\(v_{0x} = v_0 \cos\theta\)</span>,</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(v_{0x} = v_0 \cos\theta\)</span>\)</span>,</p>
 </li>
 <li>
-<p><span class="arithmatex">\(v_{0y} = v_0 \sin\theta\)</span>.</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(v_{0y} = v_0 \sin\theta\)</span>\)</span>.</p>
 </li>
 </ul>
 <h4 id="horizontal-motion">Horizontal Motion</h4>
@@ -290,10 +290,18 @@ print(f"Optimal angle (h=0): {theta_opt}°")
 print(f"Maximum range (v0=20 m/s, h=0): {R_max:.2f} m")
 </code></pre>
 <h3 id="42-results">4.2 Results</h3>
-<p>The script generates curves of <span class="arithmatex">\(R\)</span> versus <span class="arithmatex">\(\theta\)</span>, illustrating:
-- Peak range at 45° for <span class="arithmatex">\(h = 0\)</span>.
-- Shifted optima and extended ranges for <span class="arithmatex">\(h &gt; 0\)</span>.
-- Quadratic scaling with <span class="arithmatex">\(v_0\)</span>.</p>
+<p>The script generates curves of <span class="arithmatex">\(R\)</span> versus <span class="arithmatex">\(\theta\)</span>, illustrating:</p>
+<ul>
+<li>
+<p>Peak range at 45° for <span class="arithmatex">\(h = 0\)</span>.</p>
+</li>
+<li>
+<p>Shifted optima and extended ranges for <span class="arithmatex">\(h &gt; 0\)</span>.</p>
+</li>
+<li>
+<p>Quadratic scaling with <span class="arithmatex">\(v_0\)</span>.</p>
+</li>
+</ul>
 <h2 id="5-discussion">5. Discussion</h2>
 <h3 id="51-model-limitations">5.1 Model Limitations</h3>
 <p>The idealized model neglects:</p>
