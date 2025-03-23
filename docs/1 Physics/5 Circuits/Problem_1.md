@@ -4,21 +4,21 @@
 The algorithm uses graph theory to calculate the equivalent resistance of a circuit by iteratively simplifying the graph representation of the circuit. Here’s the high-level approach:
 
 1. **Graph Representation**:
-- Represent the circuit as an undirected graph where:
-    - Nodes are junctions in the circuit.
-    - Edges represent resistors, with edge weights equal to their resistance values.
-    - The source and sink nodes (e.g., terminals A and B) are the points between which we calculate the equivalent resistance.
+    - Represent the circuit as an undirected graph where:
+        - Nodes are junctions in the circuit.
+        - Edges represent resistors, with edge weights equal to their resistance values.
+        - The source and sink nodes (e.g., terminals A and B) are the points between which we calculate the equivalent resistance.
 
 2. **Iterative Simplification**:
-- **Series Reduction**: Identify nodes with degree 2 (i.e., nodes connected to exactly two other nodes). These represent resistors in series. Replace the two resistors with a single resistor whose resistance is the sum of the two.
+    - **Series Reduction**: Identify nodes with degree 2 (i.e., nodes connected to exactly two other nodes). These represent resistors in series. Replace the two resistors with a single resistor whose resistance is the sum of the two.
 
-- **Parallel Reduction**: Identify pairs of nodes connected by multiple edges (parallel resistors). Replace these edges with a single edge whose resistance is computed using the parallel resistance formula:
-   
-   $$
-   \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2}.
-   $$
-   
-   - Repeat these steps until the graph is reduced to a single edge between the source and sink nodes, representing the equivalent resistance.
+    - **Parallel Reduction**: Identify pairs of nodes connected by multiple edges (parallel resistors). Replace these edges with a single edge whose resistance is computed using the parallel resistance formula:
+    
+    $$
+    \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2}.
+    $$
+    
+        - Repeat these steps until the graph is reduced to a single edge between the source and sink nodes, representing the equivalent resistance.
 
 3. **Handling Complex Configurations**:
    - For nested series and parallel combinations, the iterative process naturally handles them by repeatedly applying series and parallel reductions.
