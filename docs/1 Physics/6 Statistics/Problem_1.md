@@ -63,7 +63,14 @@ We select three distinct population distributions to demonstrate the CLT’s uni
 
 Below is the Python code to generate the graphical outputs (histograms) for the sampling distributions. The code uses `numpy` for random number generation, `matplotlib` for plotting, and `scipy.stats` to compute the theoretical normal distribution for comparison.
 
-![Range vs Launch Angle Plot](../images/image_S1.png)
+![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_S1.png)
+
+![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_S2.png)
+
+![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_S3.png)
+
+![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_S4.png)
+
 ---
 
 ## 4. Simulation Results
