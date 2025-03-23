@@ -66,11 +66,11 @@ A = \sqrt{C^2 + D^2} = \frac{f}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega
 $$
 
 ##### Resonance Conditions
-Resonance occurs when the driving frequency $\omega$ approaches the natural frequency $\omega_0$. For minimal damping ($\gamma \to 0$), the amplitude $A$ peaks sharply at $\omega = \omega_0$, leading to a significant energy increase in the system. The maximum amplitude is approximately $\frac{f}{2\gamma\omega_0}$, illustrating how damping limits resonant growth.
+Resonance occurs when the driving frequency $\omega$ approaches the natural frequency $\omega_0$. For minimal damping   $\gamma \to 0$, the amplitude $A$ peaks sharply at $\omega = \omega_0$, leading to a significant energy increase in the system. The maximum amplitude is approximately $\frac{f}{2\gamma\omega_0}$, illustrating how damping limits resonant growth.
 
 #### 2. Analysis of Dynamics
 
-The full nonlinear equation ($\sin\theta \neq \theta $) introduces complexity beyond the small-angle regime. Key parameters influencing the dynamics include:
+The full nonlinear equation $(\sin\theta \neq \theta)$ introduces complexity beyond the small-angle regime. Key parameters influencing the dynamics include:
 
 - **Damping Coefficient ($ \gamma $)**: Higher damping reduces oscillation amplitude and suppresses chaotic behavior, stabilizing the system.
 
