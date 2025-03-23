@@ -143,11 +143,11 @@ st.write(f"Maximum range: {R_max:.2f} m")
 ### 4.2 Results
 The script generates curves of $R$ versus $\theta$, illustrating:
 
-- Peak range at 45° for $$h = 0$$.
+- Peak range at 45° for $h = 0$.
 
-- Shifted optima and extended ranges for $$h > 0$$.
+- Shifted optima and extended ranges for $h > 0$.
 
-- Quadratic scaling with $$v_0$$.
+- Quadratic scaling with $v_0$.
 
 ## 5. Discussion
 
