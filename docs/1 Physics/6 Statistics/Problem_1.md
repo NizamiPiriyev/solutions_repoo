@@ -13,14 +13,18 @@ $$
 as $n \to \infty$.
 
 ### Key Implications of the CLT
-- **Shape**: The sampling distribution of the sample mean becomes approximately normal for large $n$, even if the population distribution is not normal.
-- **Mean**: The mean of the sampling distribution is equal to the population mean \( \mu \).
-- **Variance**: The variance of the sampling distribution is \( \frac{\sigma^2}{n} \), meaning the spread decreases as the sample size increases.
+- **Shape**: The sampling distribution of the sample mean becomes approximately normal for large $n,$ even if the population distribution is not normal.
+- **Mean**: The mean of the sampling distribution is equal to the population mean $\mu$.
+- **Variance**: The variance of the sampling distribution is $\frac{\sigma^2}{n}$, meaning the spread decreases as the sample size increases.
 
 This simulation will explore the CLT by:
+
 1. Generating populations from three different distributions: Uniform, Exponential, and Binomial.
+
 2. Sampling from these populations with varying sample sizes and computing the sample means.
+
 3. Visualizing the sampling distributions of the sample means to observe convergence to normality.
+
 4. Analyzing the effects of sample size and population variance on the convergence rate.
 
 ---
@@ -31,25 +35,25 @@ This simulation will explore the CLT by:
 We select three distinct population distributions to demonstrate the CLT’s universality:
 
 1. **Uniform Distribution**:
-   - Range: \( [0, 10] \)
-   - Mean: \( \mu = \frac{0 + 10}{2} = 5 \)
-   - Variance: \( \sigma^2 = \frac{(10 - 0)^2}{12} = \frac{100}{12} \approx 8.333 \)
+    - Range: $[0, 10]$
+    - Mean: $\mu = \frac{0 + 10}{2} = 5$
+    - Variance: $\sigma^2 = \frac{(10 - 0)^2}{12} = \frac{100}{12} \approx 8.333$
 
 2. **Exponential Distribution**:
-   - Rate parameter: \( \lambda = 1 \)
-   - Mean: \( \mu = \frac{1}{\lambda} = 1 \)
-   - Variance: \( \sigma^2 = \frac{1}{\lambda^2} = 1 \)
-   - The exponential distribution is right-skewed, making it a good test for the CLT.
+    - Rate parameter: $\lambda = 1$
+    - Mean: $\mu = \frac{1}{\lambda} = 1$
+    - Variance: $\sigma^2 = \frac{1}{\lambda^2} = 1$
+    - The exponential distribution is right-skewed, making it a good test for the CLT.
 
 3. **Binomial Distribution**:
-   - Parameters: \( n = 10 \), \( p = 0.5 \)
-   - Mean: \( \mu = n \cdot p = 10 \cdot 0.5 = 5 \)
-   - Variance: \( \sigma^2 = n \cdot p \cdot (1 - p) = 10 \cdot 0.5 \cdot 0.5 = 2.5 \)
-   - The binomial distribution is discrete, providing a contrast to the continuous uniform and exponential distributions.
+    - Parameters: $n = 10$, $p = 0.5$
+    - Mean: $\mu = n \cdot p = 10 \cdot 0.5 = 5$
+    - Variance: $\sigma^2 = n \cdot p \cdot (1 - p) = 10 \cdot 0.5 \cdot 0.5 = 2.5$
+    - The binomial distribution is discrete, providing a contrast to the continuous uniform and exponential distributions.
 
 ### Simulation Parameters
 - **Population Size**: Generate a large population of 100,000 data points for each distribution to approximate the true population.
-- **Sample Sizes**: Test sample sizes \( n = 5, 10, 30, 50 \) to observe the effect of increasing \( n \).
+- **Sample Sizes**: Test sample sizes $n = 5, 10, 30, 50$ to observe the effect of increasing $n$.
 - **Number of Samples**: Draw 10,000 samples for each sample size to build a robust sampling distribution of the sample mean.
 - **Visualization**: Plot histograms of the sample means for each sample size, overlaying the theoretical normal distribution for comparison.
 
@@ -59,109 +63,7 @@ We select three distinct population distributions to demonstrate the CLT’s uni
 
 Below is the Python code to generate the graphical outputs (histograms) for the sampling distributions. The code uses `numpy` for random number generation, `matplotlib` for plotting, and `scipy.stats` to compute the theoretical normal distribution for comparison.
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.stats import norm
-
-# Set random seed for reproducibility
-np.random.seed(42)
-
-# Simulation parameters
-population_size = 100000  # Size of the population
-num_samples = 10000       # Number of samples to draw
-sample_sizes = [5, 10, 30, 50]  # Different sample sizes to test
-
-# Define the population distributions
-uniform_pop = np.random.uniform(low=0, high=10, size=population_size)  # Uniform [0, 10]
-exponential_pop = np.random.exponential(scale=1, size=population_size)  # Exponential (lambda=1)
-binomial_pop = np.random.binomial(n=10, p=0.5, size=population_size)   # Binomial (n=10, p=0.5)
-
-# Store populations and their theoretical parameters
-distributions = {
-    "Uniform": {
-        "data": uniform_pop,
-        "mean": 5,
-        "std": np.sqrt(100 / 12),
-        "color": "blue"
-    },
-    "Exponential": {
-        "data": exponential_pop,
-        "mean": 1,
-        "std": 1,
-        "color": "green"
-    },
-    "Binomial": {
-        "data": binomial_pop,
-        "mean": 5,
-        "std": np.sqrt(10 * 0.5 * 0.5),
-        "color": "red"
-    }
-}
-
-# Function to simulate sampling and compute sample means
-def simulate_sampling(population, sample_size, num_samples):
-    sample_means = []
-    for _ in range(num_samples):
-        sample = np.random.choice(population, size=sample_size, replace=True)
-        sample_mean = np.mean(sample)
-        sample_means.append(sample_mean)
-    return np.array(sample_means)
-
-# Plotting the sampling distributions
-for dist_name, dist_info in distributions.items():
-    population = dist_info["data"]
-    pop_mean = dist_info["mean"]
-    pop_std = dist_info["std"]
-    color = dist_info["color"]
-
-    # Create a figure with subplots for each sample size
-    fig, axes = plt.subplots(2, 2, figsize=(12, 8), sharex=False, sharey=False)
-    fig.suptitle(f"Sampling Distribution of the Sample Mean\nPopulation: {dist_name}", fontsize=14)
-
-    for idx, n in enumerate(sample_sizes):
-        # Simulate sampling
-        sample_means = simulate_sampling(population, n, num_samples)
-
-        # Compute theoretical normal distribution parameters
-        theoretical_mean = pop_mean
-        theoretical_std = pop_std / np.sqrt(n)  # Standard error
-
-        # Plot histogram of sample means
-        ax = axes[idx // 2, idx % 2]
-        ax.hist(sample_means, bins=50, density=True, alpha=0.7, color=color, label="Sample Means")
-        
-        # Overlay the theoretical normal distribution
-        x = np.linspace(min(sample_means), max(sample_means), 100)
-        y = norm.pdf(x, theoretical_mean, theoretical_std)
-        ax.plot(x, y, 'k-', lw=2, label=f"Normal (μ={theoretical_mean:.2f}, σ={theoretical_std:.2f})")
-        
-        ax.set_title(f"Sample Size = {n}")
-        ax.set_xlabel("Sample Mean")
-        ax.set_ylabel("Density")
-        ax.legend()
-        ax.grid(True, alpha=0.3)
-
-    plt.tight_layout(rect=[0, 0, 1, 0.95])
-    plt.show()
-
-# Plot the population distributions for reference
-fig, axes = plt.subplots(1, 3, figsize=(15, 4))
-fig.suptitle("Population Distributions", fontsize=14)
-
-for idx, (dist_name, dist_info) in enumerate(distributions.items()):
-    population = dist_info["data"]
-    color = dist_info["color"]
-    axes[idx].hist(population, bins=50, density=True, alpha=0.7, color=color)
-    axes[idx].set_title(dist_name)
-    axes[idx].set_xlabel("Value")
-    axes[idx].set_ylabel("Density")
-    axes[idx].grid(True, alpha=0.3)
-
-plt.tight_layout(rect=[0, 0, 1, 0.95])
-plt.show()
-```
-
+![Range vs Launch Angle Plot](../images/image_S1.png)
 ---
 
 ## 4. Simulation Results
