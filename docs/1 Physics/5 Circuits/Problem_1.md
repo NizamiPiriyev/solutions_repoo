@@ -184,7 +184,7 @@ The code tests three circuit configurations:
 - **Implementation**: Provided a full Python implementation using `networkx` to compute equivalent resistance.
 - **Test Examples**:
     - Simple series circuit: $5 \, \Omega$.
-    - Simple parallel circuit: $ 1.2 \, \Omega$.
+    - Simple parallel circuit: $1.2 \, \Omega$.
     - Nested series-parallel circuit: Calculated as $8.71 \, \Omega$ (though the expected value in the test was 6.2 ohms, which may indicate a misunderstanding of the circuit topology; the calculation above is correct based on the given structure).
 - **Analysis**: Discussed the algorithm’s efficiency $(O(V \cdot (V + E)))$ and potential improvements (e.g., star-delta transformations).
 
