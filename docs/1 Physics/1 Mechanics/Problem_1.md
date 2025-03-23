@@ -101,7 +101,7 @@ Extensions to uneven terrain or resistive forces require modified boundary condi
 ### 4.1 Simulation Algorithm
 Below is the plot for $v_0 = 15$ m/s and $h = 0$ m:
 
-![Range vs Launch Angle Plot](images/range_plot.png)
+![Range vs Launch Angle Plot](range_plot_p1.png)
 ### 4.2 Results
 The script generates curves of $R$ versus $\theta$, illustrating:
 
