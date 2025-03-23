@@ -241,13 +241,13 @@ A = \sqrt{C^2 + D^2} = \frac{f}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega
 <p>The full nonlinear equation <span class="arithmatex">\((\sin\theta \neq \theta)\)</span> introduces complexity beyond the small-angle regime. Key parameters influencing the dynamics include:</p>
 <ul>
 <li>
-<p><strong>Damping Coefficient ($ \gamma $)</strong>: Higher damping reduces oscillation amplitude and suppresses chaotic behavior, stabilizing the system.</p>
+<p><strong>Damping Coefficient <span class="arithmatex">\((\gamma)\)</span></strong>: Higher damping reduces oscillation amplitude and suppresses chaotic behavior, stabilizing the system.</p>
 </li>
 <li>
 <p><strong>Driving Amplitude (<span class="arithmatex">\(f\)</span>)</strong>: Small <span class="arithmatex">\(f\)</span> leads to periodic motion; large <span class="arithmatex">\(f\)</span> can drive the system into chaos.</p>
 </li>
 <li>
-<p><strong>Driving Frequency ($ \omega $)</strong>: Near $ \omega_0$, resonance enhances amplitude; far from <span class="arithmatex">\(\omega_0\)</span>, quasiperiodic or chaotic motion may emerge.</p>
+<p><strong>Driving Frequency (<span class="arithmatex">\(\omega\)</span>)</strong>: Near <span class="arithmatex">\(\omega_0\)</span>, resonance enhances amplitude; far from <span class="arithmatex">\(\omega_0\)</span>, quasiperiodic or chaotic motion may emerge.</p>
 </li>
 </ul>
 <p>The transition to chaos occurs when nonlinearity dominates, often observed through period-doubling bifurcations. For certain <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(\omega\)</span>, the pendulum exhibits regular oscillations synchronized with the driving force. Increasing <span class="arithmatex">\(f\)</span> beyond a critical threshold destabilizes this motion, leading to unpredictable, chaotic trajectories sensitive to initial conditions.</p>
@@ -342,7 +342,7 @@ plt.show()
 <p><strong>Graphical Representations</strong>: The code generates time series, phase portraits, and Poincaré sections for varying <span class="arithmatex">\(\gamma\)</span>, <span class="arithmatex">\(f\)</span>, and <span class="arithmatex">\(\omega\)</span>. Resonance peaks at <span class="arithmatex">\(\omega \approx \omega_0\)</span>; chaos emerges with large <span class="arithmatex">\(f\)</span> (e.g., <span class="arithmatex">\(f = 1.5\)</span>).</p>
 </li>
 <li>
-<p><strong>Limitations and Extensions</strong>: The model assumes constant parameters and periodic forcing. Nonlinear damping ($ b|\dot{\theta}| $) or stochastic forcing could enhance realism.</p>
+<p><strong>Limitations and Extensions</strong>: The model assumes constant parameters and periodic forcing. Nonlinear damping <span class="arithmatex">\((b|\dot{\theta}|)\)</span> or stochastic forcing could enhance realism.</p>
 </li>
 <li>
 <p><strong>Complex Dynamics</strong>: Phase portraits show closed loops for periodic motion and scattered points for chaos. Poincaré sections and bifurcation diagrams (varying <span class="arithmatex">\(f\)</span>) reveal transitions to chaos.</p>
