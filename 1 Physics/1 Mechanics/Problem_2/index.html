@@ -201,7 +201,7 @@ mL\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + mg\sin\theta = F_0 \cos(\omega 
 \frac{d^2\theta}{dt^2} + 2\gamma\frac{d\theta}{dt} + \omega_0^2 \sin\theta = f \cos(\omega t)
 \]</div>
 <h5 id="small-angle-approximation">Small-Angle Approximation</h5>
-<p>For small angles $( \theta \ll 1 $), $ \sin\theta \approx \theta $, simplifying the equation to a linear forced damped oscillator:</p>
+<p>For small angles <span class="arithmatex">\(( \theta \ll 1 )\)</span>, <span class="arithmatex">\(\sin\theta \approx \theta\)</span>, simplifying the equation to a linear forced damped oscillator:</p>
 <div class="arithmatex">\[
 \frac{d^2\theta}{dt^2} + 2\gamma\frac{d\theta}{dt} + \omega_0^2 \theta = f \cos(\omega t)
 \]</div>
@@ -215,7 +215,10 @@ r = -\gamma \pm \sqrt{\gamma^2 - \omega_0^2}
 \]</div>
 <ul>
 <li>
-<p>If $ \gamma &lt; \omega_0$ (underdamped), the solution is $ \theta_h(t) = e^{-\gamma t} (A \cos(\omega_d t) + B \sin(\omega_d t)) $, where $ \omega_d = \sqrt{\omega_0^2 - \gamma^2} $.</p>
+<p>If <span class="arithmatex">\(\gamma\)</span> &lt; <span class="arithmatex">\(\omega_0\)</span> (underdamped), the solution is 
+$$
+ \theta_h(t) = e^{-\gamma t} (A \cos(\omega_d t) + B \sin(\omega_d t)) $, where $ \omega_d = \sqrt{\omega_0^2 - \gamma^2}. 
+$$</p>
 </li>
 <li>
 <p>The particular solution for the forcing term $ f \cos(\omega t)$ is:</p>
