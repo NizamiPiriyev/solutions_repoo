@@ -93,75 +93,10 @@ The forced damped pendulum model applies to:
 #### 4. Implementation: Computational Model
 
 We use Python with the Runge-Kutta 4th-order (RK4) method to solve the nonlinear equation numerically. Below is a sample implementation:
+![Forced Damped Pendulum Motion](../images/image_1_P2.png)
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.integrate import odeint
+![Phase Portrait](../images/image_2_P2.png)
 
-# Parameters
-g = 9.81  # gravity (m/s^2)
-L = 1.0   # pendulum length (m)
-omega0 = np.sqrt(g / L)  # natural frequency
-gamma = 0.1  # damping coefficient
-f = 1.2      # driving amplitude
-omega = 2/3  # driving frequency
-
-# Differential equation as a system of first-order ODEs
-def pendulum_eq(state, t, gamma, omega0, f, omega):
-    theta, theta_dot = state
-    dtheta_dt = theta_dot
-    dtheta_dot_dt = -2 * gamma * theta_dot - omega0**2 * np.sin(theta) + f * np.cos(omega * t)
-    return [dtheta_dt, dtheta_dot_dt]
-
-# Time array
-t = np.linspace(0, 50, 1000)
-
-# Initial conditions
-state0 = [0.1, 0.0]  # [theta(0), theta_dot(0)]
-
-# Solve ODE
-sol = odeint(pendulum_eq, state0, t, args=(gamma, omega0, f, omega))
-theta, theta_dot = sol.T
-
-# Plot time series
-plt.figure(figsize=(10, 6))
-plt.plot(t, theta, label=r'$\theta(t)$')
-plt.xlabel('Time (s)')
-plt.ylabel('Angle (rad)')
-plt.title('Forced Damped Pendulum Motion')
-plt.legend()
-plt.grid()
-plt.show()
-
-# Phase portrait
-plt.figure(figsize=(10, 6))
-plt.plot(theta, theta_dot, label='Phase trajectory')
-plt.xlabel(r'$\theta$ (rad)')
-plt.ylabel(r'$\dot{\theta}$ (rad/s)')
-plt.title('Phase Portrait')
-plt.legend()
-plt.grid()
-plt.show()
-
-# Poincaré section (at t = 2π/ω)
-poincare_theta = []
-poincare_theta_dot = []
-period = 2 * np.pi / omega
-for i in range(len(t)):
-    if np.abs(t[i] % period) < 0.01:
-        poincare_theta.append(theta[i])
-        poincare_theta_dot.append(theta_dot[i])
-
-plt.figure(figsize=(10, 6))
-plt.scatter(poincare_theta, poincare_theta_dot, s=5, label='Poincaré section')
-plt.xlabel(r'$\theta$ (rad)')
-plt.ylabel(r'$\dot{\theta}$ (rad/s)')
-plt.title('Poincaré Section')
-plt.legend()
-plt.grid()
-plt.show()
-```
 
 #### Deliverables
 
