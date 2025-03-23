@@ -292,104 +292,112 @@ as <span class="arithmatex">\(n \to \infty\)</span>.</li>
 <h2 id="3-python-code-for-simulation-and-visualization">3. Python Code for Simulation and Visualization</h2>
 <p>Below is the Python code to generate the graphical outputs (histograms) for the sampling distributions. The code uses <code>numpy</code> for random number generation, <code>matplotlib</code> for plotting, and <code>scipy.stats</code> to compute the theoretical normal distribution for comparison.</p>
 <p><img alt="Sampling Distribution of the Sample Mean Population: Uniform" src="../images/image_S1.png"/></p>
-<p><img alt="Sampling Distribution of the Sample Mean Population: Uniform" src="../images/image_S2.png"/></p>
-<p><img alt="Sampling Distribution of the Sample Mean Population: Uniform" src="../images/image_S3.png"/></p>
-<p><img alt="Sampling Distribution of the Sample Mean Population: Uniform" src="../images/image_S4.png"/></p>
+<p><img alt="Sampling Distribution of the Sample Mean Population: Exponential" src="../images/image_S2.png"/></p>
+<p><img alt="Sampling Distribution of the Sample Mean Population: Binomial" src="../images/image_S3.png"/></p>
+<p><img alt="Sampling Distribution of the Sample Mean Population: Population Distributions" src="../images/image_S4.png"/></p>
 <hr/>
 <h2 id="4-simulation-results">4. Simulation Results</h2>
 <h3 id="population-distributions_1">Population Distributions</h3>
 <p>The first set of plots shows the histograms of the three population distributions:</p>
 <ul>
-<li><strong>Uniform</strong>: Flat distribution between 0 and 10, with mean 5 and variance <span class="arithmatex">\( \frac{100}{12} \approx 8.333 \)</span>.</li>
+<li><strong>Uniform</strong>: Flat distribution between 0 and 10, with mean 5 and variance <span class="arithmatex">\(\frac{100}{12} \approx 8.333\)</span>.</li>
 <li><strong>Exponential</strong>: Right-skewed distribution with mean 1 and variance 1.</li>
 <li><strong>Binomial</strong>: Discrete distribution with mean 5 and variance 2.5.</li>
 </ul>
 <p>These distributions are intentionally diverse (continuous vs. discrete, symmetric vs. skewed) to test the CLT’s claim that the sampling distribution of the sample mean becomes normal regardless of the population distribution.</p>
 <h3 id="sampling-distributions">Sampling Distributions</h3>
-<p>For each population distribution, we generated 10,000 samples of sizes <span class="arithmatex">\( n = 5, 10, 30, 50 \)</span>, computed the sample mean for each sample, and plotted the histogram of the sample means. The theoretical normal distribution (with mean <span class="arithmatex">\( \mu \)</span> and standard deviation <span class="arithmatex">\( \frac{\sigma}{\sqrt{n}} \)</span>) is overlaid on each histogram for comparison.</p>
+<p>For each population distribution, we generated 10,000 samples of sizes <span class="arithmatex">\(n = 5, 10, 30, 50\)</span>, computed the sample mean for each sample, and plotted the histogram of the sample means. The theoretical normal distribution (with mean <span class="arithmatex">\(\mu\)</span> and standard deviation <span class="arithmatex">\(\frac{\sigma}{\sqrt{n}}\)</span>) is overlaid on each histogram for comparison.</p>
 <h4 id="uniform-distribution">Uniform Distribution</h4>
 <ul>
-<li><strong>Sample Size <span class="arithmatex">\( n = 5 \)</span></strong>: The sampling distribution is somewhat uniform-like but already shows a bell-shaped curve. The spread is relatively wide (standard error <span class="arithmatex">\( \frac{\sqrt{8.333}}{\sqrt{5}} \approx 1.291 \)</span>).</li>
-<li><strong>Sample Size <span class="arithmatex">\( n = 10 \)</span></strong>: The distribution becomes more bell-shaped, with a reduced spread (standard error <span class="arithmatex">\( \frac{\sqrt{8.333}}{\sqrt{10}} \approx 0.913 \)</span>).</li>
-<li><strong>Sample Size <span class="arithmatex">\( n = 30 \)</span></strong>: The distribution is very close to normal, with a tighter spread (standard error <span class="arithmatex">\( \frac{\sqrt{8.333}}{\sqrt{30}} \approx 0.527 \)</span>).</li>
-<li><strong>Sample Size <span class="arithmatex">\( n = 50 \)</span></strong>: The distribution is nearly indistinguishable from the theoretical normal distribution (standard error <span class="arithmatex">\( \frac{\sqrt{8.333}}{\sqrt{50}} \approx 0.408 \)</span>).</li>
+<li><strong>Sample Size <span class="arithmatex">\(n = 5\)</span></strong>: The sampling distribution is somewhat uniform-like but already shows a bell-shaped curve. The spread is relatively wide (standard error <span class="arithmatex">\(\frac{\sqrt{8.333}}{\sqrt{5}} \approx 1.291\)</span>).</li>
+<li><strong>Sample Size <span class="arithmatex">\(n = 10\)</span></strong>: The distribution becomes more bell-shaped, with a reduced spread (standard error <span class="arithmatex">\(\frac{\sqrt{8.333}}{\sqrt{10}} \approx 0.913\)</span>).</li>
+<li><strong>Sample Size <span class="arithmatex">\(n = 30\)</span></strong>: The distribution is very close to normal, with a tighter spread (standard error <span class="arithmatex">\(\frac{\sqrt{8.333}}{\sqrt{30}} \approx 0.527\)</span>).</li>
+<li><strong>Sample Size <span class="arithmatex">\(n = 50\)</span></strong>: The distribution is nearly indistinguishable from the theoretical normal distribution (standard error <span class="arithmatex">\(\frac{\sqrt{8.333}}{\sqrt{50}} \approx 0.408\)</span>).</li>
 </ul>
 <h4 id="exponential-distribution">Exponential Distribution</h4>
 <ul>
-<li><strong>Sample Size <span class="arithmatex">\( n = 5 \)</span></strong>: The sampling distribution is still noticeably right-skewed, reflecting the exponential population’s skewness. The spread is moderate (standard error <span class="arithmatex">\( \frac{1}{\sqrt{5}} \approx 0.447 \)</span>).</li>
-<li><strong>Sample Size <span class="arithmatex">\( n = 10 \)</span></strong>: The skewness decreases, and the distribution starts to resemble a normal distribution (standard error <span class="arithmatex">\( \frac{1}{\sqrt{10}} \approx 0.316 \)</span>).</li>
-<li><strong>Sample Size <span class="arithmatex">\( n = 30 \)</span></strong>: The distribution is much closer to normal, with minimal skewness (standard error <span class="arithmatex">\( \frac{1}{\sqrt{30}} \approx 0.183 \)</span>).</li>
-<li><strong>Sample Size <span class="arithmatex">\( n = 50 \)</span></strong>: The distribution is nearly normal, closely matching the theoretical normal curve (standard error <span class="arithmatex">\( \frac{1}{\sqrt{50}} \approx 0.141 \)</span>).</li>
+<li><strong>Sample Size <span class="arithmatex">\(n = 5\)</span></strong>: The sampling distribution is still noticeably right-skewed, reflecting the exponential population’s skewness. The spread is moderate (standard error <span class="arithmatex">\(\frac{1}{\sqrt{5}} \approx 0.447\)</span>).</li>
+<li><strong>Sample Size <span class="arithmatex">\(n = 10\)</span></strong>: The skewness decreases, and the distribution starts to resemble a normal distribution (standard error <span class="arithmatex">\(\frac{1}{\sqrt{10}} \approx 0.316\)</span>).</li>
+<li><strong>Sample Size <span class="arithmatex">\(n = 30\)</span></strong>: The distribution is much closer to normal, with minimal skewness (standard error <span class="arithmatex">\(\frac{1}{\sqrt{30}} \approx 0.183\)</span>).</li>
+<li><strong>Sample Size <span class="arithmatex">\(n = 50\)</span></strong>: The distribution is nearly normal, closely matching the theoretical normal curve (standard error <span class="arithmatex">\(\frac{1}{\sqrt{50}} \approx 0.141\)</span>).</li>
 </ul>
 <h4 id="binomial-distribution">Binomial Distribution</h4>
 <ul>
-<li><strong>Sample Size <span class="arithmatex">\( n = 5 \)</span></strong>: The sampling distribution shows some discreteness (due to the binomial population) but is starting to form a bell shape. The spread is moderate (standard error <span class="arithmatex">\( \frac{\sqrt{2.5}}{\sqrt{5}} \approx 0.707 \)</span>).</li>
-<li><strong>Sample Size <span class="arithmatex">\( n = 10 \)</span></strong>: The distribution becomes smoother and more bell-shaped (standard error <span class="arithmatex">\( \frac{\sqrt{2.5}}{\sqrt{10}} \approx 0.5 \)</span>).</li>
-<li><strong>Sample Size <span class="arithmatex">\( n = 30 \)</span></strong>: The distribution is very close to normal, with a tighter spread (standard error <span class="arithmatex">\( \frac{\sqrt{2.5}}{\sqrt{30}} \approx 0.289 \)</span>).</li>
-<li><strong>Sample Size <span class="arithmatex">\( n = 50 \)</span></strong>: The distribution is nearly perfectly normal (standard error <span class="arithmatex">\( \frac{\sqrt{2.5}}{\sqrt{50}} \approx 0.224 \)</span>).</li>
+<li><strong>Sample Size <span class="arithmatex">\(n = 5\)</span></strong>: The sampling distribution shows some discreteness (due to the binomial population) but is starting to form a bell shape. The spread is moderate (standard error <span class="arithmatex">\(\frac{\sqrt{2.5}}{\sqrt{5}} \approx 0.707\)</span>).</li>
+<li><strong>Sample Size <span class="arithmatex">\(n = 10\)</span></strong>: The distribution becomes smoother and more bell-shaped (standard error <span class="arithmatex">\(\frac{\sqrt{2.5}}{\sqrt{10}} \approx 0.5\)</span>).</li>
+<li><strong>Sample Size <span class="arithmatex">\(n = 30\)</span></strong>: The distribution is very close to normal, with a tighter spread (standard error <span class="arithmatex">\(\frac{\sqrt{2.5}}{\sqrt{30}} \approx 0.289\)</span>).</li>
+<li><strong>Sample Size <span class="arithmatex">\(n = 50\)</span></strong>: The distribution is nearly perfectly normal (standard error <span class="arithmatex">\(\frac{\sqrt{2.5}}{\sqrt{50}} \approx 0.224\)</span>).</li>
 </ul>
 <hr/>
 <h2 id="5-parameter-exploration">5. Parameter Exploration</h2>
 <h3 id="effect-of-sample-size-on-convergence-to-normality">Effect of Sample Size on Convergence to Normality</h3>
 <ul>
-<li><strong>Small Sample Sizes (<span class="arithmatex">\( n = 5, 10 \)</span>)</strong>: For all distributions, the sampling distribution of the sample mean retains some characteristics of the population distribution:</li>
+<li><strong>Small Sample Sizes (<span class="arithmatex">\(n = 5, 10\)</span>)</strong>: For all distributions, the sampling distribution of the sample mean retains some characteristics of the population distribution:<ul>
 <li>The uniform distribution shows a flatter shape.</li>
 <li>The exponential distribution remains right-skewed.</li>
 <li>The binomial distribution exhibits discreteness.</li>
-<li><strong>Moderate Sample Size (<span class="arithmatex">\( n = 30 \)</span>)</strong>: By <span class="arithmatex">\( n = 30 \)</span>, the sampling distributions are very close to normal for all three populations, aligning with the common rule of thumb that <span class="arithmatex">\( n \geq 30 \)</span> is often sufficient for the CLT to hold.</li>
-<li><strong>Large Sample Size (<span class="arithmatex">\( n = 50 \)</span>)</strong>: At <span class="arithmatex">\( n = 50 \)</span>, the sampling distributions are nearly indistinguishable from the theoretical normal distribution, confirming the CLT’s prediction.</li>
+</ul>
+</li>
+<li><strong>Moderate Sample Size (<span class="arithmatex">\(n = 30\)</span>)</strong>: By <span class="arithmatex">\(n = 30\)</span>, the sampling distributions are very close to normal for all three populations, aligning with the common rule of thumb that <span class="arithmatex">\(n \geq 30\)</span> is often sufficient for the CLT to hold.</li>
+<li><strong>Large Sample Size (<span class="arithmatex">\(n = 50\)</span>)</strong>: At <span class="arithmatex">\(n = 50\)</span>, the sampling distributions are nearly indistinguishable from the theoretical normal distribution, confirming the CLT’s prediction.</li>
 </ul>
 <h3 id="effect-of-population-shape">Effect of Population Shape</h3>
 <ul>
-<li><strong>Uniform (Symmetric)</strong>: The uniform distribution, being symmetric, converges to normality relatively quickly. Even at <span class="arithmatex">\( n = 5 \)</span>, the sampling distribution shows a bell shape, though with a wider spread.</li>
-<li><strong>Exponential (Skewed)</strong>: The exponential distribution, being heavily right-skewed, converges more slowly. At <span class="arithmatex">\( n = 5 \)</span>, the skewness is still evident, but by <span class="arithmatex">\( n = 30 \)</span>, the distribution is nearly normal.</li>
-<li><strong>Binomial (Discrete)</strong>: The binomial distribution, being discrete, shows some discreteness at small sample sizes, but the CLT still holds, and the sampling distribution becomes smooth and normal by <span class="arithmatex">\( n = 30 \)</span>.</li>
+<li><strong>Uniform (Symmetric)</strong>: The uniform distribution, being symmetric, converges to normality relatively quickly. Even at <span class="arithmatex">\(n = 5\)</span>, the sampling distribution shows a bell shape, though with a wider spread.</li>
+<li><strong>Exponential (Skewed)</strong>: The exponential distribution, being heavily right-skewed, converges more slowly. At <span class="arithmatex">\(n = 5\)</span>, the skewness is still evident, but by <span class="arithmatex">\(n = 30\)</span>, the distribution is nearly normal.</li>
+<li><strong>Binomial (Discrete)</strong>: The binomial distribution, being discrete, shows some discreteness at small sample sizes, but the CLT still holds, and the sampling distribution becomes smooth and normal by <span class="arithmatex">\(n = 30\)</span>.</li>
 </ul>
 <h3 id="impact-of-population-variance-on-spread">Impact of Population Variance on Spread</h3>
 <ul>
-<li>The variance of the sampling distribution is given by <span class="arithmatex">\( \frac{\sigma^2}{n} \)</span>, where <span class="arithmatex">\( \sigma^2 \)</span> is the population variance.</li>
-<li><strong>Uniform</strong>: <span class="arithmatex">\( \sigma^2 \approx 8.333 \)</span>, the largest variance among the three distributions. This results in the widest sampling distributions for a given sample size (e.g., standard error at <span class="arithmatex">\( n = 5 \)</span> is 1.291).</li>
-<li><strong>Binomial</strong>: <span class="arithmatex">\( \sigma^2 = 2.5 \)</span>, a moderate variance. The sampling distributions are narrower than the uniform case (e.g., standard error at <span class="arithmatex">\( n = 5 \)</span> is 0.707).</li>
-<li><strong>Exponential</strong>: <span class="arithmatex">\( \sigma^2 = 1 \)</span>, the smallest variance. The sampling distributions have the tightest spread (e.g., standard error at <span class="arithmatex">\( n = 5 \)</span> is 0.447).</li>
-<li><strong>Observation</strong>: Populations with larger variances produce sampling distributions with larger spreads, but the spread decreases as <span class="arithmatex">\( n \)</span> increases, as predicted by the CLT (<span class="arithmatex">\( \text{standard error} \propto \frac{1}{\sqrt{n}} \)</span>).</li>
+<li>The variance of the sampling distribution is given by <span class="arithmatex">\(\frac{\sigma^2}{n}\)</span>, where <span class="arithmatex">\(\sigma^2\)</span> is the population variance.</li>
+<li><strong>Uniform</strong>: <span class="arithmatex">\(\sigma^2 \approx 8.333\)</span>, the largest variance among the three distributions. This results in the widest sampling distributions for a given sample size (e.g., standard error at <span class="arithmatex">\(n = 5\)</span> is 1.291).</li>
+<li><strong>Binomial</strong>: <span class="arithmatex">\(\sigma^2 = 2.5\)</span>, a moderate variance. The sampling distributions are narrower than the uniform case (e.g., standard error at <span class="arithmatex">\(n = 5\)</span> is 0.707).</li>
+<li><strong>Exponential</strong>: <span class="arithmatex">\(\sigma^2 = 1\)</span>, the smallest variance. The sampling distributions have the tightest spread (e.g., standard error at <span class="arithmatex">\(n = 5\)</span> is 0.447).</li>
+<li><strong>Observation</strong>: Populations with larger variances produce sampling distributions with larger spreads, but the spread decreases as <span class="arithmatex">\(n\)</span> increases, as predicted by the CLT (<span class="arithmatex">\(\text{standard error} \propto \frac{1}{\sqrt{n}}\)</span>).</li>
 </ul>
 <hr/>
 <h2 id="6-practical-applications-of-the-clt">6. Practical Applications of the CLT</h2>
 <p>The CLT has profound implications in real-world scenarios, enabling statistical inference even when the population distribution is unknown or non-normal. Here are three applications:</p>
 <ol>
-<li><strong>Estimating Population Parameters</strong>:</li>
-<li>In survey sampling, we often estimate the population mean (e.g., average income) using the sample mean. The CLT ensures that the sampling distribution of the sample mean is approximately normal for large <span class="arithmatex">\( n \)</span>, allowing us to construct confidence intervals (e.g., <span class="arithmatex">\( \bar{X} \pm z \cdot \frac{\sigma}{\sqrt{n}} \)</span>) and perform hypothesis tests.</li>
 <li>
-<p>Example: Estimating the average height of adults in a city by sampling 50 individuals. Even if heights are not normally distributed, the sample mean’s distribution will be approximately normal, enabling reliable inference.</p>
+<p><strong>Estimating Population Parameters</strong>:</p>
+<ul>
+<li>In survey sampling, we often estimate the population mean (e.g., average income) using the sample mean. The CLT ensures that the sampling distribution of the sample mean is approximately normal for large <span class="arithmatex">\(n\)</span>, allowing us to construct confidence intervals (e.g., <span class="arithmatex">\(\bar{X} \pm z \cdot \frac{\sigma}{\sqrt{n}}\)</span>) and perform hypothesis tests.</li>
+<li>Example: Estimating the average height of adults in a city by sampling 50 individuals. Even if heights are not normally distributed, the sample mean’s distribution will be approximately normal, enabling reliable inference.</li>
+</ul>
 </li>
 <li>
 <p><strong>Quality Control in Manufacturing</strong>:</p>
-</li>
-<li>In manufacturing, the CLT is used to monitor process quality. For instance, the average diameter of a batch of ball bearings can be sampled and compared to specifications. The CLT ensures that the distribution of the sample mean is normal, allowing the use of control charts (e.g., <span class="arithmatex">\( \bar{X} \)</span>-charts) to detect deviations.</li>
-<li>
-<p>Example: A factory produces screws with a target length of 10 mm. By sampling 30 screws and computing the sample mean, the CLT allows us to assess whether the process is in control, even if the lengths follow a skewed distribution.</p>
+<ul>
+<li>In manufacturing, the CLT is used to monitor process quality. For instance, the average diameter of a batch of ball bearings can be sampled and compared to specifications. The CLT ensures that the distribution of the sample mean is normal, allowing the use of control charts (e.g., <span class="arithmatex">\(\bar{X}\)</span>-charts) to detect deviations.</li>
+<li>Example: A factory produces screws with a target length of 10 mm. By sampling 30 screws and computing the sample mean, the CLT allows us to assess whether the process is in control, even if the lengths follow a skewed distribution.</li>
+</ul>
 </li>
 <li>
 <p><strong>Predicting Outcomes in Financial Models</strong>:</p>
-</li>
+<ul>
 <li>In finance, the CLT is used to model portfolio returns. The average return of a portfolio can be treated as a sample mean of individual asset returns. The CLT ensures that the distribution of the average return is approximately normal, facilitating risk assessment and option pricing.</li>
 <li>Example: A portfolio manager assesses the average daily return of a stock portfolio by sampling returns over 50 days. The CLT allows the use of normal-based models (e.g., Value at Risk) to predict potential losses, even if individual returns are not normally distributed.</li>
+</ul>
+</li>
 </ol>
 <hr/>
 <h2 id="7-discussion-and-implications">7. Discussion and Implications</h2>
 <h3 id="connection-to-theoretical-expectations">Connection to Theoretical Expectations</h3>
 <ul>
-<li><strong>Convergence to Normality</strong>: The simulations confirm the CLT’s prediction that the sampling distribution of the sample mean approaches a normal distribution as <span class="arithmatex">\( n \)</span> increases. By <span class="arithmatex">\( n = 30 \)</span>, all three distributions (uniform, exponential, binomial) produce sampling distributions that are nearly normal, and by <span class="arithmatex">\( n = 50 \)</span>, the fit is excellent.</li>
-<li><strong>Mean and Variance</strong>: The mean of the sampling distribution matches the population mean (<span class="arithmatex">\( \mu \)</span>), and the standard deviation matches the theoretical standard error (<span class="arithmatex">\( \frac{\sigma}{\sqrt{n}} \)</span>), as shown by the overlaid normal curves.</li>
-<li><strong>Rate of Convergence</strong>: The rate of convergence depends on the population’s shape:</li>
+<li><strong>Convergence to Normality</strong>: The simulations confirm the CLT’s prediction that the sampling distribution of the sample mean approaches a normal distribution as <span class="arithmatex">\(n\)</span> increases. By <span class="arithmatex">\(n = 30\)</span>, all three distributions (uniform, exponential, binomial) produce sampling distributions that are nearly normal, and by <span class="arithmatex">\(n = 50\)</span>, the fit is excellent.</li>
+<li><strong>Mean and Variance</strong>: The mean of the sampling distribution matches the population mean (<span class="arithmatex">\(\mu\)</span>), and the standard deviation matches the theoretical standard error (<span class="arithmatex">\(\frac{\sigma}{\sqrt{n}}\)</span>), as shown by the overlaid normal curves.</li>
+<li><strong>Rate of Convergence</strong>: The rate of convergence depends on the population’s shape:<ul>
 <li>Symmetric distributions (uniform, binomial) converge faster than skewed distributions (exponential).</li>
-<li>The exponential distribution, with its heavy skewness, requires a larger <span class="arithmatex">\( n \)</span> to achieve normality, but the CLT still holds.</li>
+<li>The exponential distribution, with its heavy skewness, requires a larger <span class="arithmatex">\(n\)</span> to achieve normality, but the CLT still holds.</li>
+</ul>
+</li>
 </ul>
 <h3 id="implications">Implications</h3>
 <ul>
 <li>The CLT justifies the use of normal-based statistical methods (e.g., z-tests, t-tests, confidence intervals) in practice, even when the population distribution is unknown or non-normal, as long as the sample size is sufficiently large.</li>
-<li>The simulations highlight the importance of sample size in statistical analysis. For small <span class="arithmatex">\( n \)</span>, the sampling distribution may retain characteristics of the population, leading to potential errors if normality is assumed prematurely.</li>
-<li>The effect of population variance on the spread of the sampling distribution underscores the need to consider <span class="arithmatex">\( \sigma^2 \)</span> when designing experiments. Populations with larger variances require larger sample sizes to achieve the same precision in estimating the mean.</li>
+<li>The simulations highlight the importance of sample size in statistical analysis. For small <span class="arithmatex">\(n\)</span>, the sampling distribution may retain characteristics of the population, leading to potential errors if normality is assumed prematurely.</li>
+<li>The effect of population variance on the spread of the sampling distribution underscores the need to consider <span class="arithmatex">\(\sigma^2\)</span> when designing experiments. Populations with larger variances require larger sample sizes to achieve the same precision in estimating the mean.</li>
 </ul>
 <hr/>
 <h2 id="8-conclusion">8. Conclusion</h2>
