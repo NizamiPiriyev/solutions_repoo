@@ -102,42 +102,42 @@ Extensions to uneven terrain or resistive forces require modified boundary condi
 A Python script computes and visualizes $R(\theta)$ for varying parameters. The range function accounts for arbitrary $h$:
 
 ```python
+import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 
 def compute_range(v0, theta_deg, g=9.81, h=0):
-    """Compute horizontal range for given parameters."""
     theta = np.radians(theta_deg)
     discriminant = v0**2 * np.sin(theta)**2 + 2 * g * h
     if discriminant < 0:
         return 0
-    t_flight = (v_0 * np.sin(theta) + np.sqrt(discriminant)) / g
-    return v_0 * np.cos(theta) * t_flight
+    t_flight = (v0 * np.sin(theta) + np.sqrt(discriminant)) / g
+    return v0 * np.cos(theta) * t_flight
 
-# Simulation parameters
-v0_values = [10, 15, 20]  # Initial velocities (m/s)
-h_values = [0, 10]        # Initial heights (m)
-g = 9.81                  # Gravitational acceleration (m/s^2)
-theta = np.linspace(0, 90, 91)  # Angles (degrees)
+# Streamlit interface
+st.title("Projectile Range Simulator")
+v0 = st.slider("Initial Velocity (m/s)", 5, 25, 15)
+h = st.slider("Initial Height (m)", 0, 20, 0)
+g = 9.81
 
-# Visualization
-plt.figure(figsize=(10, 6))
-for v0 in v0_values:
-    for h in h_values:
-        R = [compute_range(v0, t, g, h) for t in theta]
-        plt.plot(theta, R, label=f'$v_0={v0}$ m/s, $h={h}$ m')
-plt.xlabel('Projection Angle ($^\circ$)')
-plt.ylabel('Range (m)')
-plt.title('Projectile Range as a Function of Launch Angle')
-plt.legend()
-plt.grid(True)
-plt.show()
+theta = np.linspace(0, 90, 91)
+R = [compute_range(v0, t, g, h) for t in theta]
 
-# Analytical verification
+# Plot
+fig, ax = plt.subplots()
+ax.plot(theta, R, label=f"$v_0={v0}$ m/s, $h={h}$ m")
+ax.set_xlabel("Projection Angle (°)")
+ax.set_ylabel("Range (m)")
+ax.set_title("Range vs Launch Angle")
+ax.legend()
+ax.grid(True)
+st.pyplot(fig)
+
+# Display optimal range
 theta_opt = 45
-R_max = compute_range(20, theta_opt, g, 0)
-print(f"Optimal angle (h=0): {theta_opt}°")
-print(f"Maximum range (v0=20 m/s, h=0): {R_max:.2f} m")
+R_max = compute_range(v0, theta_opt, g, 0)
+st.write(f"Optimal angle (h=0): {theta_opt}°")
+st.write(f"Maximum range: {R_max:.2f} m")
 ```
 
 ### 4.2 Results
