@@ -1,4 +1,4 @@
-## Solution: Equivalent Resistance Using Graph Theory
+# Solution: Equivalent Resistance Using Graph Theory
 
 ### 1. Algorithm Overview
 The algorithm uses graph theory to calculate the equivalent resistance of a circuit by iteratively simplifying the graph representation of the circuit. Here’s the high-level approach:
