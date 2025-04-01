@@ -1,5 +1,3 @@
-# Problem 2
-
 ### Investigating the Dynamics of a Forced Damped Pendulum
 
 #### 1. Theoretical Foundation
