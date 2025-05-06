@@ -215,6 +215,13 @@ plt.savefig("circular_orbits.png")
 plt.close()
 ```
 
+![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_G1_1.png)
+
+![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_G1_2.png)
+
+
+
+
 ### Output Explanation
 
 - **T^2 vs r^3 Plot**: The logarithmic plot shows a linear relationship, confirming $T^2 \propto r^3$. Data points for the Moon and Mars align with the theoretical curves.
