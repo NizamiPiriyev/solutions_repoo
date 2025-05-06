@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Kepler's Third Law, which relates the square of a celestial body's orbital period ($ T^2 $) to the cube of its orbital radius ($ r^3 $), is a fundamental principle in physics and astronomy. This law, first formulated by Johannes Kepler in the early 17th century, provides a mathematical framework for understanding how objects move under gravitational forces. It is essential for studying planetary systems, satellite orbits, and even distant exoplanets. This document derives the law for circular orbits, explores its astronomical implications, provides real-world examples, and includes a computational model to simulate and verify the relationship. The discussion is tailored for a physics student, balancing clarity with sufficient depth to ensure a robust understanding suitable for academic success.
+Kepler's Third Law, which relates the square of a celestial body's orbital period ($T^2$) to the cube of its orbital radius ($r^3$), is a fundamental principle in physics and astronomy. This law, first formulated by Johannes Kepler in the early 17th century, provides a mathematical framework for understanding how objects move under gravitational forces. It is essential for studying planetary systems, satellite orbits, and even distant exoplanets. This document derives the law for circular orbits, explores its astronomical implications, provides real-world examples, and includes a computational model to simulate and verify the relationship. The discussion is tailored for a physics student, balancing clarity with sufficient depth to ensure a robust understanding suitable for academic success.
 
 ## Derivation of Kepler's Third Law for Circular Orbits
 
