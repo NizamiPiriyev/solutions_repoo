@@ -1,3 +1,5 @@
+# Problem 1
+
 # Analytical and Computational Investigation of Projectile Range as a Function of Launch Angle
 
 ## Abstract
