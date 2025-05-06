@@ -17,7 +17,7 @@ $$
 F_g = \frac{G M m}{r^2}
 $$
 
-where $G$ is the gravitational constant ($6.67430 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2}$), and $r$ is the distance between the centers of the two bodies (orbital radius).
+where $G$ is the gravitational constant ($6.67430 \times 10^{-11} \$,$\text{m}^3 \text{kg}^{-1} \text{s}^{-2}$), and $r$ is the distance between the centers of the two bodies (orbital radius).
 
 2. **Centripetal Force**: For circular motion, the centripetal force required to keep the smaller body in orbit is:
 
