@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Exploring the Central Limit Theorem through Simulations - Physics and Mathematics</title>
+<title>Problem 1 - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Exploring the Central Limit Theorem through Simulations";
+        var mkdocs_page_name = "Problem 1";
         var mkdocs_page_input_path = "1 Physics/6 Statistics/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -46,9 +46,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal">1 Mechanics</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_1/">Analytical and Computational Investigation of Projectile Range as a Function of Launch Angle</a>
+<li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_1/">Problem 1</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_2/">Investigating the Dynamics of a Forced Damped Pendulum</a>
+<li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_2/">Problem 2</a>
 </li>
 </ul>
 </li>
@@ -76,60 +76,14 @@
 </li>
 <li class="toctree-l1"><a class="reference internal">5 Circuits</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../5%20Circuits/Problem_1/">Solution: Equivalent Resistance Using Graph Theory</a>
+<li class="toctree-l2"><a class="reference internal" href="../../5%20Circuits/Problem_1/">Problem 1</a>
 </li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">6 Statistics</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Exploring the Central Limit Theorem through Simulations</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="#1-theoretical-background">1. Theoretical Background</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#key-implications-of-the-clt">Key Implications of the CLT</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#2-simulation-setup">2. Simulation Setup</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#population-distributions">Population Distributions</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#simulation-parameters">Simulation Parameters</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#3-python-code-for-simulation-and-visualization">3. Python Code for Simulation and Visualization</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#4-simulation-results">4. Simulation Results</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#population-distributions_1">Population Distributions</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#sampling-distributions">Sampling Distributions</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#5-parameter-exploration">5. Parameter Exploration</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#effect-of-sample-size-on-convergence-to-normality">Effect of Sample Size on Convergence to Normality</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#effect-of-population-shape">Effect of Population Shape</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#impact-of-population-variance-on-spread">Impact of Population Variance on Spread</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#6-practical-applications-of-the-clt">6. Practical Applications of the CLT</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#7-discussion-and-implications">7. Discussion and Implications</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#connection-to-theoretical-expectations">Connection to Theoretical Expectations</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#implications">Implications</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#8-conclusion">8. Conclusion</a>
-</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -209,7 +163,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">6 Statistics</li>
-<li class="breadcrumb-item active">Exploring the Central Limit Theorem through Simulations</li>
+<li class="breadcrumb-item active">Problem 1</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -217,6 +171,7 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
+<h1 id="problem-1">Problem 1</h1>
 <h1 id="exploring-the-central-limit-theorem-through-simulations">Exploring the Central Limit Theorem through Simulations</h1>
 <h2 id="1-theoretical-background">1. Theoretical Background</h2>
 <p>The <strong>Central Limit Theorem (CLT)</strong> is a fundamental principle in statistics that states: as the sample size <span class="arithmatex">\(n\)</span> increases, the distribution of the sample mean <span class="arithmatex">\(\bar{X}\)</span> of a random sample drawn from any population with finite mean <span class="arithmatex">\(\mu\)</span> and variance <span class="arithmatex">\(\sigma^2\)</span> approaches a normal distribution, regardless of the population’s underlying distribution. </p>
@@ -506,7 +461,7 @@ plt.show()
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../../5%20Circuits/Problem_1/" title="Solution: Equivalent Resistance Using Graph Theory"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-left" href="../../5%20Circuits/Problem_1/" title="Problem 1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 <a class="btn btn-neutral float-right" href="../Problem_2/" title="Problem 2">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
