@@ -17,7 +17,7 @@ $$
 F_g = \frac{G M m}{r^2}
 $$
 
-where $G$ is the gravitational constant ($ 6.67430 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2} $), and $r$ is the distance between the centers of the two bodies (orbital radius).
+where $G$ is the gravitational constant ($6.67430 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2}$), and $r$ is the distance between the centers of the two bodies (orbital radius).
 
 2. **Centripetal Force**: For circular motion, the centripetal force required to keep the smaller body in orbit is:
 
@@ -33,61 +33,61 @@ $$
 \frac{m v^2}{r} = \frac{G M m}{r^2}
 $$
 
-Cancel \( m \) (assuming \( m \neq 0 \)) and multiply both sides by \( r \):
+Cancel $m$ (assuming $m \neq 0$) and multiply both sides by $r$:
 
-\[
+$$
 v^2 = \frac{G M}{r}
-\]
+$$
 
-The orbital velocity can also be expressed in terms of the orbital period \( T \), the time for one complete orbit. The circumference of the circular orbit is \( 2 \pi r \), so:
+The orbital velocity can also be expressed in terms of the orbital period $T$, the time for one complete orbit. The circumference of the circular orbit is $2 \pi r$, so:
 
-\[
+$$
 v = \frac{2 \pi r}{T}
-\]
+$$
 
 Square this velocity:
 
-\[
+$$
 v^2 = \frac{4 \pi^2 r^2}{T^2}
-\]
+$$
 
 Substitute into the force balance equation:
 
-\[
+$$
 \frac{4 \pi^2 r^2}{T^2} = \frac{G M}{r}
-\]
+$$
 
-Multiply both sides by \( T^2 \) and \( r \):
+Multiply both sides by $T^2$ and $r$:
 
-\[
+$$
 4 \pi^2 r^3 = G M T^2
-\]
+$$
 
-Rearrange to isolate \( T^2 \):
+Rearrange to isolate $T^2$:
 
-\[
+$$
 T^2 = \frac{4 \pi^2}{G M} r^3
-\]
+$$
 
-This is Kepler's Third Law for circular orbits, showing that the square of the orbital period is proportional to the cube of the orbital radius. The constant \( \frac{4 \pi^2}{G M} \) depends on the mass of the central body.
+This is Kepler's Third Law for circular orbits, showing that the square of the orbital period is proportional to the cube of the orbital radius. The constant $\frac{4 \pi^2}{G M}$ depends on the mass of the central body.
 
 ## Implications for Astronomy
 
 Kepler's Third Law is a powerful tool in astronomy with wide-ranging applications:
 
-- **Determining Masses**: By measuring \( T \) and \( r \), the mass of the central body \( M \) can be calculated:
+- **Determining Masses**: By measuring $T$ and $r$, the mass of the central body $M$ can be calculated:
 
-\[
+$$
 M = \frac{4 \pi^2 r^3}{G T^2}
-\]
+$$
 
 This is crucial for estimating the masses of planets, stars, and even black holes when observing orbiting objects like moons, satellites, or companion stars.
 
-- **Calculating Orbital Radii**: If \( M \) is known (e.g., the Sun’s mass), the orbital radius \( r \) can be determined from the observed period \( T \). This is used to map planetary orbits or design satellite trajectories.
+- **Calculating Orbital Radii**: If $M$ is known (e.g., the Sun’s mass), the orbital radius $r$ can be determined from the observed period $T$. This is used to map planetary orbits or design satellite trajectories.
 
 - **Exoplanet Discovery**: For exoplanets, Kepler’s Third Law helps infer orbital distances and stellar masses by analyzing transit periods, aiding in the characterization of distant solar systems.
 
-- **Satellite and Spacecraft Orbits**: Engineers use the law to design orbits for communication satellites, ensuring specific periods (e.g., geostationary orbits with \( T = 24 \, \text{hours} \)).
+- **Satellite and Spacecraft Orbits**: Engineers use the law to design orbits for communication satellites, ensuring specific periods (e.g., geostationary orbits with $T = 24 \, \text{hours}$).
 
 - **Galactic Dynamics**: The law extends to stars orbiting galactic centers, helping estimate the mass of galaxies or detect supermassive black holes.
 
@@ -95,59 +95,59 @@ This is crucial for estimating the masses of planets, stars, and even black hole
 
 ### 1. The Moon’s Orbit Around Earth
 
-- **Orbital Radius**: \( r \approx 384,400 \, \text{km} = 3.844 \times 10^8 \, \text{m} \)
-- **Orbital Period**: \( T \approx 27.32 \, \text{days} = 2.36 \times 10^6 \, \text{s} \)
+- **Orbital Radius**: $r \approx 384,400 \, \text{km} = 3.844 \times 10^8 \, \text{m}$
+- **Orbital Period**: $T \approx 27.32 \, \text{days} = 2.36 \times 10^6 \, \text{s}$
 - **Earth’s Mass Calculation**:
 
-\[
+$$
 M = \frac{4 \pi^2 (3.844 \times 10^8)^3}{(6.67430 \times 10^{-11}) (2.36 \times 10^6)^2}
-\]
+$$
 
-\[
+$$
 M \approx 5.97 \times 10^{24} \, \text{kg}
-\]
+$$
 
 This matches Earth’s known mass, confirming the law’s accuracy.
 
 ### 2. Mars’ Orbit Around the Sun
 
-- **Orbital Radius**: \( r \approx 227.9 \times 10^6 \, \text{km} = 2.279 \times 10^{11} \, \text{m} \)
-- **Orbital Period**: \( T \approx 687 \, \text{days} = 5.936 \times 10^7 \, \text{s} \)
+- **Orbital Radius**: $r \approx 227.9 \times 10^6 \, \text{km} = 2.279 \times 10^{11} \, \text{m}$
+- **Orbital Period**: $T \approx 687 \, \text{days} = 5.936 \times 10^7 \, \text{s}$
 - **Sun’s Mass Calculation**:
 
-\[
+$$
 M = \frac{4 \pi^2 (2.279 \times 10^{11})^3}{(6.67430 \times 10^{-11}) (5.936 \times 10^7)^2}
-\]
+$$
 
-\[
+$$
 M \approx 1.989 \times 10^{30} \, \text{kg}
-\]
+$$
 
 This aligns with the Sun’s known mass, validating the law for solar system scales.
 
 ### 3. Geostationary Satellites
 
-- **Orbital Period**: \( T = 24 \, \text{hours} = 86,400 \, \text{s} \)
-- **Earth’s Mass**: \( M = 5.972 \times 10^{24} \, \text{kg} \)
+- **Orbital Period**: $T = 24 \, \text{hours} = 86,400 \, \text{s}$
+- **Earth’s Mass**: $M = 5.972 \times 10^{24} \, \text{kg}$
 - **Orbital Radius**:
 
-\[
+$$
 r^3 = \frac{G M T^2}{4 \pi^2}
-\]
+$$
 
-\[
+$$
 r^3 = \frac{(6.67430 \times 10^{-11}) (5.972 \times 10^{24}) (86,400)^2}{4 \pi^2}
-\]
+$$
 
-\[
+$$
 r \approx 4.22 \times 10^7 \, \text{m} \approx 42,200 \, \text{km}
-\]
+$$
 
 This radius places the satellite at approximately 35,786 km above Earth’s surface, consistent with geostationary orbits.
 
 ## Computational Model
 
-The following Python script simulates circular orbits and verifies Kepler’s Third Law by plotting \( T^2 \) versus \( r^3 \). It includes calculations for the Moon and Mars and visualizes their orbits.
+The following Python script simulates circular orbits and verifies Kepler’s Third Law by plotting $T^2$ versus $r^3$. It includes calculations for the Moon and Mars and visualizes their orbits.
 
 ```python
 import numpy as np
@@ -217,30 +217,30 @@ plt.close()
 
 ### Output Explanation
 
-- **T^2 vs r^3 Plot**: The logarithmic plot shows a linear relationship, confirming \( T^2 \propto r^3 \). Data points for the Moon and Mars align with the theoretical curves.
+- **T^2 vs r^3 Plot**: The logarithmic plot shows a linear relationship, confirming $T^2 \propto r^3$. Data points for the Moon and Mars align with the theoretical curves.
 - **Orbit Simulation**: The circular paths illustrate the Moon’s and Mars’ orbits, with Mars’ orbit scaled down for visibility.
 
 ## Extension to Elliptical Orbits
 
-While the derivation assumes circular orbits, Kepler’s Third Law applies to elliptical orbits by replacing the orbital radius \( r \) with the semi-major axis \( a \):
+While the derivation assumes circular orbits, Kepler’s Third Law applies to elliptical orbits by replacing the orbital radius $r$ with the semi-major axis $a$:
 
-\[
+$$
 T^2 = \frac{4 \pi^2}{G M} a^3
-\]
+$$
 
 - **Semi-Major Axis**: The average distance from the orbiting body to the central body, equal to half the longest diameter of the ellipse.
 - **Applications**:
-  - **Comets**: Halley’s Comet has \( a \approx 17.8 \, \text{AU} \), \( T \approx 76 \, \text{years} \).
+  - **Comets**: Halley’s Comet has $a \approx 17.8 \, \text{AU}$, $T \approx 76 \, \text{years}$.
   - **Exoplanets**: Kepler mission data use this law to estimate orbital periods and distances.
   - **Binary Stars**: The law helps calculate the masses of stars in binary systems.
 
-The eccentricity of the ellipse affects the orbit’s shape but not the period, which depends solely on \( a \).
+The eccentricity of the ellipse affects the orbit’s shape but not the period, which depends solely on $a$.
 
 ## Practical Considerations and Limitations
 
 - **Assumptions**: The derivation assumes a two-body system where one mass dominates, and external perturbations (e.g., other planets) are negligible.
 - **Relativistic Effects**: For extreme cases (e.g., near black holes), general relativity modifies the relationship, but this is beyond Newtonian mechanics.
-- **Measurement Precision**: Accurate \( T \) and \( r \) measurements are critical, as small errors are cubed or squared in calculations.
+- **Measurement Precision**: Accurate $T$ and $a$ measurements are critical, as small errors are cubed or squared in calculations.
 
 ## Conclusion
 
