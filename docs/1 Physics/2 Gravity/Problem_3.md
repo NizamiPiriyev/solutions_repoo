@@ -190,11 +190,11 @@ plt.show()
 ## Visualizations
 
 1. **2D Trajectory Plot** ![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_G3_1.png):
-   - Shows all trajectories with Earth’s surface, highlighting orbit shapes.
+    - Shows all trajectories with Earth’s surface, highlighting orbit shapes.
 2. **Velocity Plot** ![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_G3_2.png):
-   - Tracks velocity changes, with hyperbolic showing sustained high speed.
+    - Tracks velocity changes, with hyperbolic showing sustained high speed.
 3. **3D Trajectories** ![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_G3_3.png):
-   - Interactive plot with Earth as a 3D surface, enhancing visualization of paths.
+    - Interactive plot with Earth as a 3D surface, enhancing visualization of paths.
 
 ## Practical Considerations
 
