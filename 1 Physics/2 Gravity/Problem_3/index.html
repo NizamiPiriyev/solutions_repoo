@@ -187,7 +187,7 @@
 <div class="arithmatex">\[
 \vec{a} = \frac{d^2 \vec{r}}{dt^2} = -\frac{G M}{|\vec{r}|^3} \vec{r}
 \]</div>
-<p>This second-order differential equation governs the payload’s trajectory, solved numerically given initial position $\vec{r}_0 $ and velocity $ \vec{v}_0$.</p>
+<p>This second-order differential equation governs the payload’s trajectory, solved numerically given initial position <span class="arithmatex">\(\vec{r}_0\)</span> and velocity <span class="arithmatex">\(\vec{v}_0\)</span>.</p>
 <h3 id="trajectory-types">Trajectory Types</h3>
 <p>The trajectory depends on the payload’s specific energy <span class="arithmatex">\(\epsilon\)</span>:</p>
 <div class="arithmatex">\[
@@ -203,7 +203,7 @@
 <div class="arithmatex">\[
 e = \sqrt{1 + \frac{2 \epsilon h^2}{(G M)^2}}
 \]</div>
-<p>where $ h = |\vec{r} \times \vec{v}|$ is the specific angular momentum. 
+<p>where <span class="arithmatex">\(h = |\vec{r} \times \vec{v}|\)</span> is the specific angular momentum. 
 - <span class="arithmatex">\(e &lt; 1\)</span>: Elliptical.
 - <span class="arithmatex">\(e = 1\)</span>: Parabolic.
 - <span class="arithmatex">\(e &gt; 1\)</span>: Hyperbolic.</p>
@@ -211,9 +211,9 @@ e = \sqrt{1 + \frac{2 \epsilon h^2}{(G M)^2}}
 <p>To compute the payload’s path, we solve the equations of motion using numerical integration (e.g., <code>scipy.integrate.odeint</code>). Initial conditions are set at an altitude above Earth’s surface (<span class="arithmatex">\(R = 6.371 \times 10^6 \, \text{m}\)</span>) with varying velocities to produce elliptical, parabolic, and hyperbolic trajectories.</p>
 <h3 id="initial-conditions">Initial Conditions</h3>
 <ul>
-<li><strong>Position</strong>: Released at <span class="arithmatex">\(\vec{r}_0 = (R + h, 0)\)</span>, where $h = 400 $, <span class="arithmatex">\(\text{km}\)</span> (LEO altitude).</li>
+<li><strong>Position</strong>: Released at <span class="arithmatex">\(\vec{r}_0 = (R + h, 0)\)</span>, where <span class="arithmatex">\(h = 400\)</span>, <span class="arithmatex">\(\text{km}\)</span> (LEO altitude).</li>
 <li><strong>Velocity</strong>: <ul>
-<li>Elliptical: <span class="arithmatex">\(\vec{v}_0 = (0, v_1)\)</span>, where $ v_1 = \sqrt{\frac{G M}{r}} \approx 7.67$, <span class="arithmatex">\(\text{km/s}\)</span> (circular orbit velocity).</li>
+<li>Elliptical: <span class="arithmatex">\(\vec{v}_0 = (0, v_1)\)</span>, where <span class="arithmatex">\(v_1 = \sqrt{\frac{G M}{r}} \approx 7.67\)</span>, <span class="arithmatex">\(\text{km/s}\)</span> (circular orbit velocity).</li>
 <li>Parabolic: <span class="arithmatex">\(\vec{v}_0 = (0, v_e)\)</span>, where <span class="arithmatex">\(v_e = \sqrt{\frac{2 G M}{r}} \approx 10.85\)</span>, <span class="arithmatex">\(\text{km/s}\)</span> (escape velocity).</li>
 <li>Hyperbolic: <span class="arithmatex">\(\vec{v}_0 = (0, 1.2 v_e) \approx 13.02\)</span>, <span class="arithmatex">\(\text{km/s}\)</span>.</li>
 </ul>
