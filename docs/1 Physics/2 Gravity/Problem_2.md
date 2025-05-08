@@ -201,7 +201,6 @@ fig.write_html('escape_trajectories_3d.html')
 4. **Display in Colab**: Add `fig.show()` after `fig.write_html()` to view the 3D plot directly.
 
 ## Results
-
 - **Earth**:
   - First: $7.91 \, \text{km/s}$
   - Second: $11.19 \, \text{km/s}$
@@ -216,7 +215,6 @@ fig.write_html('escape_trajectories_3d.html')
   - Third: $65.89 \, \text{km/s}$
 
 ## Importance in Space Exploration
-
 - **Satellites**: First cosmic velocity ($7.91 \, \text{km/s}$ for Earth) enables LEO for communication and GPS.
 - **Interplanetary Missions**: Second cosmic velocity ($11.19 \, \text{km/s}$ for Earth) supports missions like NASA’s Perseverance to Mars.
 - **Interstellar Travel**: Third cosmic velocity ($43.81 \, \text{km/s}$ for Earth) is a benchmark for Voyager missions, aided by gravitational slingshots.
@@ -224,18 +222,16 @@ fig.write_html('escape_trajectories_3d.html')
 - **Design**: Jupiter’s high velocities ($59.54 \, \text{km/s}$ escape) demand robust spacecraft.
 
 ## 3D Visualizations
-
 - **Bar Plot**: Compares velocities across bodies, highlighting Jupiter’s high thresholds.
 - **3D Trajectories**: Interactive plot shows simplified escape paths, with Jupiter’s trajectory scaled for visibility. The parabolic shape reflects gravitational weakening with distance.
 
 ## Practical Considerations
-
 - **Atmospheric Effects**: Earth’s atmosphere adds drag, increasing launch energy.
 - **Gravitational Assists**: Reduce third cosmic velocity requirements (e.g., Voyager 2 used Jupiter’s gravity).
 - **Propulsion**: Multi-stage rockets achieve high velocities efficiently.
 - **Limitations**: Third cosmic velocity is an approximation, varying with launch geometry.
 
-## Conclusion
 
+## Conclusion
 Escape and cosmic velocities are essential for space exploration, defining the energy needed for orbits, planetary escapes, and interstellar journeys. Calculations for Earth, Mars, and Jupiter, enhanced by 3D visualizations, provide an interactive learning tool for physics students. The Python script, optimized for Google Colab, produces professional graphics to support academic and exploratory insights.
 
