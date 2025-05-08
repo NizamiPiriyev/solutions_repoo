@@ -56,9 +56,9 @@ To compute the payload’s path, we solve the equations of motion using numerica
 ### Initial Conditions
 - **Position**: Released at $\vec{r}_0 = (R + h, 0)$, where $h = 400 \$, $\text{km}$ (LEO altitude).
 - **Velocity**: 
-  - Elliptical: $\vec{v}_0 = (0, v_1)$, where $ v_1 = \sqrt{\frac{G M}{r}} \approx 7.67 \$, $\text{km/s}$ (circular orbit velocity).
-  - Parabolic: $\vec{v}_0 = (0, v_e)$, where $v_e = \sqrt{\frac{2 G M}{r}} \approx 10.85 \$, $\text{km/s}$ (escape velocity).
-  - Hyperbolic: $\vec{v}_0 = (0, 1.2 v_e) \approx 13.02 \$, $\text{km/s}$.
+    - Elliptical: $\vec{v}_0 = (0, v_1)$, where $ v_1 = \sqrt{\frac{G M}{r}} \approx 7.67$, $\text{km/s}$ (circular orbit velocity).
+    - Parabolic: $\vec{v}_0 = (0, v_e)$, where $v_e = \sqrt{\frac{2 G M}{r}} \approx 10.85$, $\text{km/s}$ (escape velocity).
+    - Hyperbolic: $\vec{v}_0 = (0, 1.2 v_e) \approx 13.02$, $\text{km/s}$.
 
 ## Relation to Space Missions
 
