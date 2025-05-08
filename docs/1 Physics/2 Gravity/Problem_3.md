@@ -1,6 +1,5 @@
 # Problem 3
 
-
 # Trajectories of a Freely Released Payload Near Earth
 
 ## Introduction
@@ -10,13 +9,13 @@ Understanding the trajectories of a payload released from a moving rocket near E
 ## Theoretical Background
 
 ### Newton’s Law of Gravitation
-The gravitational force on a payload of mass $ m $ at position $ \vec{r} $ from Earth’s center (mass $ M = 5.972 \times 10^{24} \, \text{kg} $) is:
+The gravitational force on a payload of mass $m$ at position $\vec{r}$ from Earth’s center (mass $M = 5.972 \times 10^{24} \, \text{kg}$) is:
 
 $$
 \vec{F} = -\frac{G M m}{|\vec{r}|^3} \vec{r}
 $$
 
-where $ G = 6.67430 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2} $, and $ |\vec{r}| $ is the distance from Earth’s center.
+where $G = 6.67430 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2}$, and $|\vec{r}|$ is the distance from Earth’s center.
 
 ### Equations of Motion
 In a two-body system, the payload’s acceleration is:
@@ -25,18 +24,18 @@ $$
 \vec{a} = \frac{d^2 \vec{r}}{dt^2} = -\frac{G M}{|\vec{r}|^3} \vec{r}
 $$
 
-This second-order differential equation governs the payload’s trajectory, solved numerically given initial position $ \vec{r}_0 $ and velocity $ \vec{v}_0 $.
+This second-order differential equation governs the payload’s trajectory, solved numerically given initial position $\vec{r}_0 $ and velocity $ \vec{v}_0$.
 
 ### Trajectory Types
-The trajectory depends on the payload’s specific energy $ \epsilon $:
+The trajectory depends on the payload’s specific energy $\epsilon$:
 
 $$
 \epsilon = \frac{v^2}{2} - \frac{G M}{r}
 $$
 
-- **Elliptical Orbit ($ \epsilon < 0 $)**: Bound orbit, e.g., satellites in stable orbits.
-- **Parabolic Trajectory ($ \epsilon = 0 $)**: Marginal escape, velocity equals escape velocity ($ v = \sqrt{\frac{2 G M}{r}} $).
-- **Hyperbolic Trajectory ($ \epsilon > 0 $)**: Unbound, escape from Earth’s gravity.
+- **Elliptical Orbit ($\epsilon < 0$)**: Bound orbit, e.g., satellites in stable orbits.
+- **Parabolic Trajectory ($\epsilon = 0$)**: Marginal escape, velocity equals escape velocity ($v = \sqrt{\frac{2 G M}{r}}$).
+- **Hyperbolic Trajectory ($\epsilon > 0$)**: Unbound, escape from Earth’s gravity.
 
 ### Orbital Parameters
 The eccentricity $ e $ determines the orbit shape:
@@ -45,21 +44,21 @@ $$
 e = \sqrt{1 + \frac{2 \epsilon h^2}{(G M)^2}}
 $$
 
-where $ h = |\vec{r} \times \vec{v}| $ is the specific angular momentum. 
-- $ e < 1 $: Elliptical.
-- $ e = 1 $: Parabolic.
-- $ e > 1 $: Hyperbolic.
+where $h = |\vec{r} \times \vec{v}|$ is the specific angular momentum. 
+- $e < 1$: Elliptical.
+- $e = 1$: Parabolic.
+- $e > 1$: Hyperbolic.
 
 ## Numerical Analysis
 
-To compute the payload’s path, we solve the equations of motion using numerical integration (e.g., `scipy.integrate.odeint`). Initial conditions are set at an altitude above Earth’s surface ($ R = 6.371 \times 10^6 \, \text{m} $) with varying velocities to produce elliptical, parabolic, and hyperbolic trajectories.
+To compute the payload’s path, we solve the equations of motion using numerical integration (e.g., `scipy.integrate.odeint`). Initial conditions are set at an altitude above Earth’s surface ($R = 6.371 \times 10^6 \, \text{m}$) with varying velocities to produce elliptical, parabolic, and hyperbolic trajectories.
 
 ### Initial Conditions
-- **Position**: Released at $ \vec{r}_0 = (R + h, 0) $, where $ h = 400 \, \text{km} $ (LEO altitude).
+- **Position**: Released at $\vec{r}_0 = (R + h, 0)$, where $h = 400 \, \text{km}$ (LEO altitude).
 - **Velocity**: 
-  - Elliptical: $ \vec{v}_0 = (0, v_1) $, where $ v_1 = \sqrt{\frac{G M}{r}} \approx 7.67 \, \text{km/s} $ (circular orbit velocity).
-  - Parabolic: $ \vec{v}_0 = (0, v_e) $, where $ v_e = \sqrt{\frac{2 G M}{r}} \approx 10.85 \, \text{km/s} $ (escape velocity).
-  - Hyperbolic: $ \vec{v}_0 = (0, 1.2 v_e) \approx 13.02 \, \text{km/s} $.
+  - Elliptical: $\vec{v}_0 = (0, v_1) $, where $ v_1 = \sqrt{\frac{G M}{r}} \approx 7.67 \, \text{km/s}$ (circular orbit velocity).
+  - Parabolic: $\vec{v}_0 = (0, v_e) $, where $ v_e = \sqrt{\frac{2 G M}{r}} \approx 10.85 \, \text{km/s}$ (escape velocity).
+  - Hyperbolic: $\vec{v}_0 = (0, 1.2 v_e) \approx 13.02 \, \text{km/s}$.
 
 ## Relation to Space Missions
 
@@ -177,94 +176,12 @@ plt.savefig('velocity_time.png', dpi=300)
 plt.show()
 ```
 
-## Running in Google Colab
-
-1. **Install Libraries**: Run `!pip install numpy scipy matplotlib plotly`.
-2. **Copy Code**: Paste into a Colab cell.
-3. **Outputs**:
-   - Console: Displays initial velocities.
-   - `trajectories_2d.png`: 2D trajectory plot.
-   - `velocity_time.png`: Velocity vs. time plot.
-   - `trajectories_3d.html`: Interactive 3D plot (download and open in browser).
-   - Inline: All plots displayed via `plt.show()` and `fig.show()`.
-4. **Download**: Use Colab’s file explorer to save `.png` and `.html` files.
-
-## Embedding Visualizations in GitHub Pages
-
-To display the interactive 3D plot (`trajectories_3d.html`) on your GitHub Pages website:
-
-1. **Clone Repository**:
-   ```bash
-   git clone https://github.com/username/repo.git
-   cd repo
-   ```
-2. **Add Files**:
-   - Copy `trajectories_2d.png`, `velocity_time.png`, `trajectories_3d.html` to the repository.
-   - Save this Markdown as `README.md` or `index.md` in the `docs` folder.
-3. **Create HTML Wrapper** (`visualizations.html`):
-   ```html
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>Payload Trajectories Visualization</title>
-       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-       <style>
-           body { font-family: Arial, sans-serif; margin: 20px; }
-           .plot-container { margin: 20px 0; }
-           h1 { text-align: center; }
-       </style>
-   </head>
-   <body>
-       <h1>Interactive Payload Trajectories</h1>
-       <div class="plot-container">
-           <h2>3D Trajectories Near Earth</h2>
-           <div id="trajectories-3d"></div>
-       </div>
-       <script>
-           fetch('trajectories_3d.html')
-               .then(response => response.text())
-               .then(html => {
-                   const parser = new DOMParser();
-                   const doc = parser.parseFromString(html, 'text/html');
-                   const script = doc.querySelector('script').innerText;
-                   eval(script);
-                   document.getElementById('trajectories-3d').innerHTML = doc.querySelector('.plotly-graph-div').outerHTML;
-               });
-       </script>
-   </body>
-   </html>
-   ```
-4. **Update Markdown**:
-   - After the Visualizations section, add:
-   ```markdown
-   ## Visualizations
-
-   1. **2D Trajectory Plot**:
-      - Shows elliptical, parabolic, and hyperbolic paths.
-      - ![Trajectories](trajectories_2d.png)
-   2. **Velocity Plot**:
-      - Displays velocity evolution over time.
-      - ![Velocity](velocity_time.png)
-   3. **3D Interactive Trajectories**:
-      - View the interactive 3D plot [here](visualizations.html).
-      - Visualizes payload paths with Earth as a 3D surface.
-   ```
-5. **Push to GitHub**:
-   ```bash
-   git add .
-   git commit -m "Add payload trajectories with visualizations"
-   git push origin main
-   ```
-6. **Verify**: Visit `https://username.github.io/repo/` to see the Markdown and linked 3D visualization.
-
 ## Results
 
 - **Initial Velocities**:
-  - Elliptical: $ 7.67 \, \text{km/s} $ (circular orbit).
-  - Parabolic: $ 10.85 \, \text{km/s} $ (escape velocity).
-  - Hyperbolic: $ 13.02 \, \text{km/s} $ (1.2 × escape).
+  - Elliptical: $7.67 \, \text{km/s}$ (circular orbit).
+  - Parabolic: $10.85 \, \text{km/s}$ (escape velocity).
+  - Hyperbolic: $13.02 \, \text{km/s}$ (1.2 × escape).
 - **Trajectories**:
   - Elliptical: Closed orbit, suitable for satellites.
   - Parabolic: Marginal escape, boundary case.
@@ -272,11 +189,11 @@ To display the interactive 3D plot (`trajectories_3d.html`) on your GitHub Pages
 
 ## Visualizations
 
-1. **2D Trajectory Plot** (`trajectories_2d.png`):
+1. **2D Trajectory Plot** ![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_G3_1.png):
    - Shows all trajectories with Earth’s surface, highlighting orbit shapes.
-2. **Velocity Plot** (`velocity_time.png`):
+2. **Velocity Plot** ![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_G3_2.png):
    - Tracks velocity changes, with hyperbolic showing sustained high speed.
-3. **3D Trajectories** (`trajectories_3d.html`):
+3. **3D Trajectories** ![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_G3_3.png):
    - Interactive plot with Earth as a 3D surface, enhancing visualization of paths.
 
 ## Practical Considerations
