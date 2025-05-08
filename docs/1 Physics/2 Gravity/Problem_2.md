@@ -191,14 +191,8 @@ fig.update_layout(
 fig.write_html('escape_trajectories_3d.html')
 ```
 
-## Running in Google Colab
-
-1. **Install Plotly**: Run `!pip install plotly` in a Colab cell if not already installed.
-2. **Copy Code**: Paste the script into a Colab cell.
-3. **Output**:
-   - `cosmic_velocities_bar.png`: Bar plot of velocities.
-   - `escape_trajectories_3d.html`: Interactive 3D plot (download and open in a browser).
-4. **Display in Colab**: Add `fig.show()` after `fig.write_html()` to view the 3D plot directly.
+![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_G2_1.png)
+![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_G2_2.png)
 
 ## Results
 - **Earth**:
