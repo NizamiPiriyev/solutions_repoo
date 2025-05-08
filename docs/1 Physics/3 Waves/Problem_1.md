@@ -201,11 +201,16 @@ fig_3d.show()
 ### 2D Heatmap
 The heatmap at $ t=0 $ uses a red-blue color scale, with red indicating positive displacement (peaks) and blue indicating negative displacement (troughs). Bright spots mark constructive interference, forming a hexagonal pattern due to the triangle’s symmetry. Dark regions signify destructive interference, notably at the center and along bisectors, providing a clear map of wave interaction.
 
+![Sampling Distribution of the Sample Mean Population: Uniform](../images/heatmap.png)
+
 ### Animation
 The GIF animation visualizes the temporal evolution, showing waves radiating from each source. As time advances, interference regions shift, with maxima and minima moving outward. This dynamic representation highlights wave propagation and phase changes, offering insight into the transient nature of interference.
 
+![Sampling Distribution of the Sample Mean Population: Uniform](../images/animation.gif)
+
 ### 3D Surface Plot
 The 3D plot presents the water surface as a wavy terrain, with height corresponding to $\eta_{\text{sum}}$. Peaks and troughs align with the 2D pattern, and the interactive feature allows rotation to explore the symmetry and interference zones, enhancing spatial understanding.
+![Sampling Distribution of the Sample Mean Population: Uniform](../images/3D_map.png)
 
 ## In-Depth Interference Pattern Insights
 
