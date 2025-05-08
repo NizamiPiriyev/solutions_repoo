@@ -191,7 +191,7 @@ U = -\frac{G M m}{R}
 <div class="arithmatex">\[
 \frac{1}{2} m v_e^2 \geq \frac{G M m}{R}
 \]</div>
-<p>Solve for escape velocity $ v_e $:</p>
+<p>Solve for escape velocity <span class="arithmatex">\(v_e\)</span>:</p>
 <div class="arithmatex">\[
 v_e = \sqrt{\frac{2 G M}{R}}
 \]</div>
@@ -217,19 +217,19 @@ v_3 \approx \sqrt{v_e^2 + v_{\text{esc,sun}}^2}
 \]</div>
 <h2 id="parameters-affecting-velocities">Parameters Affecting Velocities</h2>
 <ul>
-<li><strong>Mass ($ M $)</strong>: Increases velocities.</li>
-<li><strong>Radius ($ R $)</strong>: Larger radius decreases velocities.</li>
-<li><strong>Gravitational Constant ($ G $)</strong>: $ 6.67430 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2} $.</li>
-<li><strong>Star Distance ($ r $)</strong>: Affects third cosmic velocity.</li>
+<li><strong>Mass (<span class="arithmatex">\(M\)</span>)</strong>: Increases velocities.</li>
+<li><strong>Radius (<span class="arithmatex">\(R\)</span>)</strong>: Larger radius decreases velocities.</li>
+<li><strong>Gravitational Constant (<span class="arithmatex">\(G\)</span>)</strong>: <span class="arithmatex">\(6.67430 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2}\)</span>.</li>
+<li><strong>Star Distance (<span class="arithmatex">\(r\)</span>)</strong>: Affects third cosmic velocity.</li>
 </ul>
 <h2 id="calculations-for-celestial-bodies">Calculations for Celestial Bodies</h2>
 <h3 id="constants">Constants</h3>
 <ul>
-<li><strong>Earth</strong>: $ M = 5.972 \times 10^{24} \, \text{kg} $, $ R = 6.371 \times 10^6 \, \text{m} $</li>
-<li><strong>Mars</strong>: $ M = 6.417 \times 10^{23} \, \text{kg} $, $ R = 3.396 \times 10^6 \, \text{m} $</li>
-<li><strong>Jupiter</strong>: $ M = 1.898 \times 10^{27} \, \text{kg} $, $ R = 6.991 \times 10^7 \, \text{m} $</li>
-<li><strong>Sun</strong>: $ M_{\text{sun}} = 1.989 \times 10^{30} \, \text{kg} $</li>
-<li><strong>Orbital Radii</strong>: Earth ($ 1.496 \times 10^{11} \, \text{m} <span class="arithmatex">\(), Mars (\)</span> 2.279 \times 10^{11} \, \text{m} <span class="arithmatex">\(), Jupiter (\)</span> 7.785 \times 10^{11} \, \text{m} $)</li>
+<li><strong>Earth</strong>: <span class="arithmatex">\(M = 5.972 \times 10^{24} \, \text{kg}\)</span>, <span class="arithmatex">\(R = 6.371 \times 10^6 \, \text{m}\)</span></li>
+<li><strong>Mars</strong>: <span class="arithmatex">\(M = 6.417 \times 10^{23} \, \text{kg}\)</span>, <span class="arithmatex">\(R = 3.396 \times 10^6 \, \text{m}\)</span></li>
+<li><strong>Jupiter</strong>: <span class="arithmatex">\(M = 1.898 \times 10^{27} \, \text{kg}\)</span>, <span class="arithmatex">\(R = 6.991 \times 10^7 \, \text{m}\)</span></li>
+<li><strong>Sun</strong>: <span class="arithmatex">\(M_{\text{sun}} = 1.989 \times 10^{30} \, \text{kg}\)</span></li>
+<li><strong>Orbital Radii</strong>: Earth (<span class="arithmatex">\(1.496 \times 10^{11} \, \text{m}\)</span>), Mars (<span class="arithmatex">\(2.279 \times 10^{11} \, \text{m}\)</span>), Jupiter (<span class="arithmatex">\(7.785 \times 10^{11} \, \text{m}\)</span>)</li>
 </ul>
 <h2 id="computational-model-with-3d-visualizations">Computational Model with 3D Visualizations</h2>
 <p>The Python script below calculates cosmic velocities and generates 3D visualizations using <code>plotly</code> for interactive graphics in Google Colab. It produces a bar plot for velocities and a 3D scatter plot simulating escape trajectories.</p>
@@ -349,25 +349,25 @@ fig.write_html('escape_trajectories_3d.html')
 <h2 id="results">Results</h2>
 <ul>
 <li><strong>Earth</strong>:</li>
-<li>First: $ 7.91 \, \text{km/s} $</li>
-<li>Second: $ 11.19 \, \text{km/s} $</li>
-<li>Third: $ 43.81 \, \text{km/s} $</li>
+<li>First: <span class="arithmatex">\(7.91 \, \text{km/s}\)</span></li>
+<li>Second: <span class="arithmatex">\(11.19 \, \text{km/s}\)</span></li>
+<li>Third: <span class="arithmatex">\(43.81 \, \text{km/s}\)</span></li>
 <li><strong>Mars</strong>:</li>
-<li>First: $ 3.55 \, \text{km/s} $</li>
-<li>Second: $ 5.03 \, \text{km/s} $</li>
-<li>Third: $ 24.04 \, \text{km/s} $</li>
+<li>First: <span class="arithmatex">\(3.55 \, \text{km/s}\)</span></li>
+<li>Second: <span class="arithmatex">\(5.03 \, \text{km/s}\)</span></li>
+<li>Third: <span class="arithmatex">\(24.04 \, \text{km/s}\)</span></li>
 <li><strong>Jupiter</strong>:</li>
-<li>First: $ 42.14 \, \text{km/s} $</li>
-<li>Second: $ 59.54 \, \text{km/s} $</li>
-<li>Third: $ 65.89 \, \text{km/s} $</li>
+<li>First: <span class="arithmatex">\(42.14 \, \text{km/s}\)</span></li>
+<li>Second: <span class="arithmatex">\(59.54 \, \text{km/s}\)</span></li>
+<li>Third: <span class="arithmatex">\(65.89 \, \text{km/s}\)</span></li>
 </ul>
 <h2 id="importance-in-space-exploration">Importance in Space Exploration</h2>
 <ul>
-<li><strong>Satellites</strong>: First cosmic velocity ($ 7.91 \, \text{km/s} $ for Earth) enables LEO for communication and GPS.</li>
-<li><strong>Interplanetary Missions</strong>: Second cosmic velocity ($ 11.19 \, \text{km/s} $ for Earth) supports missions like NASA’s Perseverance to Mars.</li>
-<li><strong>Interstellar Travel</strong>: Third cosmic velocity ($ 43.81 \, \text{km/s} $ for Earth) is a benchmark for Voyager missions, aided by gravitational slingshots.</li>
-<li><strong>Mission Efficiency</strong>: Mars’ lower velocities ($ 5.03 \, \text{km/s} $ escape) favor future launches from its surface.</li>
-<li><strong>Design</strong>: Jupiter’s high velocities ($ 59.54 \, \text{km/s} $ escape) demand robust spacecraft.</li>
+<li><strong>Satellites</strong>: First cosmic velocity (<span class="arithmatex">\(7.91 \, \text{km/s}\)</span> for Earth) enables LEO for communication and GPS.</li>
+<li><strong>Interplanetary Missions</strong>: Second cosmic velocity (<span class="arithmatex">\(11.19 \, \text{km/s}\)</span> for Earth) supports missions like NASA’s Perseverance to Mars.</li>
+<li><strong>Interstellar Travel</strong>: Third cosmic velocity (<span class="arithmatex">\(43.81 \, \text{km/s}\)</span> for Earth) is a benchmark for Voyager missions, aided by gravitational slingshots.</li>
+<li><strong>Mission Efficiency</strong>: Mars’ lower velocities (<span class="arithmatex">\(5.03 \, \text{km/s}\)</span> escape) favor future launches from its surface.</li>
+<li><strong>Design</strong>: Jupiter’s high velocities (<span class="arithmatex">\(59.54 \, \text{km/s}\)</span> escape) demand robust spacecraft.</li>
 </ul>
 <h2 id="3d-visualizations">3D Visualizations</h2>
 <ul>
