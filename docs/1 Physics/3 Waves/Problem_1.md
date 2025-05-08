@@ -21,7 +21,7 @@ Let’s unpack each term for a clear understanding:
 - **$\eta(x, y, t)$**: The vertical displacement of the water surface at position $(x, y)$ and time $t$, indicating the wave’s effect on the surface.
 - **$A$**: The amplitude, a constant representing the maximum displacement, tied to the source’s initial energy.
 - **$k = \frac{2\pi}{\lambda}$**: The wave number, where $\lambda$ is the wavelength (distance between consecutive crests), measuring spatial oscillation frequency.
-- **$\omega = 2\pi f$**: The angular frequency, where $ f $ is the frequency (cycles per second), governing temporal oscillation.
+- **$\omega = 2\pi f$**: The angular frequency, where $f$ is the frequency (cycles per second), governing temporal oscillation.
 - **$r = \sqrt{(x - x_0)^2 + (y - y_0)^2}$**: The radial distance from the source to the point $(x, y)$. The $\frac{1}{\sqrt{r}}$ factor reflects the amplitude reduction due to energy spreading in two dimensions.
 - **$\phi$**: The initial phase, determining the wave’s starting position in its cycle.
 
@@ -51,19 +51,28 @@ We opt for an equilateral triangle due to its simplicity and symmetrical propert
 
 ### Positioning the Sources
 The triangle has a side length $s = 2 \, \text{m}$ with its center at $(0, 0)$. Vertex coordinates, derived from geometry, are:
+
 - Vertex 1: $(x_1, y_1) = (1, 0)$
+
 - Vertex 2: $(x_2, y_2) = (-0.5, \sqrt{3}/2) \approx (-0.5, 0.866)$
+
 - Vertex 3: $(x_3, y_3) = (-0.5, -\sqrt{3}/2) \approx (-0.5, -0.866)$
 
 These are calculated by placing one vertex on the positive x-axis and rotating the others by $\pm 60^\circ$, scaled by the side length, ensuring equidistance from the center for symmetric interference.
 
 ### Wave Parameters
 Specific values are assigned for simulation:
+
 - **Amplitude**: $A = 0.1 \, \text{m}$, a moderate value for visible effects.
+
 - **Wavelength**: $\lambda = 0.5 \, \text{m}$, short for detailed patterns in a 4x4 m grid.
+
 - **Wave Number**: $k = \frac{2\pi}{\lambda} \approx 12.566 \, \text{m}^{-1}$.
+
 - **Frequency**: $f = 2 \, \text{Hz}$, suitable for water waves.
+
 - **Angular Frequency**: $\omega = 2\pi f \approx 12.566 \, \text{rad/s}$.
+
 - **Initial Phase**: $\phi = 0$, aligning waves for simplicity.
 
 These choices ensure observable interference within the computational domain.
