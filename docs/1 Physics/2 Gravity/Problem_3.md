@@ -24,7 +24,7 @@ $$
 \vec{a} = \frac{d^2 \vec{r}}{dt^2} = -\frac{G M}{|\vec{r}|^3} \vec{r}
 $$
 
-This second-order differential equation governs the payload’s trajectory, solved numerically given initial position $\vec{r}_0 $ and velocity $ \vec{v}_0$.
+This second-order differential equation governs the payload’s trajectory, solved numerically given initial position $\vec{r}_0$ and velocity $\vec{v}_0$.
 
 ### Trajectory Types
 The trajectory depends on the payload’s specific energy $\epsilon$:
@@ -44,7 +44,7 @@ $$
 e = \sqrt{1 + \frac{2 \epsilon h^2}{(G M)^2}}
 $$
 
-where $ h = |\vec{r} \times \vec{v}|$ is the specific angular momentum. 
+where $h = |\vec{r} \times \vec{v}|$ is the specific angular momentum. 
 - $e < 1$: Elliptical.
 - $e = 1$: Parabolic.
 - $e > 1$: Hyperbolic.
@@ -54,9 +54,9 @@ where $ h = |\vec{r} \times \vec{v}|$ is the specific angular momentum.
 To compute the payload’s path, we solve the equations of motion using numerical integration (e.g., `scipy.integrate.odeint`). Initial conditions are set at an altitude above Earth’s surface ($R = 6.371 \times 10^6 \, \text{m}$) with varying velocities to produce elliptical, parabolic, and hyperbolic trajectories.
 
 ### Initial Conditions
-- **Position**: Released at $\vec{r}_0 = (R + h, 0)$, where $h = 400 \$, $\text{km}$ (LEO altitude).
+- **Position**: Released at $\vec{r}_0 = (R + h, 0)$, where $h = 400$, $\text{km}$ (LEO altitude).
 - **Velocity**: 
-    - Elliptical: $\vec{v}_0 = (0, v_1)$, where $ v_1 = \sqrt{\frac{G M}{r}} \approx 7.67$, $\text{km/s}$ (circular orbit velocity).
+    - Elliptical: $\vec{v}_0 = (0, v_1)$, where $v_1 = \sqrt{\frac{G M}{r}} \approx 7.67$, $\text{km/s}$ (circular orbit velocity).
     - Parabolic: $\vec{v}_0 = (0, v_e)$, where $v_e = \sqrt{\frac{2 G M}{r}} \approx 10.85$, $\text{km/s}$ (escape velocity).
     - Hyperbolic: $\vec{v}_0 = (0, 1.2 v_e) \approx 13.02$, $\text{km/s}$.
 
