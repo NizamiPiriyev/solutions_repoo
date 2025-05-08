@@ -186,7 +186,7 @@
 <li><strong><span class="arithmatex">\(\eta(x, y, t)\)</span></strong>: The vertical displacement of the water surface at position <span class="arithmatex">\((x, y)\)</span> and time <span class="arithmatex">\(t\)</span>, indicating the wave’s effect on the surface.</li>
 <li><strong><span class="arithmatex">\(A\)</span></strong>: The amplitude, a constant representing the maximum displacement, tied to the source’s initial energy.</li>
 <li><strong><span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span></strong>: The wave number, where <span class="arithmatex">\(\lambda\)</span> is the wavelength (distance between consecutive crests), measuring spatial oscillation frequency.</li>
-<li><strong><span class="arithmatex">\(\omega = 2\pi f\)</span></strong>: The angular frequency, where $ f $ is the frequency (cycles per second), governing temporal oscillation.</li>
+<li><strong><span class="arithmatex">\(\omega = 2\pi f\)</span></strong>: The angular frequency, where <span class="arithmatex">\(f\)</span> is the frequency (cycles per second), governing temporal oscillation.</li>
 <li><strong><span class="arithmatex">\(r = \sqrt{(x - x_0)^2 + (y - y_0)^2}\)</span></strong>: The radial distance from the source to the point <span class="arithmatex">\((x, y)\)</span>. The <span class="arithmatex">\(\frac{1}{\sqrt{r}}\)</span> factor reflects the amplitude reduction due to energy spreading in two dimensions.</li>
 <li><strong><span class="arithmatex">\(\phi\)</span></strong>: The initial phase, determining the wave’s starting position in its cycle.</li>
 </ul>
@@ -211,19 +211,41 @@
 <h3 id="selection-of-regular-polygon">Selection of Regular Polygon</h3>
 <p>We opt for an equilateral triangle due to its simplicity and symmetrical properties, ideal for observing interference patterns. An equilateral triangle features three equal sides and 60° angles, providing a balanced source distribution.</p>
 <h3 id="positioning-the-sources">Positioning the Sources</h3>
-<p>The triangle has a side length <span class="arithmatex">\(s = 2 \, \text{m}\)</span> with its center at <span class="arithmatex">\((0, 0)\)</span>. Vertex coordinates, derived from geometry, are:
-- Vertex 1: <span class="arithmatex">\((x_1, y_1) = (1, 0)\)</span>
-- Vertex 2: <span class="arithmatex">\((x_2, y_2) = (-0.5, \sqrt{3}/2) \approx (-0.5, 0.866)\)</span>
-- Vertex 3: <span class="arithmatex">\((x_3, y_3) = (-0.5, -\sqrt{3}/2) \approx (-0.5, -0.866)\)</span></p>
+<p>The triangle has a side length <span class="arithmatex">\(s = 2 \, \text{m}\)</span> with its center at <span class="arithmatex">\((0, 0)\)</span>. Vertex coordinates, derived from geometry, are:</p>
+<ul>
+<li>
+<p>Vertex 1: <span class="arithmatex">\((x_1, y_1) = (1, 0)\)</span></p>
+</li>
+<li>
+<p>Vertex 2: <span class="arithmatex">\((x_2, y_2) = (-0.5, \sqrt{3}/2) \approx (-0.5, 0.866)\)</span></p>
+</li>
+<li>
+<p>Vertex 3: <span class="arithmatex">\((x_3, y_3) = (-0.5, -\sqrt{3}/2) \approx (-0.5, -0.866)\)</span></p>
+</li>
+</ul>
 <p>These are calculated by placing one vertex on the positive x-axis and rotating the others by <span class="arithmatex">\(\pm 60^\circ\)</span>, scaled by the side length, ensuring equidistance from the center for symmetric interference.</p>
 <h3 id="wave-parameters">Wave Parameters</h3>
-<p>Specific values are assigned for simulation:
-- <strong>Amplitude</strong>: <span class="arithmatex">\(A = 0.1 \, \text{m}\)</span>, a moderate value for visible effects.
-- <strong>Wavelength</strong>: <span class="arithmatex">\(\lambda = 0.5 \, \text{m}\)</span>, short for detailed patterns in a 4x4 m grid.
-- <strong>Wave Number</strong>: <span class="arithmatex">\(k = \frac{2\pi}{\lambda} \approx 12.566 \, \text{m}^{-1}\)</span>.
-- <strong>Frequency</strong>: <span class="arithmatex">\(f = 2 \, \text{Hz}\)</span>, suitable for water waves.
-- <strong>Angular Frequency</strong>: <span class="arithmatex">\(\omega = 2\pi f \approx 12.566 \, \text{rad/s}\)</span>.
-- <strong>Initial Phase</strong>: <span class="arithmatex">\(\phi = 0\)</span>, aligning waves for simplicity.</p>
+<p>Specific values are assigned for simulation:</p>
+<ul>
+<li>
+<p><strong>Amplitude</strong>: <span class="arithmatex">\(A = 0.1 \, \text{m}\)</span>, a moderate value for visible effects.</p>
+</li>
+<li>
+<p><strong>Wavelength</strong>: <span class="arithmatex">\(\lambda = 0.5 \, \text{m}\)</span>, short for detailed patterns in a 4x4 m grid.</p>
+</li>
+<li>
+<p><strong>Wave Number</strong>: <span class="arithmatex">\(k = \frac{2\pi}{\lambda} \approx 12.566 \, \text{m}^{-1}\)</span>.</p>
+</li>
+<li>
+<p><strong>Frequency</strong>: <span class="arithmatex">\(f = 2 \, \text{Hz}\)</span>, suitable for water waves.</p>
+</li>
+<li>
+<p><strong>Angular Frequency</strong>: <span class="arithmatex">\(\omega = 2\pi f \approx 12.566 \, \text{rad/s}\)</span>.</p>
+</li>
+<li>
+<p><strong>Initial Phase</strong>: <span class="arithmatex">\(\phi = 0\)</span>, aligning waves for simplicity.</p>
+</li>
+</ul>
 <p>These choices ensure observable interference within the computational domain.</p>
 <h2 id="detailed-numerical-simulation-and-analysis">Detailed Numerical Simulation and Analysis</h2>
 <h3 id="computational-approach">Computational Approach</h3>
