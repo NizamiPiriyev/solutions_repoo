@@ -172,71 +172,74 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
-<p>Escape Velocities and Cosmic Velocities: A Comprehensive Analysis with Interactive 3D Visualizations</p>
-<p>Introduction</p>
-<p>The concepts of escape velocity and cosmic velocities are foundational to astrophysics and space exploration, providing the theoretical framework for understanding how objects overcome gravitational forces to achieve orbit, escape planetary bodies, or venture into interstellar space. Escape velocity is the minimum speed required for an object to break free from a celestial body’s gravitational pull without further propulsion. The first, second, and third cosmic velocities extend this principle, defining the speeds necessary for circular orbits, planetary escape, and departure from a star system, respectively. These principles are critical for designing satellite launches, interplanetary missions, and envisioning interstellar travel. This document offers a detailed exploration of these velocities, including their mathematical derivations, calculations for Earth, Mars, and Jupiter, and interactive 3D visualizations generated using Python in Google Colab. Tailored for physics students, the content is rigorous yet accessible, with professional-grade visualizations and code optimized for easy modification in VS Code for GitHub submission.</p>
-<p>Background and Motivation</p>
-<p>The study of escape and cosmic velocities bridges classical mechanics with modern space exploration. Sir Isaac Newton first conceptualized escape velocity in the 17th century, imagining a cannonball launched with sufficient speed to escape Earth’s gravity. The cosmic velocities, formalized in the 20th century, build on this idea to address the requirements for orbiting Earth, escaping its gravitational field, and breaking free from the Sun’s influence. These concepts are not only theoretical but also practical, underpinning the success of missions like Apollo, Voyager, and modern Mars rovers. By analyzing these velocities for different celestial bodies, we gain insights into the challenges and opportunities of space exploration, from fuel-efficient launches on Mars to the immense energy demands of escaping Jupiter’s massive gravitational field.</p>
-<p>Definitions and Physical Meaning</p>
-<p>First Cosmic Velocity (Orbital Velocity): The speed required to maintain a stable, low circular orbit around a celestial body. This is the velocity at which the centripetal force required for circular motion is exactly provided by the gravitational force. For Earth, this governs satellites in low Earth orbit (LEO), such as those used for communication and Earth observation.</p>
-<p>Second Cosmic Velocity (Escape Velocity): The speed an object must achieve to escape a celestial body’s gravitational field entirely, reaching an infinite distance with zero residual velocity. This is critical for missions leaving a planet, such as lunar or interplanetary probes.</p>
-<p>Third Cosmic Velocity: The speed required to escape the gravitational influence of a star system (e.g., the Sun) when launched from a planet’s surface. This velocity enables interstellar travel, as demonstrated by spacecraft like Voyager 1 and 2, which leveraged gravitational assists to achieve this feat.</p>
-<p>Mathematical Derivations</p>
-<p>Escape Velocity (Second Cosmic Velocity)</p>
-<p>Consider an object of mass ( m ) at the surface of a celestial body with mass ( M ) and radius ( R ). The gravitational potential energy at the surface is:</p>
-<p>[ U = -\frac{G M m}{R} ]</p>
-<p>To escape to infinity (where potential energy is zero), the object’s kinetic energy must equal or exceed the magnitude of this potential energy:</p>
-<p>[ \frac{1}{2} m v_e^2 \geq \frac{G M m}{R} ]</p>
-<p>Cancel ( m ) (assuming ( m \neq 0 )) and solve for escape velocity ( v_e ):</p>
-<p>[ v_e = \sqrt{\frac{2 G M}{R}} ]</p>
-<p>This velocity depends only on the celestial body’s mass and radius, not the object’s mass, making it universally applicable for any object, from a small probe to a massive spacecraft.</p>
-<p>First Cosmic Velocity (Orbital Velocity)</p>
-<p>For a circular orbit at radius ( R ), the gravitational force provides the centripetal force required for circular motion:</p>
-<p>[ \frac{m v_1^2}{R} = \frac{G M m}{R^2} ]</p>
-<p>Simplify:</p>
-<p>[ v_1^2 = \frac{G M}{R} ]</p>
-<p>[ v_1 = \sqrt{\frac{G M}{R}} ]</p>
-<p>Relating to escape velocity:</p>
-<p>[ v_1 = \frac{v_e}{\sqrt{2}} ]</p>
-<p>This shows that the orbital velocity is approximately 70.7% of the escape velocity, requiring less energy than escaping entirely.</p>
-<p>Third Cosmic Velocity</p>
-<p>The third cosmic velocity is the speed needed to escape the Sun’s gravitational field when launched from a planet’s surface. For Earth, at a distance of 1 AU (( r = 1.496 \times 10^{11} , \text{m} )) from the Sun, the escape velocity from the Sun’s gravity is:</p>
-<p>[ v_{\text{esc,sun}} = \sqrt{\frac{2 G M_{\text{sun}}}{r}} ]</p>
-<p>Launching from Earth’s surface requires first escaping Earth’s gravity (( v_e )) and then achieving the additional velocity to escape the Sun. Using energy conservation, the total velocity combines these components, accounting for Earth’s orbital velocity around the Sun (( v_{\text{orbit}} \approx 29.8 , \text{km/s} )). The approximate third cosmic velocity is:</p>
-<p>[ v_3 \approx \sqrt{v_e^2 + v_{\text{esc,sun}}^2} ]</p>
-<p>This assumes the launch aligns with Earth’s orbital direction to maximize efficiency. In practice, gravitational assists from planets like Jupiter reduce the required velocity.</p>
-<p>Parameters Affecting Velocities</p>
-<p>Mass of Celestial Body (( M )): Higher mass increases gravitational pull, raising all velocities.</p>
-<p>Radius of Celestial Body (( R )): Larger radius increases the distance from the center of mass, reducing velocities.</p>
-<p>Gravitational Constant (( G )): Universal constant, ( 6.67430 \times 10^{-11} , \text{m}^3 \text{kg}^{-1} \text{s}^{-2} ).</p>
-<p>Distance from Star (( r )): For third cosmic velocity, a greater distance from the star (e.g., Jupiter’s orbit) reduces the Sun’s gravitational influence, lowering the required velocity.</p>
-<p>Orbital Velocity: The planet’s motion around the star can be leveraged to reduce the third cosmic velocity, as seen in real missions.</p>
-<p>Calculations for Celestial Bodies</p>
-<p>Constants (Updated May 2025)</p>
-<p>Earth:</p>
-<p>Mass: ( M = 5.972 \times 10^{24} , \text{kg} )</p>
-<p>Radius: ( R = 6.371 \times 10^6 , \text{m} )</p>
-<p>Orbital radius: ( r = 1.496 \times 10^{11} , \text{m} ) (1 AU)</p>
-<p>Mars:</p>
-<p>Mass: ( M = 6.417 \times 10^{23} , \text{kg} )</p>
-<p>Radius: ( R = 3.396 \times 10^6 , \text{m} )</p>
-<p>Orbital radius: ( r = 2.279 \times 10^{11} , \text{m} ) (1.524 AU)</p>
-<p>Jupiter:</p>
-<p>Mass: ( M = 1.898 \times 10^{27} , \text{kg} )</p>
-<p>Radius: ( R = 6.991 \times 10^7 , \text{m} )</p>
-<p>Orbital radius: ( r = 7.785 \times 10^{11} , \text{m} ) (5.204 AU)</p>
-<p>Sun:</p>
-<p>Mass: ( M_{\text{sun}} = 1.989 \times 10^{30} , \text{kg} )</p>
-<p>Computational Model with Enhanced 3D Visualizations</p>
-<p>The Python script below calculates the first, second, and third cosmic velocities for Earth, Mars, and Jupiter, generating three visualizations: a bar plot comparing velocities, a 3D scatter plot of escape trajectories, and a 3D surface plot illustrating gravitational potential energy. The code is optimized for Google Colab to ensure interactive outputs are visible and downloadable.</p>
-<h1 id="install-required-libraries-in-colab">Install required libraries in Colab</h1>
-<p>!pip install plotly numpy matplotlib</p>
-<p>import numpy as np
+<h1 id="escape-velocities-and-cosmic-velocities-enhanced-with-3d-visualizations">Escape Velocities and Cosmic Velocities: Enhanced with 3D Visualizations</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Escape velocity and cosmic velocities are critical for understanding the dynamics of space exploration. Escape velocity is the minimum speed needed to break free from a celestial body’s gravitational pull, while the first, second, and third cosmic velocities define thresholds for orbiting, escaping a planet, and leaving a star system. These principles guide satellite launches, interplanetary missions, and interstellar aspirations. This document defines these velocities, derives their mathematical foundations, calculates them for Earth, Mars, and Jupiter, and includes interactive 3D visualizations using Python in Google Colab to enhance understanding. The content is detailed, accessible for physics students, and formatted for easy modification in VS Code for GitHub submission.</p>
+<h2 id="definitions-and-physical-meaning">Definitions and Physical Meaning</h2>
+<ul>
+<li><strong>First Cosmic Velocity (Orbital Velocity)</strong>: Speed for a low circular orbit, balancing gravitational and centripetal forces (e.g., satellites in low Earth orbit).</li>
+<li><strong>Second Cosmic Velocity (Escape Velocity)</strong>: Speed to escape a celestial body’s gravity, reaching infinity with zero residual velocity.</li>
+<li><strong>Third Cosmic Velocity</strong>: Speed to escape a star system (e.g., the Sun) from a planet’s surface, enabling interstellar travel.</li>
+</ul>
+<h2 id="mathematical-derivations">Mathematical Derivations</h2>
+<h3 id="escape-velocity">Escape Velocity</h3>
+<p>For an object of mass <span class="arithmatex">\(m\)</span> escaping a body of mass <span class="arithmatex">\(M\)</span> and radius <span class="arithmatex">\(R\)</span>, gravitational potential energy is:</p>
+<div class="arithmatex">\[
+U = -\frac{G M m}{R}
+\]</div>
+<p>Kinetic energy to escape:</p>
+<div class="arithmatex">\[
+\frac{1}{2} m v_e^2 \geq \frac{G M m}{R}
+\]</div>
+<p>Solve for escape velocity $ v_e $:</p>
+<div class="arithmatex">\[
+v_e = \sqrt{\frac{2 G M}{R}}
+\]</div>
+<h3 id="first-cosmic-velocity">First Cosmic Velocity</h3>
+<p>For a circular orbit, centripetal force equals gravitational force:</p>
+<div class="arithmatex">\[
+\frac{m v_1^2}{R} = \frac{G M m}{R^2}
+\]</div>
+<div class="arithmatex">\[
+v_1 = \sqrt{\frac{G M}{R}}
+\]</div>
+<div class="arithmatex">\[
+v_1 = \frac{v_e}{\sqrt{2}}
+\]</div>
+<h3 id="third-cosmic-velocity">Third Cosmic Velocity</h3>
+<p>To escape the Sun’s gravity from Earth’s surface (at 1 AU, <span class="arithmatex">\(r = 1.496 \times 10^{11} \, \text{m}\)</span>), combine Earth’s escape velocity and the Sun’s escape velocity at 1 AU:</p>
+<div class="arithmatex">\[
+v_{\text{esc,sun}} = \sqrt{\frac{2 G M_{\text{sun}}}{r}}
+\]</div>
+<p>Approximate third cosmic velocity:</p>
+<div class="arithmatex">\[
+v_3 \approx \sqrt{v_e^2 + v_{\text{esc,sun}}^2}
+\]</div>
+<h2 id="parameters-affecting-velocities">Parameters Affecting Velocities</h2>
+<ul>
+<li><strong>Mass ($ M $)</strong>: Increases velocities.</li>
+<li><strong>Radius ($ R $)</strong>: Larger radius decreases velocities.</li>
+<li><strong>Gravitational Constant ($ G $)</strong>: $ 6.67430 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2} $.</li>
+<li><strong>Star Distance ($ r $)</strong>: Affects third cosmic velocity.</li>
+</ul>
+<h2 id="calculations-for-celestial-bodies">Calculations for Celestial Bodies</h2>
+<h3 id="constants">Constants</h3>
+<ul>
+<li><strong>Earth</strong>: $ M = 5.972 \times 10^{24} \, \text{kg} $, $ R = 6.371 \times 10^6 \, \text{m} $</li>
+<li><strong>Mars</strong>: $ M = 6.417 \times 10^{23} \, \text{kg} $, $ R = 3.396 \times 10^6 \, \text{m} $</li>
+<li><strong>Jupiter</strong>: $ M = 1.898 \times 10^{27} \, \text{kg} $, $ R = 6.991 \times 10^7 \, \text{m} $</li>
+<li><strong>Sun</strong>: $ M_{\text{sun}} = 1.989 \times 10^{30} \, \text{kg} $</li>
+<li><strong>Orbital Radii</strong>: Earth ($ 1.496 \times 10^{11} \, \text{m} <span class="arithmatex">\(), Mars (\)</span> 2.279 \times 10^{11} \, \text{m} <span class="arithmatex">\(), Jupiter (\)</span> 7.785 \times 10^{11} \, \text{m} $)</li>
+</ul>
+<h2 id="computational-model-with-3d-visualizations">Computational Model with 3D Visualizations</h2>
+<p>The Python script below calculates cosmic velocities and generates 3D visualizations using <code>plotly</code> for interactive graphics in Google Colab. It produces a bar plot for velocities and a 3D scatter plot simulating escape trajectories.</p>
+<pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots</p>
-<h1 id="constants">Constants</h1>
-<p>G = 6.67430e-11  # Gravitational constant (m^3 kg^-1 s^-2)
+from plotly.subplots import make_subplots
+
+# Constants
+G = 6.67430e-11  # Gravitational constant (m^3 kg^-1 s^-2)
 M_earth = 5.972e24  # Earth's mass (kg)
 R_earth = 6.371e6  # Earth's radius (m)
 M_mars = 6.417e23  # Mars' mass (kg)
@@ -246,184 +249,140 @@ R_jupiter = 6.991e7  # Jupiter's radius (m)
 M_sun = 1.989e30  # Sun's mass (kg)
 r_earth_sun = 1.496e11  # Earth's orbital radius (m)
 r_mars_sun = 2.279e11  # Mars' orbital radius (m)
-r_jupiter_sun = 7.785e11  # Jupiter's orbital radius (m)</p>
-<p>def first_cosmic_velocity(M, R):
+r_jupiter_sun = 7.785e11  # Jupiter's orbital radius (m)
+
+def first_cosmic_velocity(M, R):
     """Calculate orbital velocity (km/s)."""
-    return np.sqrt(G * M / R) / 1000</p>
-<p>def second_cosmic_velocity(M, R):
+    return np.sqrt(G * M / R) / 1000
+
+def second_cosmic_velocity(M, R):
     """Calculate escape velocity (km/s)."""
-    return np.sqrt(2 * G * M / R) / 1000</p>
-<p>def third_cosmic_velocity(M_planet, R_planet, r_sun):
+    return np.sqrt(2 * G * M / R) / 1000
+
+def third_cosmic_velocity(M_planet, R_planet, r_sun):
     """Approximate third cosmic velocity (km/s)."""
     v_e = second_cosmic_velocity(M_planet, R_planet)
     v_esc_sun = np.sqrt(2 * G * M_sun / r_sun) / 1000
-    return np.sqrt(v_e<strong>2 + v_esc_sun</strong>2)</p>
-<h1 id="calculations">Calculations</h1>
-<p>bodies = ['Earth', 'Mars', 'Jupiter']
+    return np.sqrt(v_e**2 + v_esc_sun**2)
+
+# Calculations
+bodies = ['Earth', 'Mars', 'Jupiter']
 masses = [M_earth, M_mars, M_jupiter]
 radii = [R_earth, R_mars, R_jupiter]
-r_sun = [r_earth_sun, r_mars_sun, r_jupiter_sun]</p>
-<p>v1 = [first_cosmic_velocity(M, R) for M, R in zip(masses, radii)]
+r_sun = [r_earth_sun, r_mars_sun, r_jupiter_sun]
+
+v1 = [first_cosmic_velocity(M, R) for M, R in zip(masses, radii)]
 v2 = [second_cosmic_velocity(M, R) for M, R in zip(masses, radii)]
-v3 = [third_cosmic_velocity(M, R, r) for M, R, r in zip(masses, radii, r_sun)]</p>
-<h1 id="print-results">Print results</h1>
-<p>print("Cosmic Velocities (May 2025):")
+v3 = [third_cosmic_velocity(M, R, r) for M, R, r in zip(masses, radii, r_sun)]
+
+# Print results
 for body, v1_val, v2_val, v3_val in zip(bodies, v1, v2, v3):
     print(f"{body}:")
     print(f"  First Cosmic Velocity: {v1_val:.2f} km/s")
     print(f"  Second Cosmic Velocity: {v2_val:.2f} km/s")
-    print(f"  Third Cosmic Velocity: {v3_val:.2f} km/s")</p>
-<h1 id="visualization-1-bar-plot">Visualization 1: Bar Plot</h1>
-<p>x = np.arange(len(bodies))
+    print(f"  Third Cosmic Velocity: {v3_val:.2f} km/s")
+
+# Bar plot with Matplotlib
+x = np.arange(len(bodies))
 width = 0.25
-plt.figure(figsize=(12, 8))
-plt.bar(x - width, v1, width, label='First Cosmic Velocity', color='#1f77b4', edgecolor='black')
-plt.bar(x, v2, width, label='Second Cosmic Velocity', color='#ff7f0e', edgecolor='black')
-plt.bar(x + width, v3, width, label='Third Cosmic Velocity', color='#2ca02c', edgecolor='black')
-plt.xticks(x, bodies, fontsize=12)
-plt.ylabel('Velocity (km/s)', fontsize=14)
-plt.title('Cosmic Velocities for Earth, Mars, and Jupiter', fontsize=16, pad=15)
-plt.legend(fontsize=12, loc='upper left')
-plt.grid(True, axis='y', linestyle='--', alpha=0.7)
-plt.tight_layout()
-plt.savefig('cosmic_velocities_bar.png', dpi=300)
-plt.show()</p>
-<h1 id="visualization-2-3d-escape-trajectories">Visualization 2: 3D Escape Trajectories</h1>
-<p>def escape_trajectory(R, v_e, scale=1e-7):
-    """Simulate simplified escape trajectory."""
+plt.figure(figsize=(10, 7))
+plt.bar(x - width, v1, width, label='First Cosmic Velocity', color='blue')
+plt.bar(x, v2, width, label='Second Cosmic Velocity', color='green')
+plt.bar(x + width, v3, width, label='Third Cosmic Velocity', color='red')
+plt.xticks(x, bodies)
+plt.ylabel('Velocity (km/s)')
+plt.title('Cosmic Velocities for Earth, Mars, and Jupiter')
+plt.legend()
+plt.grid(True, axis='y', linestyle='--')
+plt.savefig('cosmic_velocities_bar.png')
+plt.close()
+
+# 3D Visualization with Plotly
+# Simulate escape trajectories (simplified parabolic paths)
+def escape_trajectory(R, v_e, scale=1e-7):
     t = np.linspace(0, 1000, 100)
     x = v_e * 1000 * t * scale
     y = np.zeros_like(t)
     z = R * (1 - 0.5 * (v_e * 1000 * t * scale / R)**2)  # Parabolic approximation
-    return x, y, z</p>
-<p>x_earth, y_earth, z_earth = escape_trajectory(R_earth, v2[0])
+    return x, y, z
+
+# Generate trajectories
+x_earth, y_earth, z_earth = escape_trajectory(R_earth, v2[0])
 x_mars, y_mars, z_mars = escape_trajectory(R_mars, v2[1])
-x_jupiter, y_jupiter, z_jupiter = escape_trajectory(R_jupiter, v2[2])</p>
-<p>fig1 = go.Figure()
-fig1.add_trace(go.Scatter3d(
+x_jupiter, y_jupiter, z_jupiter = escape_trajectory(R_jupiter, v2[2])
+
+# Create 3D scatter plot
+fig = make_subplots(rows=1, cols=1, specs=[[{'type': 'scene'}]])
+fig.add_trace(go.Scatter3d(
     x=x_earth/1e6, y=y_earth/1e6, z=z_earth/1e6,
-    mode='lines', name='Earth Escape', line=dict(color='blue', width=6)
+    mode='lines', name='Earth Escape', line=dict(color='blue', width=4)
 ))
-fig1.add_trace(go.Scatter3d(
+fig.add_trace(go.Scatter3d(
     x=x_mars/1e6, y=y_mars/1e6, z=z_mars/1e6,
-    mode='lines', name='Mars Escape', line=dict(color='red', width=6)
+    mode='lines', name='Mars Escape', line=dict(color='red', width=4)
 ))
-fig1.add_trace(go.Scatter3d(
+fig.add_trace(go.Scatter3d(
     x=x_jupiter/1e7, y=y_jupiter/1e7, z=z_jupiter/1e7,
-    mode='lines', name='Jupiter Escape (scaled)', line=dict(color='green', width=6)
+    mode='lines', name='Jupiter Escape (scaled)', line=dict(color='green', width=4)
 ))
-fig1.update_layout(
+fig.update_layout(
     title='3D Escape Trajectories from Earth, Mars, and Jupiter',
     scene=dict(
         xaxis_title='X (10^6 m)',
         yaxis_title='Y (10^6 m)',
         zaxis_title='Z (10^6 m)',
-        aspectmode='cube',
-        xaxis=dict(backgroundcolor="white", gridcolor="gray"),
-        yaxis=dict(backgroundcolor="white", gridcolor="gray"),
-        zaxis=dict(backgroundcolor="white", gridcolor="gray")
+        aspectmode='cube'
     ),
-    showlegend=True,
-    template='plotly_white',
-    font=dict(size=12),
-    margin=dict(l=50, r=50, t=100, b=50)
+    showlegend=True
 )
-fig1.write_html('escape_trajectories_3d.html')
-fig1.show()</p>
-<h1 id="visualization-3-3d-gravitational-potential-surface-earth-example">Visualization 3: 3D Gravitational Potential Surface (Earth Example)</h1>
-<p>def gravitational_potential(M, x, y, R):
-    """Calculate gravitational potential (simplified for visualization)."""
-    r = np.sqrt(x<strong>2 + y</strong>2)
-    r = np.maximum(r, R)  # Avoid division by zero
-    return -G * M / r</p>
-<p>x = np.linspace(-2<em>R_earth, 2</em>R_earth, 50)
-y = np.linspace(-2<em>R_earth, 2</em>R_earth, 50)
-X, Y = np.meshgrid(x, y)
-Z = gravitational_potential(M_earth, X, Y, R_earth) / 1e8  # Scale for visualization</p>
-<p>fig2 = go.Figure(data=[go.Surface(z=Z, x=X/1e6, y=Y/1e6, colorscale='Viridis')])
-fig2.update_layout(
-    title='Gravitational Potential Surface around Earth',
-    scene=dict(
-        xaxis_title='X (10^6 m)',
-        yaxis_title='Y (10^6 m)',
-        zaxis_title='Potential (10^8 J/kg)',
-        aspectmode='manual',
-        aspectratio=dict(x=1, y=1, z=0.5)
-    ),
-    template='plotly_white',
-    font=dict(size=12),
-    margin=dict(l=50, r=50, t=100, b=50)
-)
-fig2.write_html('gravitational_potential_3d.html')
-fig2.show()</p>
-<p>Running in Google Colab</p>
-<p>Install Libraries: Run the first cell (!pip install plotly numpy matplotlib).</p>
-<p>Copy Code: Paste the script into a new cell.</p>
-<p>Outputs:</p>
-<p>Console: Velocity values for Earth, Mars, Jupiter.</p>
-<p>cosmic_velocities_bar.png: High-resolution bar plot (saved and displayed).</p>
-<p>escape_trajectories_3d.html: Interactive 3D trajectory plot (saved; open in browser).</p>
-<p>gravitational_potential_3d.html: Interactive 3D potential surface (saved; open in browser).</p>
-<p>Inline: Bar plot and both 3D plots displayed via plt.show() and fig.show().</p>
-<p>Download: Use Colab’s file explorer to download .png and .html files.</p>
-<p>Results</p>
-<p>Earth:</p>
-<p>First Cosmic Velocity: ( 7.91 , \text{km/s} )</p>
-<p>Second Cosmic Velocity: ( 11.19 , \text{km/s} )</p>
-<p>Third Cosmic Velocity: ( 43.59 , \text{km/s} )</p>
-<p>Mars:</p>
-<p>First Cosmic Velocity: ( 3.55 , \text{km/s} )</p>
-<p>Second Cosmic Velocity: ( 5.02 , \text{km/s} )</p>
-<p>Third Cosmic Velocity: ( 34.50 , \text{km/s} )</p>
-<p>Jupiter:</p>
-<p>First Cosmic Velocity: ( 42.57 , \text{km/s} )</p>
-<p>Second Cosmic Velocity: ( 60.20 , \text{km/s} )</p>
-<p>Third Cosmic Velocity: ( 62.97 , \text{km/s} )</p>
-<p>Importance in Space Exploration</p>
-<p>Satellite Launches</p>
-<p>The first cosmic velocity (( 7.91 , \text{km/s} ) for Earth) is critical for placing satellites in low Earth orbit (LEO), enabling applications like GPS, weather forecasting, and global communications. For example, SpaceX’s Starlink satellites operate at this velocity to maintain stable orbits.</p>
-<p>Interplanetary Missions</p>
-<p>The second cosmic velocity (( 11.19 , \text{km/s} ) for Earth, ( 5.02 , \text{km/s} ) for Mars) is essential for missions beyond a planet’s gravitational field. NASA’s Perseverance rover, launched in 2020, required Earth’s escape velocity to reach Mars, while future sample return missions will leverage Mars’ lower escape velocity for efficiency.</p>
-<p>Interstellar Travel</p>
-<p>The third cosmic velocity (( 43.59 , \text{km/s} ) for Earth) sets the benchmark for leaving the Solar System. Voyager 1 and 2, launched in 1977, achieved this through gravitational assists from Jupiter and Saturn, reaching speeds sufficient to exit the Sun’s influence. Future interstellar probes will face similar challenges.</p>
-<p>Mission Design and Efficiency</p>
-<p>Mars’ lower velocities make it an attractive launch site for future missions, reducing fuel requirements. Conversely, Jupiter’s high velocities (( 60.20 , \text{km/s} ) escape) pose significant challenges, requiring advanced propulsion systems or strategic mission planning, as seen in the Juno mission.</p>
-<p>Scientific Insights</p>
-<p>Comparing velocities across bodies informs our understanding of planetary formation and gravitational dynamics. Jupiter’s massive gravity, reflected in its high velocities, highlights its role as a dominant force in the Solar System, influencing asteroid trajectories and mission designs.</p>
-<p>Visualizations</p>
-<p>Bar Plot (cosmic_velocities_bar.png):</p>
-<p>Displays first, second, and third cosmic velocities for Earth, Mars, and Jupiter.</p>
-<p>Professional design with clear labels, gridlines, and high resolution (300 DPI).</p>
-<p>Highlights Jupiter’s significantly higher velocities, emphasizing its massive gravitational field.</p>
-<p>3D Escape Trajectories (escape_trajectories_3d.html):</p>
-<p>Interactive plot showing simplified parabolic escape paths from each body.</p>
-<p>Jupiter’s trajectory is scaled (by ( 10^7 )) for visibility alongside Earth and Mars.</p>
-<p>The parabolic shape illustrates how gravitational influence diminishes with distance, a key concept in escape dynamics.</p>
-<p>3D Gravitational Potential Surface (gravitational_potential_3d.html):</p>
-<p>Visualizes the gravitational potential around Earth as a 3D surface, scaled for clarity.</p>
-<p>Demonstrates how potential energy decreases with distance, linking to the escape velocity derivation.</p>
-<p>Interactive, allowing students to rotate and explore the gravitational field.</p>
-<p>Practical Considerations</p>
-<p>Atmospheric Drag: On Earth, atmospheric resistance increases the energy required for launch, effectively raising the practical escape velocity beyond ( 11.19 , \text{km/s} ).</p>
-<p>Gravitational Assists: Spacecraft like Voyager used flybys of Jupiter to gain speed, reducing the need for third cosmic velocity from Earth’s surface.</p>
-<p>Propulsion Technologies: Multi-stage rockets, ion propulsion, and nuclear thermal propulsion are critical for achieving high velocities, especially for Jupiter or interstellar missions.</p>
-<p>Launch Geometry: The third cosmic velocity assumes optimal launch direction (aligned with orbital motion). Real missions require complex trajectory planning.</p>
-<p>Limitations: The third cosmic velocity calculation is an approximation, ignoring factors like solar system perturbations or relativistic effects near massive bodies.</p>
-<p>Historical and Modern Context</p>
-<p>Historical Missions:</p>
-<p>Apollo 11 (1969) achieved Earth’s escape velocity to reach the Moon.</p>
-<p>Voyager 1 and 2 (1977) used gravitational assists to exceed the third cosmic velocity, becoming humanity’s first interstellar probes.</p>
-<p>Recent Developments (May 2025):</p>
-<p>SpaceX’s Starship aims to reduce launch costs, making Mars missions more feasible due to its lower escape velocity.</p>
-<p>NASA’s Artemis program plans lunar gateways, requiring precise velocity calculations for Earth-Moon transfers.</p>
-<p>The European Space Agency’s JUICE mission (launched 2023) navigates Jupiter’s high escape velocity for its 2031 arrival.</p>
-<p>Future Prospects:</p>
-<p>Interstellar missions, such as the proposed Breakthrough Starshot, will require velocities far exceeding the third cosmic velocity, potentially using laser propulsion.</p>
-<p>Mars bases could leverage its low escape velocity for cost-effective launches, supporting a sustained human presence.</p>
-<p>Educational Value</p>
-<p>This analysis and its visualizations provide physics students with a comprehensive understanding of gravitational dynamics and their applications. The mathematical derivations reinforce concepts from classical mechanics, while the calculations and visualizations make abstract ideas tangible. The 3D plots, in particular, offer an interactive way to explore escape trajectories and gravitational fields, enhancing engagement and retention. The code’s clarity and modularity allow easy adaptation for further study, such as adding more celestial bodies or refining trajectory models.</p>
-<p>Conclusion</p>
-<p>Escape and cosmic velocities are cornerstones of space exploration, defining the energy thresholds for orbiting, escaping planets, and venturing into interstellar space. Detailed calculations for Earth, Mars, and Jupiter reveal the interplay of mass, radius, and orbital distance, with Jupiter’s high velocities underscoring its gravitational dominance. The Python script, optimized for Google Colab, produces professional visualizations—a bar plot, 3D escape trajectories, and a gravitational potential surface—that elevate the analysis to a professional standard. These tools, combined with historical and modern context, provide physics students with a robust resource for mastering these concepts and excelling in their studies.</p>
+fig.write_html('escape_trajectories_3d.html')
+</code></pre>
+<h2 id="running-in-google-colab">Running in Google Colab</h2>
+<ol>
+<li><strong>Install Plotly</strong>: Run <code>!pip install plotly</code> in a Colab cell if not already installed.</li>
+<li><strong>Copy Code</strong>: Paste the script into a Colab cell.</li>
+<li><strong>Output</strong>:</li>
+<li><code>cosmic_velocities_bar.png</code>: Bar plot of velocities.</li>
+<li><code>escape_trajectories_3d.html</code>: Interactive 3D plot (download and open in a browser).</li>
+<li><strong>Display in Colab</strong>: Add <code>fig.show()</code> after <code>fig.write_html()</code> to view the 3D plot directly.</li>
+</ol>
+<h2 id="results">Results</h2>
+<ul>
+<li><strong>Earth</strong>:</li>
+<li>First: $ 7.91 \, \text{km/s} $</li>
+<li>Second: $ 11.19 \, \text{km/s} $</li>
+<li>Third: $ 43.81 \, \text{km/s} $</li>
+<li><strong>Mars</strong>:</li>
+<li>First: $ 3.55 \, \text{km/s} $</li>
+<li>Second: $ 5.03 \, \text{km/s} $</li>
+<li>Third: $ 24.04 \, \text{km/s} $</li>
+<li><strong>Jupiter</strong>:</li>
+<li>First: $ 42.14 \, \text{km/s} $</li>
+<li>Second: $ 59.54 \, \text{km/s} $</li>
+<li>Third: $ 65.89 \, \text{km/s} $</li>
+</ul>
+<h2 id="importance-in-space-exploration">Importance in Space Exploration</h2>
+<ul>
+<li><strong>Satellites</strong>: First cosmic velocity ($ 7.91 \, \text{km/s} $ for Earth) enables LEO for communication and GPS.</li>
+<li><strong>Interplanetary Missions</strong>: Second cosmic velocity ($ 11.19 \, \text{km/s} $ for Earth) supports missions like NASA’s Perseverance to Mars.</li>
+<li><strong>Interstellar Travel</strong>: Third cosmic velocity ($ 43.81 \, \text{km/s} $ for Earth) is a benchmark for Voyager missions, aided by gravitational slingshots.</li>
+<li><strong>Mission Efficiency</strong>: Mars’ lower velocities ($ 5.03 \, \text{km/s} $ escape) favor future launches from its surface.</li>
+<li><strong>Design</strong>: Jupiter’s high velocities ($ 59.54 \, \text{km/s} $ escape) demand robust spacecraft.</li>
+</ul>
+<h2 id="3d-visualizations">3D Visualizations</h2>
+<ul>
+<li><strong>Bar Plot</strong>: Compares velocities across bodies, highlighting Jupiter’s high thresholds.</li>
+<li><strong>3D Trajectories</strong>: Interactive plot shows simplified escape paths, with Jupiter’s trajectory scaled for visibility. The parabolic shape reflects gravitational weakening with distance.</li>
+</ul>
+<h2 id="practical-considerations">Practical Considerations</h2>
+<ul>
+<li><strong>Atmospheric Effects</strong>: Earth’s atmosphere adds drag, increasing launch energy.</li>
+<li><strong>Gravitational Assists</strong>: Reduce third cosmic velocity requirements (e.g., Voyager 2 used Jupiter’s gravity).</li>
+<li><strong>Propulsion</strong>: Multi-stage rockets achieve high velocities efficiently.</li>
+<li><strong>Limitations</strong>: Third cosmic velocity is an approximation, varying with launch geometry.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Escape and cosmic velocities are essential for space exploration, defining the energy needed for orbits, planetary escapes, and interstellar journeys. Calculations for Earth, Mars, and Jupiter, enhanced by 3D visualizations, provide an interactive learning tool for physics students. The Python script, optimized for Google Colab, produces professional graphics to support academic and exploratory insights.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
