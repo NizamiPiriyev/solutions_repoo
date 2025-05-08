@@ -28,7 +28,7 @@ $$
 \frac{1}{2} m v_e^2 \geq \frac{G M m}{R}
 $$
 
-Solve for escape velocity $ v_e $:
+Solve for escape velocity $v_e$:
 
 $$
 v_e = \sqrt{\frac{2 G M}{R}}
@@ -66,20 +66,20 @@ $$
 
 ## Parameters Affecting Velocities
 
-- **Mass ($ M $)**: Increases velocities.
-- **Radius ($ R $)**: Larger radius decreases velocities.
-- **Gravitational Constant ($ G $)**: $ 6.67430 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2} $.
-- **Star Distance ($ r $)**: Affects third cosmic velocity.
+- **Mass ($M$)**: Increases velocities.
+- **Radius ($R$)**: Larger radius decreases velocities.
+- **Gravitational Constant ($G$)**: $6.67430 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2}$.
+- **Star Distance ($r$)**: Affects third cosmic velocity.
 
 ## Calculations for Celestial Bodies
 
 ### Constants
 
-- **Earth**: $ M = 5.972 \times 10^{24} \, \text{kg} $, $ R = 6.371 \times 10^6 \, \text{m} $
-- **Mars**: $ M = 6.417 \times 10^{23} \, \text{kg} $, $ R = 3.396 \times 10^6 \, \text{m} $
-- **Jupiter**: $ M = 1.898 \times 10^{27} \, \text{kg} $, $ R = 6.991 \times 10^7 \, \text{m} $
-- **Sun**: $ M_{\text{sun}} = 1.989 \times 10^{30} \, \text{kg} $
-- **Orbital Radii**: Earth ($ 1.496 \times 10^{11} \, \text{m} $), Mars ($ 2.279 \times 10^{11} \, \text{m} $), Jupiter ($ 7.785 \times 10^{11} \, \text{m} $)
+- **Earth**: $M = 5.972 \times 10^{24} \, \text{kg}$, $R = 6.371 \times 10^6 \, \text{m}$
+- **Mars**: $M = 6.417 \times 10^{23} \, \text{kg}$, $R = 3.396 \times 10^6 \, \text{m}$
+- **Jupiter**: $M = 1.898 \times 10^{27} \, \text{kg}$, $R = 6.991 \times 10^7 \, \text{m}$
+- **Sun**: $M_{\text{sun}} = 1.989 \times 10^{30} \, \text{kg}$
+- **Orbital Radii**: Earth ($1.496 \times 10^{11} \, \text{m}$), Mars ($2.279 \times 10^{11} \, \text{m}$), Jupiter ($7.785 \times 10^{11} \, \text{m}$)
 
 ## Computational Model with 3D Visualizations
 
@@ -203,25 +203,25 @@ fig.write_html('escape_trajectories_3d.html')
 ## Results
 
 - **Earth**:
-  - First: $ 7.91 \, \text{km/s} $
-  - Second: $ 11.19 \, \text{km/s} $
-  - Third: $ 43.81 \, \text{km/s} $
+  - First: $7.91 \, \text{km/s}$
+  - Second: $11.19 \, \text{km/s}$
+  - Third: $43.81 \, \text{km/s}$
 - **Mars**:
-  - First: $ 3.55 \, \text{km/s} $
-  - Second: $ 5.03 \, \text{km/s} $
-  - Third: $ 24.04 \, \text{km/s} $
+  - First: $3.55 \, \text{km/s}$
+  - Second: $5.03 \, \text{km/s}$
+  - Third: $24.04 \, \text{km/s}$
 - **Jupiter**:
-  - First: $ 42.14 \, \text{km/s} $
-  - Second: $ 59.54 \, \text{km/s} $
-  - Third: $ 65.89 \, \text{km/s} $
+  - First: $42.14 \, \text{km/s}$
+  - Second: $59.54 \, \text{km/s}$
+  - Third: $65.89 \, \text{km/s}$
 
 ## Importance in Space Exploration
 
-- **Satellites**: First cosmic velocity ($ 7.91 \, \text{km/s} $ for Earth) enables LEO for communication and GPS.
-- **Interplanetary Missions**: Second cosmic velocity ($ 11.19 \, \text{km/s} $ for Earth) supports missions like NASA’s Perseverance to Mars.
-- **Interstellar Travel**: Third cosmic velocity ($ 43.81 \, \text{km/s} $ for Earth) is a benchmark for Voyager missions, aided by gravitational slingshots.
-- **Mission Efficiency**: Mars’ lower velocities ($ 5.03 \, \text{km/s} $ escape) favor future launches from its surface.
-- **Design**: Jupiter’s high velocities ($ 59.54 \, \text{km/s} $ escape) demand robust spacecraft.
+- **Satellites**: First cosmic velocity ($7.91 \, \text{km/s}$ for Earth) enables LEO for communication and GPS.
+- **Interplanetary Missions**: Second cosmic velocity ($11.19 \, \text{km/s}$ for Earth) supports missions like NASA’s Perseverance to Mars.
+- **Interstellar Travel**: Third cosmic velocity ($43.81 \, \text{km/s}$ for Earth) is a benchmark for Voyager missions, aided by gravitational slingshots.
+- **Mission Efficiency**: Mars’ lower velocities ($5.03 \, \text{km/s}$ escape) favor future launches from its surface.
+- **Design**: Jupiter’s high velocities ($59.54 \, \text{km/s}$ escape) demand robust spacecraft.
 
 ## 3D Visualizations
 
