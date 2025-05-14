@@ -175,7 +175,7 @@ The 3D plot for the crossed fields case highlights the full spatial path, showin
 ## Parameter Exploration
 
 ### Variations and Effects
-- **Field Strengths ($E, B$)**: Increasing $ B $ reduces the Larmor radius, tightening circular paths. Increasing $ E $ enhances drift velocity in crossed fields.
+- **Field Strengths ($E, B$)**: Increasing $B$ reduces the Larmor radius, tightening circular paths. Increasing $E$ enhances drift velocity in crossed fields.
 - **Initial Velocity ($\mathbf{v}$)**: Higher $v_\perp$ increases the Larmor radius; altering direction shifts the helical axis.
 - **Charge and Mass ($q, m$)**: Higher $q/m$ ratio tightens orbits; changing sign of $q$ reverses motion direction.
 These parameters shape trajectory complexity, from tight spirals to broad drifts.
@@ -192,7 +192,7 @@ The helical and drift motions align with experimental observations in accelerato
 
 ## Suggestions for Extension
 - **Non-Uniform Fields**: Introduce spatial variations in $\mathbf{E}$ or $\mathbf{B}$ to simulate magnetic bottles or gradient drifts.
-- **Multiple Particles**: Add interactions or varying $ q/m $ to model plasma behavior.
+- **Multiple Particles**: Add interactions or varying $q/m$ to model plasma behavior.
 - **Time-Varying Fields**: Incorporate oscillating $\mathbf{E}$ or $\mathbf{B}$ to explore cyclotron resonance.
 
 ## Conclusion
