@@ -174,7 +174,7 @@
 <h1 id="problem-1">Problem 1</h1>
 <h1 id="simulating-the-effects-of-the-lorentz-force-a-comprehensive-analysis">Simulating the Effects of the Lorentz Force: A Comprehensive Analysis</h1>
 <h2 id="introduction">Introduction</h2>
-<p>The Lorentz force, expressed as <span class="arithmatex">\(\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}\)</span>, governs the motion of charged particles in the presence of electric (<span class="arithmatex">\(\mathbf{E}\)</span>) and magnetic (<span class="arithmatex">\(\mathbf{B}\)</span>) fields. This force is fundamental across disciplines such as plasma physics, particle accelerators, and astrophysics, influencing particle trajectories in complex ways. By simulating these trajectories, we can explore the practical applications and visualize the intricate paths that arise due to the Lorentz force. This analysis, tailored for physics students, provides a detailed exploration of the force’s effects under various field configurations—uniform magnetic, combined electric and magnetic, and crossed fields. Using Python, we implement numerical simulations to compute and visualize particle motion, offering insights into physical phenomena like the Larmor radius and drift velocity, with a focus on real-world applications such as cyclotrons and magnetic traps as of 11:52 PM CEST on Wednesday, May 14, 2025.</p>
+<p>The Lorentz force, expressed as <span class="arithmatex">\(\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}\)</span>, governs the motion of charged particles in the presence of electric (<span class="arithmatex">\(\mathbf{E}\)</span>) and magnetic (<span class="arithmatex">\(\mathbf{B}\)</span>) fields. This force is fundamental across disciplines such as plasma physics, particle accelerators, and astrophysics, influencing particle trajectories in complex ways. By simulating these trajectories, we can explore the practical applications and visualize the intricate paths that arise due to the Lorentz force.</p>
 <h2 id="theoretical-background">Theoretical Background</h2>
 <h3 id="lorentz-force-definition">Lorentz Force Definition</h3>
 <p>The Lorentz force combines two components:</p>
@@ -193,27 +193,47 @@ $$
 where $ m $ is the particle’s mass. This second-order differential equation governs the particle’s motion, requiring numerical integration for complex trajectories.</p>
 <h3 id="trajectory-types">Trajectory Types</h3>
 <ul>
-<li><strong>Uniform Magnetic Field</strong>: Induces circular or helical motion due to the magnetic force’s perpendicular nature, with the Larmor radius $ r_L = \frac{m v_\perp}{q B} $ (where $ v_\perp $ is the velocity component perpendicular to $ \mathbf{B} $).</li>
-<li><strong>Combined Fields</strong>: Adds linear motion from $ \mathbf{E} $ to circular motion, potentially causing helical paths.</li>
-<li><strong>Crossed Fields</strong>: When $ \mathbf{E} $ and $ \mathbf{B} $ are perpendicular, a drift velocity $ \mathbf{v}_d = \frac{\mathbf{E} \times \mathbf{B}}{B^2} $ emerges, leading to complex trajectories.</li>
+<li>
+<p><strong>Uniform Magnetic Field</strong>: Induces circular or helical motion due to the magnetic force’s perpendicular nature, with the Larmor radius <span class="arithmatex">\(r_L = \frac{m v_\perp}{q B}\)</span> (where <span class="arithmatex">\(v_\perp\)</span> is the velocity component perpendicular to <span class="arithmatex">\(\mathbf{B}\)</span>).</p>
+</li>
+<li>
+<p><strong>Combined Fields</strong>: Adds linear motion from <span class="arithmatex">\(\mathbf{E}\)</span> to circular motion, potentially causing helical paths.</p>
+</li>
+<li>
+<p><strong>Crossed Fields</strong>: When <span class="arithmatex">\(\mathbf{E}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span> are perpendicular, a drift velocity <span class="arithmatex">\(\mathbf{v}_d = \frac{\mathbf{E} \times \mathbf{B}}{B^2}\)</span> emerges, leading to complex trajectories.</p>
+</li>
 </ul>
 <h3 id="physical-phenomena">Physical Phenomena</h3>
 <ul>
-<li><strong>Larmor Radius</strong>: The radius of the circular path in a magnetic field, influenced by charge, mass, velocity, and field strength.</li>
-<li><strong>Drift Velocity</strong>: A steady motion perpendicular to crossed $ \mathbf{E} $ and $ \mathbf{B} $ fields, critical in plasma confinement.</li>
+<li>
+<p><strong>Larmor Radius</strong>: The radius of the circular path in a magnetic field, influenced by charge, mass, velocity, and field strength.</p>
+</li>
+<li>
+<p><strong>Drift Velocity</strong>: A steady motion perpendicular to crossed <span class="arithmatex">\(\mathbf{E}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span> fields, critical in plasma confinement.</p>
+</li>
 </ul>
 <h2 id="exploration-of-applications">Exploration of Applications</h2>
 <h3 id="systems-involving-the-lorentz-force">Systems Involving the Lorentz Force</h3>
 <ul>
-<li><strong>Particle Accelerators</strong>: Cyclotrons and synchrotrons use magnetic fields to guide and accelerate charged particles, relying on the Lorentz force for circular motion.</li>
-<li><strong>Mass Spectrometers</strong>: Magnetic and electric fields separate ions by mass-to-charge ratio, leveraging the force to curve trajectories.</li>
-<li><strong>Plasma Confinement</strong>: In tokamaks and stellarators, magnetic fields confine plasma using the Lorentz force to prevent wall contact.</li>
+<li>
+<p><strong>Particle Accelerators</strong>: Cyclotrons and synchrotrons use magnetic fields to guide and accelerate charged particles, relying on the Lorentz force for circular motion.</p>
+</li>
+<li>
+<p><strong>Mass Spectrometers</strong>: Magnetic and electric fields separate ions by mass-to-charge ratio, leveraging the force to curve trajectories.</p>
+</li>
+<li>
+<p><strong>Plasma Confinement</strong>: In tokamaks and stellarators, magnetic fields confine plasma using the Lorentz force to prevent wall contact.</p>
+</li>
 </ul>
 <h3 id="relevance-of-fields">Relevance of Fields</h3>
 <ul>
-<li><strong>Electric Field ($ \mathbf{E} $)</strong>: Accelerates particles along its direction, useful for initial acceleration or trajectory adjustment.</li>
-<li><strong>Magnetic Field ($ \mathbf{B} $)</strong>: Deflects particles perpendicularly, enabling confinement and circular motion, essential for maintaining particle beams or plasma stability.
-Together, they provide precise control over charged particle motion, critical for experimental and industrial applications.</li>
+<li>
+<p><strong>Electric Field (<span class="arithmatex">\(\mathbf{E}\)</span>)</strong>: Accelerates particles along its direction, useful for initial acceleration or trajectory adjustment.</p>
+</li>
+<li>
+<p><strong>Magnetic Field (<span class="arithmatex">\(\mathbf{B}\)</span>)</strong>: Deflects particles perpendicularly, enabling confinement and circular motion, essential for maintaining particle beams or plasma stability.
+Together, they provide precise control over charged particle motion, critical for experimental and industrial applications.</p>
+</li>
 </ul>
 <h2 id="simulation-implementation">Simulation Implementation</h2>
 <h3 id="numerical-method">Numerical Method</h3>
@@ -224,18 +244,18 @@ $$
 RK4 approximates the solution by evaluating the derivative at multiple points per step, ensuring precision over time.</p>
 <h3 id="simulation-cases">Simulation Cases</h3>
 <ol>
-<li><strong>Uniform Magnetic Field</strong>: $ \mathbf{B} = B \hat{z} $, $ \mathbf{E} = 0 $.</li>
-<li><strong>Combined Fields</strong>: $ \mathbf{B} = B \hat{z} $, $ \mathbf{E} = E \hat{x} $.</li>
-<li><strong>Crossed Fields</strong>: $ \mathbf{B} = B \hat{z} $, $ \mathbf{E} = E \hat{y} $.</li>
+<li><strong>Uniform Magnetic Field</strong>: <span class="arithmatex">\(\mathbf{B} = B \hat{z}\)</span>, <span class="arithmatex">\(\mathbf{E} = 0\)</span>.</li>
+<li><strong>Combined Fields</strong>: <span class="arithmatex">\(\mathbf{B} = B \hat{z}\)</span>, <span class="arithmatex">\(\mathbf{E} = E \hat{x}\)</span>.</li>
+<li><strong>Crossed Fields</strong>: <span class="arithmatex">\(\mathbf{B} = B \hat{z}\)</span>, <span class="arithmatex">\(\mathbf{E} = E \hat{y}\)</span>.</li>
 </ol>
 <h3 id="base-parameters">Base Parameters</h3>
 <ul>
-<li>Charge: $ q = 1.6 \times 10^{-19} \, \text{C} $ (electron).</li>
-<li>Mass: $ m = 9.11 \times 10^{-31} \, \text{kg} $ (electron).</li>
-<li>Initial Velocity: $ \mathbf{v}_0 = (0, 10^6, 10^5) \, \text{m/s} $.</li>
-<li>Magnetic Field: $ B = 0.01 \, \text{T} $.</li>
-<li>Electric Field: $ E = 100 \, \text{V/m} $ (where applicable).</li>
-<li>Time Step: $ \Delta t = 10^{-10} \, \text{s} $, Duration: $ 10^{-7} \, \text{s} $.</li>
+<li>Charge: <span class="arithmatex">\(q = 1.6 \times 10^{-19} \, \text{C}\)</span> (electron).</li>
+<li>Mass: <span class="arithmatex">\(m = 9.11 \times 10^{-31} \, \text{kg}\)</span> (electron).</li>
+<li>Initial Velocity: <span class="arithmatex">\(\mathbf{v}_0 = (0, 10^6, 10^5) \, \text{m/s}\)</span>.</li>
+<li>Magnetic Field: <span class="arithmatex">\(B = 0.01 \, \text{T}\)</span>.</li>
+<li>Electric Field: <span class="arithmatex">\(E = 100 \, \text{V/m}\)</span> (where applicable).</li>
+<li>Time Step: <span class="arithmatex">\(\Delta t = 10^{-10} \, \text{s}\)</span>, Duration: <span class="arithmatex">\(10^{-7} \, \text{s}\)</span>.</li>
 </ul>
 <h2 id="computational-model-with-visualizations">Computational Model with Visualizations</h2>
 <p>The Python script simulates particle motion and generates 2D and 3D plots.</p>
@@ -319,29 +339,29 @@ print(f"Approximate Larmor Radius: {r_larmor:.6e} m")
 <h2 id="detailed-visualization-analysis">Detailed Visualization Analysis</h2>
 <h3 id="2d-trajectories">2D Trajectories</h3>
 <ul>
-<li><strong>Magnetic Only</strong>: Shows circular motion in the XY-plane due to the $ \mathbf{v} \times \mathbf{B} $ force, with radius approximating the Larmor radius.</li>
+<li><strong>Magnetic Only</strong>: Shows circular motion in the XY-plane due to the <span class="arithmatex">\(\mathbf{v} \times \mathbf{B}\)</span> force, with radius approximating the Larmor radius.</li>
 <li><strong>Combined Fields</strong>: Exhibits a helical path as the electric field adds linear motion along X, superimposed on circular motion.</li>
-<li><strong>Crossed Fields</strong>: Displays drift motion, with a steady $ \mathbf{v}_d $ perpendicular to $ \mathbf{E} $ and $ \mathbf{B} $, combined with circular components.</li>
+<li><strong>Crossed Fields</strong>: Displays drift motion, with a steady <span class="arithmatex">\(\mathbf{v}_d\)</span> perpendicular to <span class="arithmatex">\(\mathbf{E}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span>, combined with circular components.</li>
 </ul>
 <h3 id="3d-trajectory">3D Trajectory</h3>
 <p>The 3D plot for the crossed fields case highlights the full spatial path, showing drift in the XY-plane and oscillation along Z, providing a comprehensive view of the motion.</p>
 <h3 id="physical-phenomena_1">Physical Phenomena</h3>
 <ul>
-<li><strong>Larmor Radius</strong>: Calculated as $ r_L \approx 5.69 \times 10^{-5} \, \text{m} $, matching the circular path radius in the magnetic-only case.</li>
-<li><strong>Drift Velocity</strong>: Observed in the crossed fields case, with $ \mathbf{v}_d = \frac{E}{B} \approx 10^4 \, \text{m/s} $ along the expected direction.</li>
+<li><strong>Larmor Radius</strong>: Calculated as <span class="arithmatex">\(r_L \approx 5.69 \times 10^{-5} \, \text{m}\)</span>, matching the circular path radius in the magnetic-only case.</li>
+<li><strong>Drift Velocity</strong>: Observed in the crossed fields case, with <span class="arithmatex">\(\mathbf{v}_d = \frac{E}{B} \approx 10^4 \, \text{m/s}\)</span> along the expected direction.</li>
 </ul>
 <h2 id="parameter-exploration">Parameter Exploration</h2>
 <h3 id="variations-and-effects">Variations and Effects</h3>
 <ul>
-<li><strong>Field Strengths ($ E, B $)</strong>: Increasing $ B $ reduces the Larmor radius, tightening circular paths. Increasing $ E $ enhances drift velocity in crossed fields.</li>
-<li><strong>Initial Velocity ($ \mathbf{v} $)</strong>: Higher $ v_\perp $ increases the Larmor radius; altering direction shifts the helical axis.</li>
-<li><strong>Charge and Mass ($ q, m $)</strong>: Higher $ q/m $ ratio tightens orbits; changing sign of $ q $ reverses motion direction.
+<li><strong>Field Strengths (<span class="arithmatex">\(E, B\)</span>)</strong>: Increasing $ B $ reduces the Larmor radius, tightening circular paths. Increasing $ E $ enhances drift velocity in crossed fields.</li>
+<li><strong>Initial Velocity (<span class="arithmatex">\(\mathbf{v}\)</span>)</strong>: Higher <span class="arithmatex">\(v_\perp\)</span> increases the Larmor radius; altering direction shifts the helical axis.</li>
+<li><strong>Charge and Mass (<span class="arithmatex">\(q, m\)</span>)</strong>: Higher <span class="arithmatex">\(q/m\)</span> ratio tightens orbits; changing sign of <span class="arithmatex">\(q\)</span> reverses motion direction.
 These parameters shape trajectory complexity, from tight spirals to broad drifts.</li>
 </ul>
 <h2 id="practical-applications-and-discussion">Practical Applications and Discussion</h2>
 <h3 id="relation-to-real-systems">Relation to Real Systems</h3>
 <ul>
-<li><strong>Cyclotrons</strong>: The magnetic-only case mirrors cyclotron operation, where particles spiral under uniform $ \mathbf{B} $ for acceleration, with the Larmor radius guiding design.</li>
+<li><strong>Cyclotrons</strong>: The magnetic-only case mirrors cyclotron operation, where particles spiral under uniform <span class="arithmatex">\(\mathbf{B}\)</span> for acceleration, with the Larmor radius guiding design.</li>
 <li><strong>Magnetic Traps</strong>: Combined fields simulate magnetic mirrors, confining particles with helical paths, used in fusion devices like tokamaks.</li>
 <li><strong>Crossed Fields</strong>: Reflect mass spectrometry, where drift separates ions, and astrophysical contexts like solar wind particle motion.</li>
 </ul>
@@ -349,12 +369,12 @@ These parameters shape trajectory complexity, from tight spirals to broad drifts
 <p>The helical and drift motions align with experimental observations in accelerators and plasma devices, validating the model. The Larmor radius and drift velocity calculations provide quantitative benchmarks for system design.</p>
 <h2 id="suggestions-for-extension">Suggestions for Extension</h2>
 <ul>
-<li><strong>Non-Uniform Fields</strong>: Introduce spatial variations in $ \mathbf{E} $ or $ \mathbf{B} $ to simulate magnetic bottles or gradient drifts.</li>
+<li><strong>Non-Uniform Fields</strong>: Introduce spatial variations in <span class="arithmatex">\(\mathbf{E}\)</span> or <span class="arithmatex">\(\mathbf{B}\)</span> to simulate magnetic bottles or gradient drifts.</li>
 <li><strong>Multiple Particles</strong>: Add interactions or varying $ q/m $ to model plasma behavior.</li>
-<li><strong>Time-Varying Fields</strong>: Incorporate oscillating $ \mathbf{E} $ or $ \mathbf{B} $ to explore cyclotron resonance.</li>
+<li><strong>Time-Varying Fields</strong>: Incorporate oscillating <span class="arithmatex">\(\mathbf{E}\)</span> or <span class="arithmatex">\(\mathbf{B}\)</span> to explore cyclotron resonance.</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
-<p>This simulation of the Lorentz force under uniform magnetic, combined, and crossed field configurations reveals diverse particle trajectories—circular, helical, and drift—driven by $ \mathbf{E} $ and $ \mathbf{B} $. Detailed 2D and 3D visualizations, supported by RK4 integration, highlight the Larmor radius and drift velocity, connecting theoretical physics to practical systems like cyclotrons and magnetic traps. The parameter exploration and extension suggestions offer a foundation for further study, enhancing understanding of electromagnetism’s role in modern science.</p>
+<p>This simulation of the Lorentz force under uniform magnetic, combined, and crossed field configurations reveals diverse particle trajectories—circular, helical, and drift—driven by <span class="arithmatex">\(\mathbf{E}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span>. Detailed 2D and 3D visualizations, supported by RK4 integration, highlight the Larmor radius and drift velocity, connecting theoretical physics to practical systems like cyclotrons and magnetic traps. The parameter exploration and extension suggestions offer a foundation for further study, enhancing understanding of electromagnetism’s role in modern science.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
