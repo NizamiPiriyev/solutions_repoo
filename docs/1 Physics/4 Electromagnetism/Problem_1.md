@@ -161,11 +161,14 @@ print(f"Approximate Larmor Radius: {r_larmor:.6e} m")
 ## Detailed Visualization Analysis
 
 ### 2D Trajectories
+
 - **Magnetic Only**: Shows circular motion in the XY-plane due to the $\mathbf{v} \times \mathbf{B}$ force, with radius approximating the Larmor radius.
 ![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_E1_1.png)
 
+
 - **Combined Fields**: Exhibits a helical path as the electric field adds linear motion along X, superimposed on circular motion.
 ![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_E1_2.png)
+
 
 - **Crossed Fields**: Displays drift motion, with a steady $\mathbf{v}_d$ perpendicular to $\mathbf{E}$ and $\mathbf{B}$, combined with circular components.
 ![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_E1_3.png)
