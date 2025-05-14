@@ -5,14 +5,16 @@
 
 ## Introduction
 
-The Lorentz force, expressed as $\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}$, governs the motion of charged particles in the presence of electric ($\mathbf{E} $) and magnetic ($ \mathbf{B}$) fields. This force is fundamental across disciplines such as plasma physics, particle accelerators, and astrophysics, influencing particle trajectories in complex ways. By simulating these trajectories, we can explore the practical applications and visualize the intricate paths that arise due to the Lorentz force. This analysis, tailored for physics students, provides a detailed exploration of the force’s effects under various field configurations—uniform magnetic, combined electric and magnetic, and crossed fields. Using Python, we implement numerical simulations to compute and visualize particle motion, offering insights into physical phenomena like the Larmor radius and drift velocity, with a focus on real-world applications such as cyclotrons and magnetic traps as of 11:52 PM CEST on Wednesday, May 14, 2025.
+The Lorentz force, expressed as $\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}$, governs the motion of charged particles in the presence of electric ($\mathbf{E}$) and magnetic ($\mathbf{B}$) fields. This force is fundamental across disciplines such as plasma physics, particle accelerators, and astrophysics, influencing particle trajectories in complex ways. By simulating these trajectories, we can explore the practical applications and visualize the intricate paths that arise due to the Lorentz force. This analysis, tailored for physics students, provides a detailed exploration of the force’s effects under various field configurations—uniform magnetic, combined electric and magnetic, and crossed fields. Using Python, we implement numerical simulations to compute and visualize particle motion, offering insights into physical phenomena like the Larmor radius and drift velocity, with a focus on real-world applications such as cyclotrons and magnetic traps as of 11:52 PM CEST on Wednesday, May 14, 2025.
 
 ## Theoretical Background
 
 ### Lorentz Force Definition
 The Lorentz force combines two components:
-    - **Electric Force**: $q\mathbf{E}$, where $q$ is the particle’s charge and $\mathbf{E}$ is the electric field, acting along the field direction.
-    - **Magnetic Force**: $q\mathbf{v} \times \mathbf{B}$, where $\mathbf{v}$ is the particle’s velocity and $\mathbf{B}$ is the magnetic field, acting perpendicular to both $\mathbf{v}$ and $\mathbf{B}$ due to the cross product.
+
+- **Electric Force**: $q\mathbf{E}$, where $q$ is the particle’s charge and $\mathbf{E}$ is the electric field, acting along the field direction.
+
+- **Magnetic Force**: $q\mathbf{v} \times \mathbf{B}$, where $\mathbf{v}$ is the particle’s velocity and $\mathbf{B}$ is the magnetic field, acting perpendicular to both $\mathbf{v}$ and $\mathbf{B}$ due to the cross product.
 
 The total force dictates the acceleration:
 $$
