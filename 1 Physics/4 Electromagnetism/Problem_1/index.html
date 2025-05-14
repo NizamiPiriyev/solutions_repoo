@@ -174,12 +174,18 @@
 <h1 id="problem-1">Problem 1</h1>
 <h1 id="simulating-the-effects-of-the-lorentz-force-a-comprehensive-analysis">Simulating the Effects of the Lorentz Force: A Comprehensive Analysis</h1>
 <h2 id="introduction">Introduction</h2>
-<p>The Lorentz force, expressed as <span class="arithmatex">\(\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}\)</span>, governs the motion of charged particles in the presence of electric (<span class="arithmatex">\(\mathbf{E} <span class="arithmatex">\() and magnetic (\)</span> \mathbf{B}\)</span>) fields. This force is fundamental across disciplines such as plasma physics, particle accelerators, and astrophysics, influencing particle trajectories in complex ways. By simulating these trajectories, we can explore the practical applications and visualize the intricate paths that arise due to the Lorentz force. This analysis, tailored for physics students, provides a detailed exploration of the force’s effects under various field configurations—uniform magnetic, combined electric and magnetic, and crossed fields. Using Python, we implement numerical simulations to compute and visualize particle motion, offering insights into physical phenomena like the Larmor radius and drift velocity, with a focus on real-world applications such as cyclotrons and magnetic traps as of 11:52 PM CEST on Wednesday, May 14, 2025.</p>
+<p>The Lorentz force, expressed as <span class="arithmatex">\(\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}\)</span>, governs the motion of charged particles in the presence of electric (<span class="arithmatex">\(\mathbf{E}\)</span>) and magnetic (<span class="arithmatex">\(\mathbf{B}\)</span>) fields. This force is fundamental across disciplines such as plasma physics, particle accelerators, and astrophysics, influencing particle trajectories in complex ways. By simulating these trajectories, we can explore the practical applications and visualize the intricate paths that arise due to the Lorentz force. This analysis, tailored for physics students, provides a detailed exploration of the force’s effects under various field configurations—uniform magnetic, combined electric and magnetic, and crossed fields. Using Python, we implement numerical simulations to compute and visualize particle motion, offering insights into physical phenomena like the Larmor radius and drift velocity, with a focus on real-world applications such as cyclotrons and magnetic traps as of 11:52 PM CEST on Wednesday, May 14, 2025.</p>
 <h2 id="theoretical-background">Theoretical Background</h2>
 <h3 id="lorentz-force-definition">Lorentz Force Definition</h3>
-<p>The Lorentz force combines two components:
-    - <strong>Electric Force</strong>: <span class="arithmatex">\(q\mathbf{E}\)</span>, where <span class="arithmatex">\(q\)</span> is the particle’s charge and <span class="arithmatex">\(\mathbf{E}\)</span> is the electric field, acting along the field direction.
-    - <strong>Magnetic Force</strong>: <span class="arithmatex">\(q\mathbf{v} \times \mathbf{B}\)</span>, where <span class="arithmatex">\(\mathbf{v}\)</span> is the particle’s velocity and <span class="arithmatex">\(\mathbf{B}\)</span> is the magnetic field, acting perpendicular to both <span class="arithmatex">\(\mathbf{v}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span> due to the cross product.</p>
+<p>The Lorentz force combines two components:</p>
+<ul>
+<li>
+<p><strong>Electric Force</strong>: <span class="arithmatex">\(q\mathbf{E}\)</span>, where <span class="arithmatex">\(q\)</span> is the particle’s charge and <span class="arithmatex">\(\mathbf{E}\)</span> is the electric field, acting along the field direction.</p>
+</li>
+<li>
+<p><strong>Magnetic Force</strong>: <span class="arithmatex">\(q\mathbf{v} \times \mathbf{B}\)</span>, where <span class="arithmatex">\(\mathbf{v}\)</span> is the particle’s velocity and <span class="arithmatex">\(\mathbf{B}\)</span> is the magnetic field, acting perpendicular to both <span class="arithmatex">\(\mathbf{v}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span> due to the cross product.</p>
+</li>
+</ul>
 <p>The total force dictates the acceleration:
 $$
 \mathbf{a} = \frac{\mathbf{F}}{m} = \frac{q\mathbf{E}}{m} + \frac{q}{m} (\mathbf{v} \times \mathbf{B})
