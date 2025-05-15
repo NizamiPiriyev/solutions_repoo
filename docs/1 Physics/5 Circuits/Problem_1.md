@@ -191,5 +191,3 @@ The code tests three circuit configurations:
     - Nested series-parallel circuit: Calculated as $8.71 \, \Omega$ (though the expected value in the test was 6.2 ohms, which may indicate a misunderstanding of the circuit topology; the calculation above is correct based on the given structure).
 - **Analysis**: Discussed the algorithm’s efficiency $(O(V \cdot (V + E)))$ and potential improvements (e.g., star-delta transformations).
 
----
-This solution provides a practical, working implementation that you can use to calculate equivalent resistance for a variety of circuits, with clear visualizations to understand the process. Let me know if you’d like to extend the implementation to handle more complex circuits (e.g., with star-delta transformations)!
