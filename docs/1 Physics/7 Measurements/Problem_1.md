@@ -5,7 +5,7 @@
 
 ## Introduction
 
-The acceleration $ g $ due to gravity is a fundamental constant influencing physical phenomena, structural design, and experiments across various fields. Accurate measurement of $ g $ is crucial for understanding gravitational interactions. A classic method involves using a simple pendulum, where the oscillation period depends on the local gravitational field.
+The acceleration $g$ due to gravity is a fundamental constant influencing physical phenomena, structural design, and experiments across various fields. Accurate measurement of $g$ is crucial for understanding gravitational interactions. A classic method involves using a simple pendulum, where the oscillation period depends on the local gravitational field.
 ## Procedure
 
 ### Materials
@@ -23,9 +23,11 @@ The acceleration $ g $ due to gravity is a fundamental constant influencing phys
 - Measure the time for 10 full oscillations ($T_{10}$) and repeat this process 10 times. Record all 10 measurements.
 - Calculate the mean time for 10 oscillations ($\overline{T_{10}}$) and the standard deviation ($\sigma_T$).
 - Determine the uncertainty in the mean time as:
+  
   $$
   \Delta T_{10} = \frac{\sigma_T}{\sqrt{n}}
   $$
+  
   where $n = 10$.
 
 ## Calculations
@@ -33,14 +35,16 @@ The acceleration $ g $ due to gravity is a fundamental constant influencing phys
 ### 1. Calculate the Period
 - Period $T = \frac{\overline{T_{10}}}{10}$ and uncertainty $\Delta T = \frac{\Delta T_{10}}{10}$.
 
-### 2. Determine $ g $
+### 2. Determine $g$
 - Using the pendulum period formula:
+  
   $$
   g = \frac{4\pi^2 L}{T^2}
   $$
 
 ### 3. Propagate Uncertainties
 - Uncertainty in $g$:
+  
   $$
   \Delta g = g \sqrt{\left(\frac{\Delta L}{L}\right)^2 + \left(2 \frac{\Delta T}{T}\right)^2}
   $$
@@ -61,11 +65,17 @@ The acceleration $ g $ due to gravity is a fundamental constant influencing phys
 | 10          | 14.3             |
 
 - Length $L = 1.00 \, \text{m}$, Ruler Resolution = 0.01 m, $\Delta L = 0.005 \, \text{m}$.
+
 - Mean $\overline{T_{10}} = 14.25 \, \text{s}$.
+
 - Standard deviation $\sigma_T = 0.15 \, \text{s}$.
+
 - Uncertainty in mean $\Delta T_{10} = \frac{0.15}{\sqrt{10}} \approx 0.047 \, \text{s}$.
+
 - Period $T = \frac{14.25}{10} = 1.425 \, \text{s}$, $\Delta T = \frac{0.047}{10} \approx 0.0047 \, \text{s}$.
+
 - $g = \frac{4\pi^2 \cdot 1.00}{(1.425)^2} \approx 9.81 \, \text{m/s}^2$.
+
 - $\Delta g = 9.81 \sqrt{\left(\frac{0.005}{1.00}\right)^2 + \left(2 \frac{0.0047}{1.425}\right)^2} \approx 0.06 \, \text{m/s}^2$.
 
 ## Visualization with Python (Google Colab Compatible)
@@ -125,7 +135,7 @@ print(f"Calculated g = {g:.2f} ± {delta_g:.2f} m/s²")
 
 
 ### Period vs. $g$ with Uncertainty
-- The plot shows a theoretical curve of $ g $ versus $T$ based on $g = \frac{4\pi^2 L}{T^2}$. A red point with error bars marks the measured $g = 9.81 \pm 0.06 \, \text{m/s}^2$, illustrating how $T$ uncertainty propagates to $g$. The curve highlights the inverse-square relationship.
+- The plot shows a theoretical curve of $g$ versus $T$ based on $g = \frac{4\pi^2 L}{T^2}$. A red point with error bars marks the measured $g = 9.81 \pm 0.06 \, \text{m/s}^2$, illustrating how $T$ uncertainty propagates to $g$. The curve highlights the inverse-square relationship.
 
 ![Sampling Distribution of the Sample Mean Population: Uniform](../images/image_M1_2.png)
 
