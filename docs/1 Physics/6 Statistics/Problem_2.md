@@ -10,7 +10,8 @@ Monte Carlo simulations leverage randomness to solve problems or estimate values
 ## Part 1: Estimating $\pi$ Using a Circle
 
 ### Theoretical Foundation
-- **Ratio Method**: The ratio of points inside a circle to the total points in a square can estimate $\pi$. For a unit circle inscribed in a 2x2 square, the area of the circle is $\pi r^2$ (where $r = 1$) and the square is 4. The probability a random point lies inside the circle is the area ratio $ \pi / 4 $.
+- **Ratio Method**: The ratio of points inside a circle to the total points in a square can estimate $\pi$. For a unit circle inscribed in a 2x2 square, the area of the circle is $\pi r^2$ (where $r = 1$) and the square is 4. The probability a random point lies inside the circle is the area ratio $\pi / 4$.
+
 - **Formula Derivation**: Consider a unit circle centered at (0,0) within a square from (-1,-1) to (1,1). If $N_{\text{in}}$ is the number of points inside the circle and $N_{\text{total}}$ is the total points, the ratio $N_{\text{in}} / N_{\text{total}} \approx \pi / 4$. Thus, $\pi \approx 4 \cdot (N_{\text{in}} / N_{\text{total}})$.
 
 ### Simulation
@@ -25,7 +26,7 @@ Monte Carlo simulations leverage randomness to solve problems or estimate values
 - Investigate how accuracy improves with increasing points.
 - Discuss convergence rate and computational considerations.
 
-## Part 2: Estimating $ \pi $ Using Buffon’s Needle
+## Part 2: Estimating $\pi$ Using Buffon’s Needle
 
 ### Theoretical Foundation
 - **Buffon’s Needle Problem**: A needle of length $L$ is dropped on a plane with parallel lines spaced $d$ apart. $\pi$ is estimated based on the probability of the needle crossing a line.
